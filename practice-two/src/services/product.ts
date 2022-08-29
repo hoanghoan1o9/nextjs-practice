@@ -1,5 +1,7 @@
 // Models
 import { Product } from 'models/product';
+
+// Constants
 import { API } from 'constants/clientApis';
 
 export class ProductClient {
