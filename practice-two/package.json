@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+		"json-server": "json-server --watch src/server/index.json"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -16,6 +17,7 @@
     "react-toast-notifications": "^2.5.1"
   },
   "devDependencies": {
+    "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",

@@ -16,6 +16,5 @@
   "parser": "typescript",
   "singleQuote": true,
   "trailingComma": "all",
-  "semi": true,
-  "endOfLine": "auto"
+  "semi": true
 }
