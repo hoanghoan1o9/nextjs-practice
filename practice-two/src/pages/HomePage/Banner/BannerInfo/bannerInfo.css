@@ -1,0 +1,18 @@
+.banner__info {
+  padding: 226px 0 0 36px;
+}
+
+.banner__info__title {
+  font-size: var(--font-size-big);
+  font-weight: var(--font-weight-upper-normals);
+  line-height: 43px;
+  color: var(--while-color);
+}
+
+.banner__info__price {
+  font-weight: var(--font-weight-normals);
+  font-size: var(--font-size-normal);
+  color: var(--while-color);
+  line-height: 35px;
+}
+  

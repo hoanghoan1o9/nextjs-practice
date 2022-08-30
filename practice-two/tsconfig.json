@@ -18,6 +18,7 @@
     "baseUrl": "./src",
     "paths": {
       "assets/*": ["assets/*"],
+      "helpers/*": ["helpers/*"],
       "components/*": ["components/*"],
       "constants/*": ["constants/*"],
       "utilities/*": ["utilities/*"],

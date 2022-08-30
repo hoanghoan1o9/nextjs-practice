@@ -1,0 +1,30 @@
+.nav__menu {
+  display: none;
+}
+
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.nav__item {
+  margin: 0 32px;
+}
+
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.active {
+  text-decoration: underline;
+}
+  
