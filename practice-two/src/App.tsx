@@ -1,7 +1,8 @@
+// Libs
 import React from 'react';
 
-function App() {
-  return <div>hi</div>;
-}
+const App = (): JSX.Element => {
+  return <div>Hi</div>;
+};
 
 export default App;
