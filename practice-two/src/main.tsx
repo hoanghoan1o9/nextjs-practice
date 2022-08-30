@@ -9,6 +9,9 @@ import App from './App';
 // Contexts
 import { ProductProvider } from 'contexts/ProductContext';
 
+// Styles
+import './styles/index.css';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ProductProvider>
     <Router>

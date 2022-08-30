@@ -1,0 +1,32 @@
+#root {
+  --primary: rgb(70, 40, 255);
+  --warning: rgb(255, 208, 40);
+  --danger: rgb(235, 63, 39);
+  --success: rgb(117, 250, 131);
+  --dark-color: rgb(0, 0, 0);
+  --light-color: rgb(112, 112, 112);
+  --while-color: rgb(255, 255, 255);
+  --light-while-color: rgb(255, 255, 255, 0.6);
+  --gold-color: rgb(161, 138, 104);
+  --gray-color: rgb(216, 216, 216);
+  --transparent-color: transparent;
+
+  --font-size-lower-small: 14px;
+  --font-size-small: 16px;
+  --font-size-upper-small: 20px;
+  --font-size-normal: 26px;
+  --font-size-upper-normal: 28px;
+  --font-size-big: 33px;
+
+  --font-weight-normal: 400;
+  --font-weight-upper-normal: 500;
+  --font-weight-bold: 700;
+
+  --line-hight-lower-small: 20px;
+  --line-hight-small: 22px;
+  --line-hight-normal: 26px;
+  --line-hight-big: 28px;
+  --line-hight-upper-big: 30px;
+  --line-hight-supper-big: 33px;
+}
+  
