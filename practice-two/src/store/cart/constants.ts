@@ -1,0 +1,4 @@
+export enum CARTS_ACTIONS {
+  GET_CART_LIST = 'GET_CART_LIST',
+  ADD_CART = 'ADD_CART',
+}

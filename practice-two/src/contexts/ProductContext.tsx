@@ -5,13 +5,13 @@ import { createContext, useContext, useReducer } from 'react';
 import { ProductServices } from 'services/product';
 
 // Store
-import { PRODUCTS_ACTIONS } from 'store/constants';
+import { PRODUCTS_ACTIONS } from 'store/product/constants';
 
 import {
   initialProductState,
   productReducer,
   ProductState,
-} from 'store/reducer';
+} from 'store/product/reducer';
 
 // Models
 import { Product } from '../models/product';
