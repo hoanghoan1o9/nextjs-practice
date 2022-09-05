@@ -14,11 +14,14 @@ import { CartProvider } from 'contexts/CartContext';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <ProductProvider>
-    <CartProvider>
-      <Router>
-        <App />
-      </Router>
-    </CartProvider>
-  </ProductProvider>,
+  <React.StrictMode>
+    <ProductProvider>
+      <CartProvider>
+        <Router>
+          <App />
+        </Router>
+      </CartProvider>
+    </ProductProvider>
+    ,
+  </React.StrictMode>,
 );
