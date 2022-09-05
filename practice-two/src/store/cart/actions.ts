@@ -4,18 +4,32 @@ import { Cart } from 'models/cart';
 // Store
 import { CARTS_ACTIONS } from './constants';
 
-export type getCartList = {
+export type GetCartList = {
   type: typeof CARTS_ACTIONS.GET_CART_LIST;
   payload: {
     cartList: Cart[];
   };
 };
 
-export type addCart = {
+export type AddCart = {
   type: typeof CARTS_ACTIONS.ADD_CART;
   payload: {
     cart: Cart;
   };
 };
 
-export type CartAction = getCartList | addCart;
+export type DeleteCart = {
+  type: typeof CARTS_ACTIONS.DELETE_CART;
+  payload: {
+    index: number;
+  };
+};
+
+export type UpdateCart = {
+  type: typeof CARTS_ACTIONS.UPDATE_CART;
+  payload: {
+    id: string;
+  };
+};
+
+export type CartAction = GetCartList | AddCart | DeleteCart | UpdateCart;
