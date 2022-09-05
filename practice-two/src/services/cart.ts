@@ -29,15 +29,17 @@ export class CartClient {
     return response.json();
   };
 
-  delete = async (): Promise<void> => {
-    await fetch(this.url, {
+  deleteCart = async (id: string): Promise<void> => {
+    const url = `${this.url}/${id}`;
+    await fetch(url, {
       method: API.HTTP_METHODS.DELETE,
       headers: API.HEADERS,
     });
   };
 
-  patch = async (data: Cart): Promise<Cart> => {
-    const response = await fetch(this.url, {
+  patchCart = async (id: string, data: Cart): Promise<Cart> => {
+    const url = `${this.url}/${id}`;
+    const response = await fetch(url, {
       method: API.HTTP_METHODS.PATCH,
       headers: API.HEADERS,
       body: JSON.stringify(data),

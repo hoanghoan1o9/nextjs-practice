@@ -33,7 +33,6 @@ const ProductListPage = () => {
     getProductList();
   }, [products]);
 
-  console.log('data', productList);
   const productsData = productList;
 
   const handleSortProduct = (
@@ -65,7 +64,7 @@ const ProductListPage = () => {
     let value = target.value.toUpperCase();
 
     if (!value) {
-      setProducts(productsData);
+      return setProducts(productsData);
     }
 
     setProducts(
@@ -93,7 +92,7 @@ const ProductListPage = () => {
         </div>
         <Dropdown options={DROPDOWN.OPTION_DATA} onChange={handleSortProduct} />
       </div>
-      <ProductList productList={products} />
+      <ProductList productList={productList} />
       {/* <Pagination /> */}
     </section>
   );
