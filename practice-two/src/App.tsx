@@ -1,6 +1,10 @@
 // Libs
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+// Contexts
+import { useProduct } from 'contexts/ProductContext';
+import { useCart } from 'contexts/CartContext';
 
 // Pages
 import Header from 'components/Header';
@@ -9,55 +13,42 @@ import Footer from 'components/Footer';
 import ErrorBoundary from 'pages/ErrorBoundaryPage';
 import NotFoundPage from 'pages/NotFoundPage';
 import ProductListPage from 'pages/ProductListPage';
+import ProductDetailPage from 'pages/ProductDetailPage';
+import CartPage from 'pages/CartPage';
 
 // Constants
 import { MENU_LIST } from 'constants/menu';
 
 const App = (): JSX.Element => {
+  const { productList, getProductList } = useProduct();
+  const { cartList, getCartList } = useCart();
+
+  useEffect(() => {
+    getProductList();
+    getCartList();
+  }, []);
+
   return (
-    // <>
-    //   <Header menuList={MENU_LIST} />
-    //   <ErrorBoundary>
-    //     <HomePage />
-    //   </ErrorBoundary>
-    // </>
     <>
       <Header menuList={MENU_LIST} />
       <ErrorBoundary>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductListPage />} />
-          {/* <Route
+          <Route
             path="/products/:productId"
             element={
               <ProductDetailPage
-                products={products}
+                productList={productList}
                 cartList={cartList}
-                isLoading={isLoading}
-                message={message}
-                count={count}
-                onIncrease={this.handleClickIncrease}
-                onDecrease={this.handleClickDecrease}
-                onAddCart={this.handleAddCart}
-                onUpdateCart={this.handleUpdateCart}
               />
             }
-          /> */}
-          {/* <Route
+          />
+          <Route
             path="cart"
-            element={
-              <CartPage
-                isLoading={isLoading}
-                products={products}
-                carts={carts}
-                cartList={cartList}
-                message={message}
-                totalPrice={totalPrice}
-                onDeleteCart={this.handleDeleteCart}
-              />
-            }
-          /> */}
-          <Route path="*" element={<NotFoundPage />}></Route>
+            element={<CartPage productList={productList} cartList={cartList} />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ErrorBoundary>
       <Footer />
