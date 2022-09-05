@@ -5,14 +5,14 @@ import React, { memo } from 'react';
 import { BUTTON } from 'constants/button';
 
 // Styles
-import './button.css';
+import './counter.css';
 
 interface Props {
-  style: string;
-  size: string;
+  style?: string;
+  size?: string;
   count: number;
-  onIncrease: () => void;
-  onDecrease: () => void;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
 }
 
 const Counter: React.FC<Props> = ({
@@ -22,7 +22,7 @@ const Counter: React.FC<Props> = ({
   onIncrease,
   onDecrease,
 }) => (
-  <>
+  <div className="counter">
     <button
       className={`btn ${style} ${size}`}
       type="button"
@@ -38,7 +38,7 @@ const Counter: React.FC<Props> = ({
     >
       +
     </button>
-  </>
+  </div>
 );
 
 export default memo(Counter);
