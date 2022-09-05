@@ -1,0 +1,60 @@
+.product-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+}
+
+.product-info-item {
+  width: 120px;
+  height:120px;
+  margin-bottom: 40px;
+  margin-right: 39px;
+}
+
+.product-info-item-image {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info-banner {
+  display: flex;
+  flex: 1;
+  width: 540px;
+  height: 600px;
+}
+
+.product-info-banner-image {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 64px;
+}
+
+.product-info--banner-heading {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-upper-big);
+  margin-bottom: 23px;
+}
+
+.product-info--banner-price {
+  color: var(--gold-color);
+  font-size: var(--font-size-upper-small);
+  font-weight: var(--font-weight-upper-normal);
+  line-height: var(--line-height-big);
+  margin-bottom: 61px;
+}
+
+.product-info--banner-description {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-normal);
+  color: var(--light-color);
+  margin-bottom: 48px;
+}
+
+.product-info--banner-action {
+  display: flex;
+  height: 53px;
+}
