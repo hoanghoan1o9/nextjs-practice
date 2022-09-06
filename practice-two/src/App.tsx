@@ -34,7 +34,10 @@ const App = (): JSX.Element => {
       <ErrorBoundary>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductListPage />} />
+          <Route
+            path="/products"
+            element={<ProductListPage productList={productList} />}
+          />
           <Route
             path="/products/:productId"
             element={
