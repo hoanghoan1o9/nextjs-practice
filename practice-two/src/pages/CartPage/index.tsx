@@ -1,5 +1,5 @@
 // Libs
-import React, { useEffect } from 'react';
+import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useNavigate } from 'react-router-dom';
 
