@@ -7,9 +7,6 @@ import { debounce } from 'helpers/debounce';
 // Models
 import { Product } from 'models/product';
 
-// Contexts
-import { useProduct } from 'contexts/ProductContext';
-
 // Components
 import Dropdown from 'components/Dropdown';
 import Input from 'components/Input';
@@ -17,6 +14,7 @@ import ProductList from 'components/ProductList';
 
 // Constants
 import { DROPDOWN } from 'constants/dropdown';
+import { PRODUCT } from 'constants/product';
 
 //Images
 import { SearchIcon } from 'assets/index';
@@ -24,59 +22,76 @@ import { SearchIcon } from 'assets/index';
 // Styles
 import './productListPage.css';
 
-const ProductListPage = () => {
-  const { productList, getProductList } = useProduct();
+interface Props {
+  productList: Product[];
+}
 
+const ProductListPage = ({ productList }: Props) => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    getProductList();
-  }, [products]);
+    setProducts(productList);
+  }, [productList]);
 
-  const productsData = productList;
-
-  const handleSortProduct = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ): void => {
-    const value = event.target.value;
-
-    switch (value) {
-      case DROPDOWN.VALUES.A_TO_Z:
-        setProducts(productsData.sort((a, b) => (a.title > b.title ? 1 : -1)));
-        break;
-
-      case DROPDOWN.VALUES.Z_TO_A:
-        setProducts(productsData.sort((a, b) => (a.title > b.title ? -1 : 1)));
-        break;
-
-      case DROPDOWN.VALUES.HIGHTEST_TO_LOWEST:
-        setProducts(productsData.sort((a, b) => (a.price > b.price ? -1 : 1)));
-        break;
-
-      case DROPDOWN.VALUES.LOWEST_TO_HIGHEST:
-        setProducts(productsData.sort((a, b) => (a.price < b.price ? -1 : 1)));
-    }
+  const handleSetProducts = (newProducts: Product[]) => {
+    setProducts([...newProducts]);
   };
 
-  const handleSearchProduct = (event: React.KeyboardEvent): void => {
-    const target = event.target as HTMLInputElement;
+  const handleSortProduct = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>): void => {
+      const value = event.target.value;
 
-    let value = target.value.toUpperCase();
+      switch (value) {
+        case DROPDOWN.VALUES.A_TO_Z:
+          handleSetProducts(
+            products.sort((a, b) => (a.title > b.title ? 1 : -1)),
+          );
+          break;
 
-    if (!value) {
-      return setProducts(productsData);
-    }
+        case DROPDOWN.VALUES.Z_TO_A:
+          handleSetProducts(
+            products.sort((a, b) => (a.title > b.title ? -1 : 1)),
+          );
+          break;
 
-    setProducts(
-      productsData.filter((product) =>
-        product.title.toUpperCase().includes(value),
-      ),
-    );
-  };
+        case DROPDOWN.VALUES.HIGHTEST_TO_LOWEST:
+          handleSetProducts(
+            products.sort((a, b) => (a.price > b.price ? -1 : 1)),
+          );
+          break;
+
+        case DROPDOWN.VALUES.LOWEST_TO_HIGHEST:
+          handleSetProducts(
+            products.sort((a, b) => (a.price < b.price ? -1 : 1)),
+          );
+          break;
+      }
+    },
+    [products],
+  );
+
+  const handleSearchProduct = useCallback(
+    (event: React.KeyboardEvent): void => {
+      const target = event.target as HTMLInputElement;
+
+      let value = target.value.toUpperCase();
+
+      if (!value) {
+        return setProducts(productList);
+      }
+
+      setProducts(
+        productList.filter((product) =>
+          product.title.toUpperCase().includes(value),
+        ),
+      );
+    },
+    [productList],
+  );
 
   return (
     <section className="product-list-page">
-      <div>
+      <div className="product-list-page__search">
         <h2 className="product-list-page__title">Shop The Latest</h2>
         <div className="product-list-page__input">
           <Input
@@ -92,8 +107,11 @@ const ProductListPage = () => {
         </div>
         <Dropdown options={DROPDOWN.OPTION_DATA} onChange={handleSortProduct} />
       </div>
-      <ProductList productList={productList} />
-      {/* <Pagination /> */}
+      <ProductList
+        productList={products}
+        style={PRODUCT.STYLES.HIDE}
+        size={PRODUCT.SIZES_IMAGE.MEDIUM}
+      />
     </section>
   );
 };
