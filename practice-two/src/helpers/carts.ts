@@ -1,3 +1,6 @@
+//Libs
+import React, { useMemo } from 'react';
+
 // Models
 import { Cart } from 'models/cart';
 import { Product } from '../models/product';
@@ -24,7 +27,10 @@ const generateCartList = (cartList: Cart[], products: Product[]) => {
       ];
   });
 
-  const totalPriceCart = carts.reduce((x, y) => x + y.price * y.quantity, 0);
+  const totalPriceCart = useMemo(
+    () => carts.reduce((x, y) => x + y.price * y.quantity, 0),
+    [carts],
+  );
 
   return {
     carts,
