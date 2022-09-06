@@ -13,10 +13,12 @@ export const MENU_LIST: INavigation[] = [
   {
     key: 'blog',
     label: 'Blog',
+    path: 'block',
   },
   {
     key: 'out story',
     label: 'Out Story',
+    path: 'story',
   },
   {
     key: 'verticalLine',
@@ -33,5 +35,6 @@ export const MENU_LIST: INavigation[] = [
     key: 'userIcon',
     src: userIcon,
     alt: 'userIcon',
+    path: '/user',
   },
 ];
