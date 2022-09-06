@@ -1,5 +1,5 @@
 // Libs
-import React from 'react';
+import React, { memo } from 'react';
 
 // Styles
 import './bannerInfo.css';
@@ -16,4 +16,4 @@ const BannerInfo = ({ title, price }: Props): JSX.Element => (
   </div>
 );
 
-export default BannerInfo;
+export default memo(BannerInfo);
