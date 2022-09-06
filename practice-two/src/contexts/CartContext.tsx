@@ -36,24 +36,22 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const getCartList = async (): Promise<void> => {
     const response = await CartServices.getCartList();
-    const responseData: Cart[] = response;
 
     dispatch({
       type: CARTS_ACTIONS.GET_CART_LIST,
       payload: {
-        cartList: responseData,
+        cartList: response,
       },
     });
   };
 
   const addCart = async (data: Cart): Promise<void> => {
     const response = await CartServices.addCart(data);
-    const responseData: Cart = response;
 
     dispatch({
       type: CARTS_ACTIONS.ADD_CART,
       payload: {
-        cart: responseData,
+        cart: response,
       },
     });
   };
@@ -71,12 +69,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const updateCart = async (id: string, data: Cart): Promise<void> => {
     const response = await CartServices.patchCart(id, data);
-    console.log(response);
+
     dispatch({
       type: CARTS_ACTIONS.UPDATE_CART,
       payload: {
         id,
-        // cart: response,
+        cart: response,
       },
     });
   };
