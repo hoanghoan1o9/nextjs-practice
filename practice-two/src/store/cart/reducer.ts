@@ -8,14 +8,12 @@ import { CartAction, DeleteCart, UpdateCart } from './actions';
 import { CARTS_ACTIONS } from './constants';
 
 export interface CartState {
-  // id: string;
-  // cart: Cart | {};
+  cart: Cart | {};
   cartList: Cart[] | [];
 }
 
 export const initialCartState: CartState = {
-  // id: '',
-  // cart: {},
+  cart: {},
   cartList: [],
 };
 
@@ -50,19 +48,17 @@ export const cartReducer = (
     case CARTS_ACTIONS.UPDATE_CART:
       const myUpdateAction = action as UpdateCart;
 
-      const cart = state.cartList.find(
-        (cart) => cart.id === myUpdateAction.payload.id,
-      );
-
       const index = state.cartList.findIndex(
         (cart) => cart.id === myUpdateAction.payload.id,
       );
 
-      const newCartList = (state.cartList[index] = cart as Cart);
+      const newCart = myUpdateAction.payload.cart;
+
+      state.cartList.splice(index, 1, newCart);
 
       return {
         ...state,
-        cartList: [...state.cartList, newCartList],
+        cartList: [...state.cartList],
       };
 
     default:

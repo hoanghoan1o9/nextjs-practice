@@ -69,18 +69,8 @@
   ],
   "carts": [
     {
-      "id": "3",
-      "quantity": 5,
-      "isAddedToCart": true
-    },
-    {
-      "id": "5",
-      "quantity": 5,
-      "isAddedToCart": true
-    },
-    {
-      "id": "1",
-      "quantity": 16,
+      "id": "2",
+      "quantity": 8,
       "isAddedToCart": true
     }
   ]

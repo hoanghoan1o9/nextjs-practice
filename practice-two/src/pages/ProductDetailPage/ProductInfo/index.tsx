@@ -1,5 +1,5 @@
 // Libs
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 // Contexts
 import { useCart } from 'contexts/CartContext';
@@ -54,7 +54,6 @@ const ProductInfo = ({
       if (cart) {
         const quantity = cart.quantity + count;
         const newCart = { id, quantity } as Cart;
-        console.log('count: ', count);
 
         updateCart(id, newCart);
       }
@@ -63,12 +62,14 @@ const ProductInfo = ({
     }
   };
 
-  const handleIncrease = (): void => {
+  const handleIncrease = useCallback((): void => {
     setCount((prev) => prev + 1);
-  };
-  const handleDecrease = (): void => {
+  }, []);
+
+  const handleDecrease = useCallback((): void => {
     setCount((prev) => prev - 1);
-  };
+  }, []);
+
   return (
     <>
       <section className="product-info">

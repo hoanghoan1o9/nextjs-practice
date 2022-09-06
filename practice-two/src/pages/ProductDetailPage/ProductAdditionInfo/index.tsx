@@ -1,5 +1,5 @@
 // Libs
-import React from 'react';
+import React, { memo } from 'react';
 
 // Models
 import { Product } from 'models/product';
@@ -33,4 +33,4 @@ const ProductAdditionalInfo = ({ product }: Props): JSX.Element => (
   </section>
 );
 
-export default ProductAdditionalInfo;
+export default memo(ProductAdditionalInfo);
