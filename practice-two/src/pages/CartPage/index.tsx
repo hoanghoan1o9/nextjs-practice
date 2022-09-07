@@ -68,7 +68,7 @@ const CartPage = ({ productList, cartList }: Props): JSX.Element => {
               <CartItem
                 index={index}
                 cart={cart}
-                key={cart.id}
+                key={cart.productId}
                 onDeleteCart={handleDeleteCart}
               />
             ))}

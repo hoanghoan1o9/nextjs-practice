@@ -9,7 +9,7 @@ const generateCartList = (cartList: Cart[], products: Product[]) => {
   let carts: Cart[] = [];
   cartList.map((cart: Cart) => {
     const product: Product | undefined = products.find(
-      (product: Product) => product.id === cart.id,
+      (product: Product) => product.id === cart.productId,
     );
     if (product)
       carts = [

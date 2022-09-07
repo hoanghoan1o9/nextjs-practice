@@ -1,7 +1,6 @@
 // Libs
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useToasts } from 'react-toast-notifications';
 
 // Models
 import { Product } from 'models/product';
@@ -24,7 +23,7 @@ const ProductDetailPage = ({ productList, cartList }: Props): JSX.Element => {
       (product) => product.id === params.productId,
     );
     if (product) {
-      const cart = cartList.find((cart) => cart.id === product?.id);
+      const cart = cartList.find((cart) => cart.productId === product?.id);
       let isAddedToCart;
 
       !!cart ? (isAddedToCart = true) : (isAddedToCart = false);

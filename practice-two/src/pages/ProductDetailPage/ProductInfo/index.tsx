@@ -33,10 +33,10 @@ const ProductInfo = ({ isAddedToCart, product, cart }: Props): JSX.Element => {
   const { addToast } = useToasts();
   const { id, src, title, price, description } = product;
 
-  const handleAddCart = (id: string): void => {
+  const handleAddCart = (productId: string): void => {
     try {
       const quantity = count;
-      const cartData = { id, quantity } as Cart;
+      const cartData = { productId, quantity } as Cart;
 
       addCart(cartData);
 
@@ -53,11 +53,11 @@ const ProductInfo = ({ isAddedToCart, product, cart }: Props): JSX.Element => {
     }
   };
 
-  const handleUpdateCart = (id: string): void => {
+  const handleUpdateCart = (productId: string): void => {
     try {
       if (cart) {
         const quantity = cart.quantity + count;
-        const newCart = { id, quantity } as Cart;
+        const newCart = { productId, quantity } as Cart;
 
         updateCart(newCart);
         addToast(MESSAGE.SUCCESS.UPDATE, {

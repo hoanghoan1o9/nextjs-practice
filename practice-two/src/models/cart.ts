@@ -1,5 +1,5 @@
 export interface Cart {
-  id: string;
+  productId : string;
   price: number;
   title?: string;
   colors?: string;

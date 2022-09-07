@@ -22,17 +22,17 @@ interface Props {
 }
 
 const CartItem = ({
-  cart: { id, price, title, colors, src, quantity },
+  cart: { productId , price, title, colors, src, quantity },
   index,
   onDeleteCart,
 }: Props): JSX.Element => {
   const handleDeleteCart = (): void => {
-    onDeleteCart(id, index);
+    onDeleteCart(productId , index);
   };
 
   return (
     <li className="cart-item">
-      <Link className="cart-item-link" to={`/products/${id}`}>
+      <Link className="cart-item-link" to={`/products/${productId }`}>
         <div className="cart-item-image">
           <img src={src} alt={title} />
         </div>
