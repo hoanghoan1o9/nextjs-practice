@@ -82,7 +82,7 @@ const ProductInfo = ({ isAddedToCart, product, cart }: Props): JSX.Element => {
     setCount((prev) => prev - 1);
   }, []);
 
-  const handleAction = (): void => {
+  const handleCartAction = (): void => {
     isAddedToCart ? handleUpdateCart(id) : handleAddCart(id);
   };
 
@@ -121,7 +121,7 @@ const ProductInfo = ({ isAddedToCart, product, cart }: Props): JSX.Element => {
                 type="submit"
                 size={BUTTON.SIZES.LARGE}
                 style={BUTTON.STYLES.OUTLINE_SECONDARY}
-                onClick={handleAction}
+                onClick={handleCartAction}
               >
                 Add To Cart
               </Button>
