@@ -25,7 +25,9 @@ const ProductDetailPage = ({ productList, cartList }: Props): JSX.Element => {
     );
     if (product) {
       const cart = cartList.find((cart) => cart.id === product?.id);
-      let isAddedToCart = !!cart?.isAddedToCart;
+      let isAddedToCart;
+
+      !!cart ? (isAddedToCart = true) : (isAddedToCart = false);
 
       return (
         <ProductInfo

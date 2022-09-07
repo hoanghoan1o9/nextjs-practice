@@ -1,11 +1,9 @@
 // Libs
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
+import { useToasts } from 'react-toast-notifications';
 
 // Contexts
 import { useCart } from 'contexts/CartContext';
-
-// Helpers
-import { generateCartList } from 'helpers/carts';
 
 // Models
 import { Product } from 'models/product';
@@ -13,11 +11,12 @@ import { Cart } from 'models/cart';
 
 // Components
 import ProductAdditionalInfo from '../ProductAdditionInfo';
-import Button from 'components/Button';
-import Counter from 'components/Counter';
+import { Button } from 'components/Button';
+import { Counter } from 'components/Counter';
 
 // Constants
 import { BUTTON } from 'constants/button';
+import { MESSAGE } from 'constants/messages';
 
 // Styles
 import './productInfo.css';
@@ -36,16 +35,25 @@ const ProductInfo = ({
 }: Props): JSX.Element => {
   const [count, setCount] = useState<number>(0);
   const { addCart, updateCart } = useCart();
+  const { addToast } = useToasts();
 
   const handleAddCart = (id: string): void => {
     try {
       const quantity = count;
-      const isAddedToCart = true;
-      const cartData = { id, quantity, isAddedToCart } as Cart;
+      const cartData = { id, quantity } as Cart;
 
       addCart(cartData);
+
+      addToast(MESSAGE.SUCCESS.ADD, {
+        appearance: 'success',
+        autoDismiss: true,
+      });
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error)
+        addToast(MESSAGE.ERRORS.ADD, {
+          appearance: 'error',
+          autoDismiss: true,
+        });
     }
   };
 
@@ -55,10 +63,18 @@ const ProductInfo = ({
         const quantity = cart.quantity + count;
         const newCart = { id, quantity } as Cart;
 
-        updateCart(id, newCart);
+        updateCart(newCart);
+        addToast(MESSAGE.SUCCESS.UPDATE, {
+          appearance: 'success',
+          autoDismiss: true,
+        });
       }
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error)
+        addToast(MESSAGE.ERRORS.UPDATE, {
+          appearance: 'error',
+          autoDismiss: true,
+        });
     }
   };
 
@@ -69,6 +85,10 @@ const ProductInfo = ({
   const handleDecrease = useCallback((): void => {
     setCount((prev) => prev - 1);
   }, []);
+
+  const handleAction = (): void => {
+    isAddedToCart ? handleUpdateCart(id) : handleAddCart(id);
+  };
 
   return (
     <>
@@ -105,9 +125,7 @@ const ProductInfo = ({
                 type="submit"
                 size={BUTTON.SIZES.LARGE}
                 style={BUTTON.STYLES.OUTLINE_SECONDARY}
-                onClick={() =>
-                  isAddedToCart ? handleUpdateCart(id) : handleAddCart(id)
-                }
+                onClick={handleAction}
               >
                 Add To Cart
               </Button>
@@ -120,4 +138,4 @@ const ProductInfo = ({
   );
 };
 
-export default ProductInfo;
+export default memo(ProductInfo);

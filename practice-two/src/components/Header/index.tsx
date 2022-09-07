@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import Navigation, { INavigation } from 'components/Navigation';
+import { Navigation, INavigation } from 'components/Navigation';
 
 // Images
 import { shoppeLogo } from 'assets/index';
@@ -15,7 +15,7 @@ interface Props {
   menuList: INavigation[];
 }
 
-const Header = ({ menuList }: Props): JSX.Element => (
+const HeaderBase = ({ menuList }: Props): JSX.Element => (
   <header className="header">
     <Link to="/" className="header__logo">
       <img className="header__logo-img" src={shoppeLogo} alt="shoppeLogo" />
@@ -24,4 +24,4 @@ const Header = ({ menuList }: Props): JSX.Element => (
   </header>
 );
 
-export default memo(Header);
+export const Header = memo(HeaderBase);

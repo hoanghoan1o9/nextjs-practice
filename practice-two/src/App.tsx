@@ -1,5 +1,5 @@
 // Libs
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 // Contexts
@@ -7,9 +7,9 @@ import { useProduct } from 'contexts/ProductContext';
 import { useCart } from 'contexts/CartContext';
 
 // Pages
-import Header from 'components/Header';
+import { Header } from 'components/Header';
 import HomePage from 'pages/HomePage';
-import Footer from 'components/Footer';
+import { Footer } from 'components/Footer';
 import ErrorBoundary from 'pages/ErrorBoundaryPage';
 import NotFoundPage from 'pages/NotFoundPage';
 import ProductListPage from 'pages/ProductListPage';

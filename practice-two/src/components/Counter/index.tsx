@@ -15,7 +15,7 @@ interface Props {
   onDecrease?: () => void;
 }
 
-const Counter: React.FC<Props> = ({
+const CounterBase: React.FC<Props> = ({
   style = BUTTON.STYLES.PRIMARY,
   size = BUTTON.SIZES.SMALL,
   count,
@@ -30,7 +30,7 @@ const Counter: React.FC<Props> = ({
     >
       -
     </button>
-    <div>{count}</div>
+    <div className="counter-result">{count}</div>
     <button
       className={`btn ${style} ${size}`}
       type="button"
@@ -41,4 +41,4 @@ const Counter: React.FC<Props> = ({
   </div>
 );
 
-export default memo(Counter);
+export const Counter = memo(CounterBase);

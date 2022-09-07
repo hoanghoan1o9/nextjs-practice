@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Component
-import Button from 'components/Button';
+import { Button } from 'components/Button';
 
 // Constants
 import { BUTTON } from 'constants/button';

@@ -35,4 +35,4 @@ const ProductItem = ({
     </Link>
   </li>
 );
-export default ProductItem;
+export { ProductItem };

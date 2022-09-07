@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Components
 import BannerInfo from './BannerInfo';
-import Button from 'components/Button';
+import { Button } from 'components/Button';
 
 // Constants
 import { BUTTON } from 'constants/button';
@@ -13,11 +13,11 @@ import { BUTTON } from 'constants/button';
 import './banner.css';
 
 const Banner = (): JSX.Element => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const navigateProductsPage = () => {
-      navigate('products', { replace: true });
-    };
+  const navigateProductsPage = () => {
+    navigate('products', { replace: true });
+  };
 
   return (
     <section className="banner">

@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ToastProvider } from 'react-toast-notifications';
 
 // Components
 import App from './App';
@@ -18,7 +19,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <CartProvider>
       <Router>
         <React.StrictMode>
-          <App />
+          <ToastProvider>
+            <App />
+          </ToastProvider>
         </React.StrictMode>
       </Router>
     </CartProvider>

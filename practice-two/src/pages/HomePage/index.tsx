@@ -6,7 +6,7 @@ import { useProduct } from 'contexts/ProductContext';
 
 // Components
 import Banner from './Banner';
-import ProductList from 'components/ProductList';
+import { ProductList } from 'components/ProductList';
 
 // Constants
 import { PRODUCT } from 'constants/product';
@@ -24,10 +24,7 @@ const HomePage = (): JSX.Element => {
   return (
     <section className="home-page">
       <Banner />
-      <ProductList
-        productList={productList}
-        size={PRODUCT.SIZES_IMAGE.LARGE}
-      />
+      <ProductList productList={productList} size={PRODUCT.SIZES_IMAGE.LARGE} />
     </section>
   );
 };

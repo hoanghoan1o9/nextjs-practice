@@ -8,9 +8,9 @@ import { debounce } from 'helpers/debounce';
 import { Product } from 'models/product';
 
 // Components
-import Dropdown from 'components/Dropdown';
-import Input from 'components/Input';
-import ProductList from 'components/ProductList';
+import { Dropdown } from 'components/Dropdown';
+import { Input } from 'components/Input';
+import { ProductList } from 'components/ProductList';
 
 // Constants
 import { DROPDOWN } from 'constants/dropdown';

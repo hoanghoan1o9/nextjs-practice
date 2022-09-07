@@ -16,7 +16,7 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<Props> = ({
+const ButtonBase: React.FC<Props> = ({
   disabled = false,
   type,
   style = BUTTON.STYLES.OUTLINE_SECONDARY,
@@ -34,4 +34,4 @@ const Button: React.FC<Props> = ({
   </button>
 );
 
-export default memo(Button);
+export const Button = memo(ButtonBase);

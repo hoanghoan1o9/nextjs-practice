@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Product } from 'models/product';
 
 // Components
-import ProductItem from 'components/ProductItem';
+import { ProductItem } from 'components/ProductItem';
 
 //Constants
 import { PRODUCT } from 'constants/product';
@@ -36,4 +36,4 @@ const ProductList = ({ productList = [], style, size }: Props): JSX.Element => (
   </section>
 );
 
-export default ProductList;
+export { ProductList };

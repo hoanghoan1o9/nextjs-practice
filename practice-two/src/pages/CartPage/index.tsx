@@ -2,6 +2,7 @@
 import React from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useNavigate } from 'react-router-dom';
+import { useToasts } from 'react-toast-notifications';
 
 // Contexts
 import { useCart } from 'contexts/CartContext';
@@ -12,10 +13,11 @@ import { Cart } from 'models/cart';
 
 // Components
 import CartItem from './CartItem';
-import Button from 'components/Button';
+import { Button } from 'components/Button';
 
 // Constants
 import { BUTTON } from 'constants/button';
+import { MESSAGE } from 'constants/messages';
 
 // Helpers
 import { generateCartList } from 'helpers/carts';
@@ -31,9 +33,23 @@ interface Props {
 const CartPage = ({ productList, cartList }: Props): JSX.Element => {
   const { carts, totalPriceCart } = generateCartList(cartList, productList);
   const { deleteCart } = useCart();
+  const { addToast } = useToasts();
 
   const handleDeleteCart = (id: string, index: number): void => {
-    deleteCart(id, index);
+    try {
+      deleteCart(id, index);
+
+      addToast(MESSAGE.SUCCESS.REMOVE, {
+        appearance: 'success',
+        autoDismiss: true,
+      });
+    } catch (error) {
+      if (error instanceof Error)
+        addToast(MESSAGE.ERRORS.REMOVE, {
+          appearance: 'error',
+          autoDismiss: true,
+        });
+    }
   };
 
   let navigate = useNavigate();
@@ -48,7 +64,7 @@ const CartPage = ({ productList, cartList }: Props): JSX.Element => {
       <div className="cart-info">
         <div>
           <ul className="product__item">
-            {carts?.map((cart: Cart, index: number) => (
+            {carts.map((cart: Cart, index: number) => (
               <CartItem
                 index={index}
                 cart={cart}
