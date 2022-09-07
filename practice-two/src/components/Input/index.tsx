@@ -17,7 +17,7 @@ interface Props {
   onKeyUp?: (event: React.KeyboardEvent) => void;
 }
 
-const Input: React.FC<Props> = ({
+const InputBase: React.FC<Props> = ({
   style = INPUT.STYLES.PRIMARY,
   size = INPUT.SIZES.SMALL,
   type,
@@ -36,4 +36,4 @@ const Input: React.FC<Props> = ({
   />
 );
 
-export default memo(Input);
+export const Input = memo(InputBase);

@@ -15,8 +15,13 @@
 
 .product__image {
   position: relative;
+  width: 380px;
+  height: 380px;  
+}
+
+.image--medium {
   width: 310px;
-  height: 300px;  
+  height: 300px;
 }
 
 .product__image:hover .product__image-icon {

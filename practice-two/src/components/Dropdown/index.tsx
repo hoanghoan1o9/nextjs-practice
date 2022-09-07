@@ -20,7 +20,7 @@ export interface Props {
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Dropdown: React.FC<Props> = ({
+const DropdownBase: React.FC<Props> = ({
   style = DROPDOWN.SIZES.NORMAL,
   size,
   options = [],
@@ -35,4 +35,4 @@ const Dropdown: React.FC<Props> = ({
   </select>
 );
 
-export default memo(Dropdown);
+export const Dropdown = memo(DropdownBase);

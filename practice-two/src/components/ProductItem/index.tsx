@@ -13,14 +13,16 @@ import './productItem.css';
 
 interface Props {
   product: Product;
+  size?: string;
 }
 
 const ProductItem = ({
   product: { title, price, src, id },
+  size,
 }: Props): JSX.Element => (
   <li className="product__item">
     <Link to={`/products/${id}`}>
-      <div className="product__image">
+      <div className={`product__image ${size}`}>
         <img className="product__image-item" src={src} alt={title} />
         <div className="product__image-icon">
           <img src={shoppingCartIcon} alt="shoppingCartIcon" />
@@ -33,4 +35,4 @@ const ProductItem = ({
     </Link>
   </li>
 );
-export default ProductItem;
+export { ProductItem };

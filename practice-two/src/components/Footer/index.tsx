@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import Input from 'components/Input';
+import { Input } from 'components/Input';
 
 // Constants
 import { INPUT } from 'constants/input';
@@ -20,7 +20,7 @@ import {
 // Styles
 import './footer.css';
 
-const Footer = (): JSX.Element => (
+const FooterBase = (): JSX.Element => (
   <section className="footer">
     <div>
       <nav className="footer__nav">
@@ -79,4 +79,4 @@ const Footer = (): JSX.Element => (
   </section>
 );
 
-export default memo(Footer);
+export const Footer = memo(FooterBase);

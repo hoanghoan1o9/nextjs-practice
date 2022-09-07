@@ -18,7 +18,7 @@ interface Props {
   menuList: INavigation[];
 }
 
-const Navigation = ({ menuList = [] }: Props): JSX.Element => {
+const NavigationBase = ({ menuList = [] }: Props): JSX.Element => {
   const renderMenuList = (list: INavigation[]): JSX.Element[] =>
     list.map(({ key, label, src, alt, path }) => (
       <li className="nav__item" key={key}>
@@ -36,4 +36,4 @@ const Navigation = ({ menuList = [] }: Props): JSX.Element => {
   );
 };
 
-export default memo(Navigation);
+export const Navigation = memo(NavigationBase);

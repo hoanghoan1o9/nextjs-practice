@@ -5,16 +5,13 @@ import { createContext, useContext, useReducer } from 'react';
 import { ProductServices } from 'services/product';
 
 // Store
-import { PRODUCTS_ACTIONS } from 'store/constants';
+import { PRODUCTS_ACTIONS } from 'store/product/constants';
 
 import {
   initialProductState,
   productReducer,
   ProductState,
-} from 'store/reducer';
-
-// Models
-import { Product } from '../models/product';
+} from 'store/product/reducer';
 
 interface ProductContextValue extends ProductState {
   getProductList: () => void;
@@ -26,7 +23,7 @@ interface ProductProviderProps {
 
 export const ProductContext = createContext<ProductContextValue>({
   ...initialProductState,
-  getProductList: () => Promise<Product[]>,
+  getProductList: () => Promise<void>,
 });
 
 export const ProductProvider = ({ children }: ProductProviderProps) => {
@@ -34,12 +31,11 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
 
   const getProductList = async (): Promise<void> => {
     const response = await ProductServices.getProductList();
-    const responseData: Product[] = response;
 
     dispatch({
       type: PRODUCTS_ACTIONS.GET_PRODUCT_LIST,
       payload: {
-        productList: responseData,
+        productList: response,
       },
     });
   };
