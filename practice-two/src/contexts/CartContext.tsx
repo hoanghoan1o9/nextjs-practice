@@ -16,7 +16,7 @@ interface CartContextValue extends CartState {
   getCartList: () => void;
   addCart: (cart: Cart) => void;
   deleteCart: (id: string, index: number) => void;
-  updateCart: (id: string, cart: Cart) => void;
+  updateCart: (cart: Cart) => void;
 }
 
 interface CartProviderProps {
@@ -45,8 +45,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
   };
 
-  const addCart = async (data: Cart): Promise<void> => {
-    const response = await CartServices.addCart(data);
+  const addCart = async (cart: Cart): Promise<void> => {
+    const response = await CartServices.addCart(cart);
 
     dispatch({
       type: CARTS_ACTIONS.ADD_CART,
@@ -67,13 +67,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
   };
 
-  const updateCart = async (id: string, data: Cart): Promise<void> => {
-    const response = await CartServices.patchCart(id, data);
+  const updateCart = async (cart: Cart): Promise<void> => {
+    const response = await CartServices.patchCart(cart);
 
     dispatch({
       type: CARTS_ACTIONS.UPDATE_CART,
       payload: {
-        id,
         cart: response,
       },
     });
