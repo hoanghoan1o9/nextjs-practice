@@ -22,17 +22,17 @@ interface Props {
 }
 
 const CartItem = ({
-  cart: { productId , price, title, colors, src, quantity },
+  cart: { productId, price, title, colors, src, quantity },
   index,
   onDeleteCart,
 }: Props): JSX.Element => {
   const handleDeleteCart = (): void => {
-    onDeleteCart(productId , index);
+    onDeleteCart(productId, index);
   };
 
   return (
     <li className="cart-item">
-      <Link className="cart-item-link" to={`/products/${productId }`}>
+      <Link className="cart-item-link" to={`/products/${productId}`}>
         <div className="cart-item-image">
           <img src={src} alt={title} />
         </div>
@@ -55,4 +55,4 @@ const CartItem = ({
   );
 };
 
-export default CartItem;
+export { CartItem };
