@@ -27,15 +27,11 @@ interface Props {
   product: Product;
 }
 
-const ProductInfo = ({
-  isAddedToCart,
-  product: { id, src, title, price, description },
-  product,
-  cart,
-}: Props): JSX.Element => {
+const ProductInfo = ({ isAddedToCart, product, cart }: Props): JSX.Element => {
   const [count, setCount] = useState<number>(0);
   const { addCart, updateCart } = useCart();
   const { addToast } = useToasts();
+  const { id, src, title, price, description } = product;
 
   const handleAddCart = (id: string): void => {
     try {
