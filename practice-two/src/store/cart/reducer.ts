@@ -49,7 +49,7 @@ export const cartReducer = (
       const myUpdateAction = action as UpdateCart;
 
       const index = state.cartList.findIndex(
-        (cart) => cart.id === myUpdateAction.payload.id,
+        (cart) => cart.id === myUpdateAction.payload.cart.id,
       );
 
       const newCart = myUpdateAction.payload.cart;

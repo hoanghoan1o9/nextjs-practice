@@ -37,12 +37,12 @@ export class CartClient {
     });
   };
 
-  patchCart = async (id: string, data: Cart): Promise<Cart> => {
-    const url = `${this.url}/${id}`;
+  patchCart = async (cart: Cart): Promise<Cart> => {
+    const url = `${this.url}/${cart.id}`;
     const response = await fetch(url, {
       method: API.HTTP_METHODS.PATCH,
       headers: API.HEADERS,
-      body: JSON.stringify(data),
+      body: JSON.stringify(cart),
     });
 
     return response.json();

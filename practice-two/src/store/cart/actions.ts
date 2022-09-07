@@ -28,7 +28,6 @@ export type DeleteCart = {
 export type UpdateCart = {
   type: typeof CARTS_ACTIONS.UPDATE_CART;
   payload: {
-    id: string;
     cart: Cart;
   };
 };
