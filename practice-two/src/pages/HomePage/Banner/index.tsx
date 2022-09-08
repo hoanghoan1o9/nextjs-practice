@@ -22,14 +22,16 @@ const Banner = (): JSX.Element => {
   return (
     <section className="banner">
       <BannerInfo title="Gold big hoops" price={68} />
-      <Button
-        type="button"
-        size={BUTTON.SIZES.MEDIUM}
-        style={BUTTON.STYLES.OUTLINE_PRIMARY}
-        onClick={navigateProductsPage}
-      >
-        View product
-      </Button>
+      <div className="banner__button">
+        <Button
+          type="button"
+          size={BUTTON.SIZES.MEDIUM}
+          style={BUTTON.STYLES.OUTLINE_PRIMARY}
+          onClick={navigateProductsPage}
+        >
+          View product
+        </Button>
+      </div>
     </section>
   );
 };

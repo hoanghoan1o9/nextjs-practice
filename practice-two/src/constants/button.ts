@@ -1,6 +1,7 @@
 export namespace BUTTON {
-    
+  
   export enum STYLES {
+    BASIC = 'btn--basic',
     PRIMARY = 'btn--primary',
     OUTLINE_PRIMARY = 'btn--primary--outline',
     SECONDARY = 'btn--secondary',
