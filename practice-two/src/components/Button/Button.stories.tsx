@@ -9,7 +9,7 @@ import { Button } from './index';
 import { BUTTON } from 'constants/button';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 export default {
   title: 'Components/Button',

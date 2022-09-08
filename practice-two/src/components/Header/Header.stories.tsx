@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
@@ -10,7 +10,7 @@ import { Header } from 'components/Header';
 import { userIcon, shoppingCartIcon, verticalLine } from 'assets/index';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 const MENU_LIST = [
   {
@@ -59,4 +59,9 @@ export default {
   ],
 } as ComponentMeta<typeof Header>;
 
-export const HeaderBase = () => <Header menuList={MENU_LIST} />;
+const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+
+export const HeaderBase = Template.bind({});
+HeaderBase.args = {
+  menuList: MENU_LIST,
+};

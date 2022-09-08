@@ -1,15 +1,18 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
 import { ProductItem } from 'components/ProductItem';
 
-// Styles
-import '../../styles/index.css';
+//Constants
+import { PRODUCT } from 'constants/product';
 
-const PRODUCT = {
+// Styles
+import 'styles/index.css';
+
+const PRODUCT_ITEM = {
   id: '1',
   src: 'https://i.ibb.co/PwnfVGC/Lira-Earrings.png',
   title: 'Hal Earrings',
@@ -34,4 +37,12 @@ export default {
   ],
 } as ComponentMeta<typeof ProductItem>;
 
-export const ProductItemBase = () => <ProductItem product={PRODUCT} />;
+const Template: ComponentStory<typeof ProductItem> = (args) => (
+  <ProductItem {...args} />
+);
+
+export const ProductItemBase = Template.bind({});
+ProductItemBase.args = {
+  product: PRODUCT_ITEM,
+  size: PRODUCT.SIZES_IMAGE.LARGE,
+};

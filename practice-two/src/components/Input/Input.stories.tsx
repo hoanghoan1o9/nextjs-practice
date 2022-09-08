@@ -9,7 +9,7 @@ import { Input } from './index';
 import { INPUT } from 'constants/input';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 export default {
   title: 'Components/Input',

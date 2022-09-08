@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
@@ -10,7 +10,7 @@ import { Navigation } from 'components/Navigation';
 import { userIcon, shoppingCartIcon, verticalLine } from 'assets/index';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 const MENU_LIST = [
   {
@@ -59,4 +59,11 @@ export default {
   ],
 } as ComponentMeta<typeof Navigation>;
 
-export const NavigationBase = () => <Navigation menuList={MENU_LIST} />;
+const Template: ComponentStory<typeof Navigation> = (args) => (
+  <Navigation {...args} />
+);
+
+export const NavigationBase = Template.bind({});
+NavigationBase.args = {
+  menuList: MENU_LIST,
+};

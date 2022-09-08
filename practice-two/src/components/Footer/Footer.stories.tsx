@@ -1,13 +1,13 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
 import { Footer } from 'components/Footer';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 export default {
   title: 'Components/Footer',

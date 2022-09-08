@@ -1,13 +1,16 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
 import { ProductList } from 'components/ProductList';
 
+//Constants
+import { PRODUCT } from 'constants/product';
+
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 const PRODUCTS = [
   {
@@ -96,4 +99,12 @@ export default {
   ],
 } as ComponentMeta<typeof ProductList>;
 
-export const ProductListBase = () => <ProductList productList={PRODUCTS} />;
+const Template: ComponentStory<typeof ProductList> = (args) => (
+  <ProductList {...args} />
+);
+
+export const ProductListBase = Template.bind({});
+ProductListBase.args = {
+  productList: PRODUCTS,
+  size: PRODUCT.SIZES_IMAGE.LARGE,
+};

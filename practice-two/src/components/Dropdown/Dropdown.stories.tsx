@@ -9,7 +9,7 @@ import { Dropdown } from './index';
 import { DROPDOWN } from 'constants/dropdown';
 
 // Styles
-import '../../styles/index.css';
+import 'styles/index.css';
 
 const OPTION_DATA = [
   {

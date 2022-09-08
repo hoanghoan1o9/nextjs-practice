@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 // Components
@@ -10,7 +10,7 @@ import { CartItem } from './index';
 import { Cart } from 'models/cart';
 
 // Styles
-import '../../../styles/index.css';
+import 'styles/index.css';
 
 const CART: Cart = {
   productId: '1',
@@ -34,6 +34,12 @@ export default {
   ],
 } as ComponentMeta<typeof CartItem>;
 
-export const CartItemBase = () => (
-  <CartItem cart={CART} index={0} onDeleteCart={() => {}} />
+const Template: ComponentStory<typeof CartItem> = (args) => (
+  <CartItem {...args} />
 );
+
+export const CartItemBase = Template.bind({});
+CartItemBase.args = {
+  cart: CART,
+  index: 0,
+};
