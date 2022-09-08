@@ -27,6 +27,7 @@
       "services/*": ["services/*"],
       "contexts/*": ["contexts/*"],
       "store/*": ["store/*"],
+      "styles/*": ["styles/*"],
     }
   },
   "include": ["src"],

@@ -47,6 +47,10 @@ export default defineConfig({
         find: 'helpers',
         replacement: path.resolve(__dirname, 'src/helpers'),
       },
+      {
+        find: 'styles',
+        replacement: path.resolve(__dirname, 'src/styles'),
+      },
     ],
   },
 });
