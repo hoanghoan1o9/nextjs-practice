@@ -90,19 +90,3 @@ export const Sizes = () => (
     </div>
   </div>
 );
-
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   type: 'email',
-//   placeholder: 'Give an email, get the newsletter.',
-//   style: INPUT.STYLES.PRIMARY,
-//   size: INPUT.SIZES.MEDIUM,
-// };
-
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   type: 'text',
-//   placeholder: 'Search...',
-//   style: INPUT.STYLES.PRIMARY,
-//   size: INPUT.SIZES.SMALL,
-// };

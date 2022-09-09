@@ -19,11 +19,11 @@ export class CartClient {
     return response.json();
   };
 
-  addCart = async (data: Cart): Promise<Cart> => {
+  addCart = async (cart: Cart): Promise<Cart> => {
     const response = await fetch(this.url, {
       method: API.HTTP_METHODS.POST,
       headers: API.HEADERS,
-      body: JSON.stringify(data),
+      body: JSON.stringify(cart),
     });
 
     return response.json();
@@ -38,7 +38,7 @@ export class CartClient {
   };
 
   patchCart = async (cart: Cart): Promise<Cart> => {
-    const url = `${this.url}/${cart.productId }`;
+    const url = `${this.url}/${cart.productId}`;
     const response = await fetch(url, {
       method: API.HTTP_METHODS.PATCH,
       headers: API.HEADERS,

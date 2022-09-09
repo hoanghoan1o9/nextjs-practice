@@ -70,13 +70,8 @@
   "carts": [
     {
       "productId": "1",
-      "quantity": 11,
-      "id": 1
-    },
-    {
-      "productId": "2",
       "quantity": 3,
-      "id": 2
+      "id": 1
     }
   ]
 }
