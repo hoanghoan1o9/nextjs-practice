@@ -15,6 +15,8 @@ export default {
   title: 'Components/Counter',
   component: Counter,
   argTypes: {
+    onIncrease: { action: 'clicked-increase' },
+    onDecrease: { action: 'clicked-decrease' },
     count: {
       name: 'count',
       type: { name: 'number' },

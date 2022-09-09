@@ -43,6 +43,7 @@ export default {
   title: 'Components/Dropdown',
   component: Dropdown,
   argTypes: {
+    onChange: { action: 'changed' },
     size: {
       name: 'sizes',
       type: { name: 'string' },

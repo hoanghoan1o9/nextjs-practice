@@ -15,6 +15,8 @@ export default {
   title: 'Components/Input',
   component: Input,
   argTypes: {
+    onKeyUp: { action: 'clicked' },
+    onChange: { action: 'changed' },
     placeholder: {
       name: 'placeholder',
       type: { name: 'string', required: true },

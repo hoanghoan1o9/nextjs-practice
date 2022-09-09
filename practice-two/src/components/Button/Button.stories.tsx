@@ -10,11 +10,13 @@ import { BUTTON } from 'constants/button';
 
 // Styles
 import 'styles/index.css';
+import 'styles/utils/index.css';
 
 export default {
   title: 'Components/Button',
   component: Button,
   argTypes: {
+    onClick: { action: 'clicked' },
     children: {
       name: 'children',
       type: { name: 'string', required: true },
@@ -59,7 +61,11 @@ Basic.args = {
 
 export const Sizes = () => (
   <div
-    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
   >
     <div style={{ marginRight: '20px' }}>
       <Button
