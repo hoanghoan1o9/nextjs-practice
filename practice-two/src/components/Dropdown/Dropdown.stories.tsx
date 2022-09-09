@@ -42,6 +42,31 @@ const OPTION_DATA = [
 export default {
   title: 'Components/Dropdown',
   component: Dropdown,
+  argTypes: {
+    size: {
+      name: 'sizes',
+      type: { name: 'string' },
+      description: 'The dropdown sizes',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    style: {
+      name: 'styles',
+      type: { name: 'string' },
+      description: 'The dropdown styles',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    options: {
+      name: 'options',
+      description: 'The dropdown options',
+      table: {
+        type: { summary: 'T[]' },
+      },
+    },
+  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
@@ -50,6 +75,7 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
+  style: DROPDOWN.STYLES.NORMAL,
   size: DROPDOWN.SIZES.NORMAL,
   options: OPTION_DATA,
 };

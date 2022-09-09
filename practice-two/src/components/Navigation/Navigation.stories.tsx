@@ -50,6 +50,15 @@ const MENU_LIST = [
 export default {
   title: 'Components/Navigation',
   component: Navigation,
+  argTypes: {
+    menuList: {
+      name: 'menuList',
+      description: 'The list of navigation items',
+      table: {
+        type: { summary: 'T[]' },
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>

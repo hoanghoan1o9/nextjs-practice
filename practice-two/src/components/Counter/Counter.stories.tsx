@@ -14,6 +14,23 @@ import 'styles/index.css';
 export default {
   title: 'Components/Counter',
   component: Counter,
+  argTypes: {
+    count: {
+      name: 'count',
+      type: { name: 'number' },
+      description: 'The counter result',
+    },
+    style: {
+      name: 'styles',
+      type: { name: 'string' },
+      description: 'The counter styles',
+    },
+    size: {
+      name: 'sizes',
+      type: { name: 'string' },
+      description: 'The counter sizes',
+    },
+  },
 } as ComponentMeta<typeof Counter>;
 
 const Template: ComponentStory<typeof Counter> = (args) => (

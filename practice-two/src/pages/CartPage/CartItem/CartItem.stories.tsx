@@ -25,6 +25,23 @@ const CART: Cart = {
 export default {
   title: 'Components/CartItem',
   component: CartItem,
+  argTypes: {
+    index: {
+      name: 'index',
+      description: 'The index of cart item',
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    cart: {
+      name: 'cart',
+      description: 'The cart item',
+      table: {
+        type: { summary: 'T{}' },
+        defaultValue: { summary: '{}' },
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -40,6 +57,6 @@ const Template: ComponentStory<typeof CartItem> = (args) => (
 
 export const CartItemBase = Template.bind({});
 CartItemBase.args = {
-  cart: CART,
   index: 0,
+  cart: CART,
 };

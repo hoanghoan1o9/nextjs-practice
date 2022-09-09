@@ -50,6 +50,16 @@ const MENU_LIST = [
 export default {
   title: 'Components/Header',
   component: Header,
+  argTypes: {
+    menuList: {
+      name: 'menuList',
+      description: 'The list of navigation items',
+      table: {
+        type: { summary: 'T[]' },
+        defaultValue: { summary: '[]' },
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>

@@ -90,6 +90,33 @@ const PRODUCTS = [
 export default {
   title: 'Components/ProductList',
   component: ProductList,
+  argTypes: {
+    size: {
+      name: 'sizes',
+      type: { name: 'string', required: true },
+      description: 'The size of the product list image',
+      table: {
+        defaultValue: { summary: 'image--large' },
+      },
+    },
+    style: {
+      name: 'styles',
+      type: { name: 'string', required: true },
+      description: 'The style of the product list image',
+      table: {
+        type: { summary: 'medium' },
+        defaultValue: { summary: 'medium' },
+      },
+    },
+    productList: {
+      name: 'productList',
+      description: 'The list of product',
+      table: {
+        type: { summary: 'T[]' },
+        defaultValue: { summary: '[]' },
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -105,6 +132,7 @@ const Template: ComponentStory<typeof ProductList> = (args) => (
 
 export const ProductListBase = Template.bind({});
 ProductListBase.args = {
-  productList: PRODUCTS,
   size: PRODUCT.SIZES_IMAGE.LARGE,
+  style: PRODUCT.STYLES.MEDIUM,
+  productList: PRODUCTS,
 };

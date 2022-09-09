@@ -28,6 +28,23 @@ const PRODUCT_ITEM = {
 export default {
   title: 'Components/ProductItem',
   component: ProductItem,
+  argTypes: {
+    product: {
+      name: 'product',
+      description: 'The product item',
+      table: {
+        type: { summary: 'T{}' },
+      },
+    },
+    size: {
+      name: 'size',
+      description: 'The product sizes',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'image--large' },
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -43,6 +60,6 @@ const Template: ComponentStory<typeof ProductItem> = (args) => (
 
 export const ProductItemBase = Template.bind({});
 ProductItemBase.args = {
-  product: PRODUCT_ITEM,
   size: PRODUCT.SIZES_IMAGE.LARGE,
+  product: PRODUCT_ITEM,
 };
