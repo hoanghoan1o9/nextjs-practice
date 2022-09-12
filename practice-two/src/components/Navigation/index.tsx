@@ -14,7 +14,6 @@ export interface INavigation {
 }
 
 interface Props {
-  menuBar?: string;
   menuList: INavigation[];
 }
 

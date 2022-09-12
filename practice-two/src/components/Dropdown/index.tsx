@@ -21,8 +21,8 @@ export interface Props {
 }
 
 const DropdownBase: React.FC<Props> = ({
-  style = DROPDOWN.SIZES.NORMAL,
-  size,
+  style = DROPDOWN.STYLES.NORMAL,
+  size = DROPDOWN.SIZES.NORMAL,
   options = [],
   onChange,
 }) => (

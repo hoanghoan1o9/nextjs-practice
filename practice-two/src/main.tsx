@@ -17,13 +17,13 @@ import './styles/index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ProductProvider>
     <CartProvider>
-      <Router>
-        <React.StrictMode>
-          <ToastProvider>
+      <React.StrictMode>
+        <ToastProvider>
+          <Router>
             <App />
-          </ToastProvider>
-        </React.StrictMode>
-      </Router>
+          </Router>
+        </ToastProvider>
+      </React.StrictMode>
     </CartProvider>
   </ProductProvider>,
 );

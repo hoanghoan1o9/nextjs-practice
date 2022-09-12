@@ -2,6 +2,7 @@ export namespace PRODUCT {
 
   export enum STYLES {
     HIDE = 'hide',
+    MEDIUM = 'medium'
   }
 
   export enum SIZES_IMAGE {

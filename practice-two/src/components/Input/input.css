@@ -3,6 +3,11 @@
   border: none;
 }
 
+.input--basic {
+  padding-right: 30px;
+  background-color: var(--antique-while-color);
+}
+
 .input--primary {
   padding-right: 30px;
 }

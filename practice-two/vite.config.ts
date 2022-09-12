@@ -36,10 +36,6 @@ export default defineConfig({
         replacement: path.resolve(__dirname, 'src/services'),
       },
       {
-        find: 'hocs',
-        replacement: path.resolve(__dirname, 'src/hocs'),
-      },
-      {
         find: 'store',
         replacement: path.resolve(__dirname, 'src/store'),
       },
@@ -50,6 +46,10 @@ export default defineConfig({
       {
         find: 'helpers',
         replacement: path.resolve(__dirname, 'src/helpers'),
+      },
+      {
+        find: 'styles',
+        replacement: path.resolve(__dirname, 'src/styles'),
       },
     ],
   },

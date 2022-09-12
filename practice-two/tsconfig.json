@@ -25,9 +25,9 @@
       "models/*": ["models/*"],
       "pages/*": ["pages/*"],
       "services/*": ["services/*"],
-      "hocs/*": ["hocs/*"],
       "contexts/*": ["contexts/*"],
       "store/*": ["store/*"],
+      "styles/*": ["styles/*"],
     }
   },
   "include": ["src"],

@@ -1,6 +1,7 @@
 export namespace INPUT {
-    
+  
   export enum STYLES {
+    BASIC = 'input--basic',
     PRIMARY = 'input--primary',
     OUT_LINE = 'input-outline',
     BORDER_BOTTOM = 'input-border--bottom',

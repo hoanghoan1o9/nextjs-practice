@@ -1,4 +1,7 @@
-#root {
+/*
+ ** #docs-root use for docs-storybook
+ */
+#root, #docs-root {
   --primary: rgb(70, 40, 255);
   --warning: rgb(255, 208, 40);
   --danger: rgb(235, 63, 39);
@@ -9,6 +12,8 @@
   --light-while-color: rgb(255, 255, 255, 0.6);
   --gold-color: rgb(161, 138, 104);
   --gray-color: rgb(216, 216, 216);
+  --red-color: rgb(255, 0, 0);
+  --antique-while-color:rgb(250, 235, 215);
   --transparent-color: transparent;
 
   --font-size-lower-small: 14px;
@@ -28,5 +33,7 @@
   --line-hight-big: 28px;
   --line-hight-upper-big: 30px;
   --line-hight-supper-big: 33px;
-}
+} 
+
+
   

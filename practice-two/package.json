@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-		"json-server": "json-server --watch src/server/index.json"
+    "json-server": "json-server --watch src/server/index.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -17,14 +19,34 @@
     "react-toast-notifications": "^2.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@mdx-js/react": "1",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-backgrounds": "^6.5.10",
+    "@storybook/addon-docs": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addon-measure": "^6.5.10",
+    "@storybook/addon-outline": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/channel-postmessage": "^6.5.10",
+    "@storybook/channel-websocket": "^6.5.10",
+    "@storybook/client-api": "^6.5.10",
+    "@storybook/preview-web": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.22.0",
     "json-server": "^0.17.0",
     "prettier": "^2.7.1",
     "react-spinners": "^0.13.4",
+    "storybook-react-router": "^1.0.8",
     "typescript": "^4.6.4",
     "vite": "^3.0.7"
   }

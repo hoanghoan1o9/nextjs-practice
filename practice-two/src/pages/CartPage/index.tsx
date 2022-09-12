@@ -12,7 +12,7 @@ import { Product } from 'models/product';
 import { Cart } from 'models/cart';
 
 // Components
-import CartItem from './CartItem';
+import { CartItem } from './CartItem';
 import { Button } from 'components/Button';
 
 // Constants
