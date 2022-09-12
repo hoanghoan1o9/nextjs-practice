@@ -11,6 +11,10 @@ export class ProductClient {
     this.baseApi = baseApi;
   }
 
+  /**
+   * Get products from server
+   * @returns {Product[]} Product[]
+   */
   getProductList = async (): Promise<Product[]> => {
     const url = `${this.baseApi}${API.PATHS.PRODUCTS}`;
     const response = await fetch(url);

@@ -5,6 +5,11 @@ import React, { useMemo } from 'react';
 import { Cart } from 'models/cart';
 import { Product } from '../models/product';
 
+/**
+ * Find the cart and product has the same id then assign them to new object
+ * @param {Cart[]} cartList
+ * @param {Product[]} products
+ */
 const generateCartList = (cartList: Cart[], products: Product[]) => {
   let carts: Cart[] = [];
   cartList.map((cart: Cart) => {
@@ -27,6 +32,9 @@ const generateCartList = (cartList: Cart[], products: Product[]) => {
       ];
   });
 
+  /**
+   * Calculate the total price of items in the cart
+   */
   const totalPriceCart = useMemo(
     () => carts.reduce((x, y) => x + y.price * y.quantity, 0),
     [carts],

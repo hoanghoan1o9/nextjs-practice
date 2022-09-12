@@ -1,3 +1,12 @@
+// Libs
+import React from 'react';
+
+/**
+ * Call the func args after waitFor timeout.
+ * @param {React.Component} func React components
+ * @param {Number} waitFor
+ * @returns
+ */
 export const debounce = <F extends (...args: any[]) => any>(
   func: F,
   waitFor: number,
