@@ -19,7 +19,7 @@ Supporters should make sure trainees got below prerequisites
 * Install [nvm](https://github.com/nvm-sh/nvm#install--update-script) and [Node.js](https://nodejs.org/en/download/) v16.x
 * Install [pnpm](https://pnpm.io/) v6.x 
 
-# GETTING STARTED]
+# GETTING STARTED
 
 ## BUILD TOOL
 
