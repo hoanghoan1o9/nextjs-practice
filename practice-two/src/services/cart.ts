@@ -12,13 +12,20 @@ export class CartClient {
     this.baseApi = baseApi;
     this.url = `${this.baseApi}${API.PATHS.CARTS}`;
   }
-
+  /**
+   * Get carts from server
+   * @returns {Cart[]}
+   */
   getCartList = async (): Promise<Cart[]> => {
     const response = await fetch(this.url);
 
     return response.json();
   };
 
+  /**
+   * Post new cart to server
+   * @param {Cart} cart
+   */
   addCart = async (cart: Cart): Promise<Cart> => {
     const response = await fetch(this.url, {
       method: API.HTTP_METHODS.POST,
@@ -29,6 +36,10 @@ export class CartClient {
     return response.json();
   };
 
+  /**
+   * Delete cart at server by id
+   * @param {String} id
+   */
   deleteCart = async (id: string): Promise<void> => {
     const url = `${this.url}/${id}`;
     await fetch(url, {
@@ -37,6 +48,10 @@ export class CartClient {
     });
   };
 
+  /**
+   * Update cart at server
+   * @param {Cart} cart
+   */
   patchCart = async (cart: Cart): Promise<Cart> => {
     const url = `${this.url}/${cart.productId}`;
     const response = await fetch(url, {

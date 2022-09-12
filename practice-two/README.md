@@ -2,12 +2,12 @@
 
 # OVERVIEW 
 
-This document contains the estimation for React Basic Practice.
+This document contains the estimation for the practicing with React hook.
 
 # TIMELINE
 
 * Estimate time: 4 days (29/08/22 - 05/09/22)
-* Actual days
+* Actual days: 8 days
 
 # TECHNICAL STACK
 
@@ -25,7 +25,7 @@ This document contains the estimation for React Basic Practice.
 # TARGET
 
 * Convert all of class component of practice-one to function component
-* Apply react hooks for practice 
+* Apply react hooks for practice
 
 # FEATURES
 
@@ -49,7 +49,7 @@ This document contains the estimation for React Basic Practice.
 * Cd to the folder
 
 ```bash
-    cd react-training
+    cd practice-two
 ```
 
 * Checkout to the branch 
