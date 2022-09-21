@@ -1,0 +1,31 @@
+.products {
+  margin-top: 64px;
+  margin-bottom: 50px;
+}
+
+.product__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 167px;
+}
+
+.product__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 39px;
+}
+
+.product__heading {
+  font-size: var(--font-size-big);
+  font-weight: var(--font-weight-upper-normal);
+  line-height: 43px;
+}
+
+.product__link {
+  font-size: var(--font-size-upper-small);
+  font-weight: var(--font-weight-upper-normal);
+  color: var(--gold-color);
+  line-height: 26px;
+}

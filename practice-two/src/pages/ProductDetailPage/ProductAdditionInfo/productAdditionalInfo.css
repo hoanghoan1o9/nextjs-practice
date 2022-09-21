@@ -1,0 +1,29 @@
+.additional-info {
+  margin: 123px 0 52px 0;
+  padding-bottom: 500px;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.additional-info-heading {
+  border-bottom: 1px solid var(--light-color);
+  padding-bottom: 10px;
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-upper-small);
+  line-height: var(--line-hight-normal);
+  margin-bottom: 40px;
+}
+
+.additional-info-weight,
+.additional-info-dimension,
+.additional-info-color,
+.additional-info-material {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-hight-normal);
+}
+
+.info {
+  color: var(--light-color);
+  padding-left: 10px;
+}
+  

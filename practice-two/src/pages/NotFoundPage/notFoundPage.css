@@ -1,0 +1,21 @@
+.not-found {
+  display: block;
+  margin: 378px auto;
+  text-align: center;
+}
+
+.not-found-heading {
+  font-size: var(--font-size-big);
+  font-weight: var(--font-weight-upper-normal);
+  line-height: var(--line-hight-big);
+  margin-bottom: 24px;
+}
+
+.not-found-description {
+  margin-bottom: 64px;
+  font-size: var(--font-size-upper-small);
+  line-height: var(--line-hight-normal);
+  font-weight: var(--font-weight-normal);
+  color: var(--gray-color);
+}
+  

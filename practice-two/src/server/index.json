@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "src": "https://i.ibb.co/PwnfVGC/Lira-Earrings.png",
+      "title": "Hal Earrings",
+      "price": 25,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    },
+    {
+      "id": "2",
+      "src": "https://i.ibb.co/5cSYMCM/Hair-Pin-Set-of-3.png",
+      "title": "Kaede Hair Pin Set Of 4",
+      "price": 40,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    },
+    {
+      "id": "3",
+      "src": "https://i.ibb.co/BcyCKhQ/Yuki-Hair-Pin-Set-of-3.png",
+      "title": "Kaede Hair Pin Set Of 3",
+      "price": 30,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    },
+    {
+      "id": "4",
+      "src": "https://i.ibb.co/C6t2c9z/Hal-Earrings.png",
+      "title": "Lira Earrings",
+      "price": 20,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    },
+    {
+      "id": "5",
+      "src": "https://i.ibb.co/d2DmM2w/Plaine-Necklace.png",
+      "title": "Plaine Necklace",
+      "price": 19,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    },
+    {
+      "id": "6",
+      "src": "https://i.ibb.co/dbv0HDd/Kaede-Hair-Pin-Set-Of-3.png",
+      "title": "Yuki Hair Pin Set of 3",
+      "price": 29,
+      "weight": 0.3,
+      "dimensions": "15 * 10 * 1 cm",
+      "colors": "Black, Brows, White",
+      "material": "Gold",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. "
+    }
+  ],
+  "carts": [
+    {
+      "productId": "1",
+      "quantity": 3,
+      "id": 1
+    },
+    {
+      "productId": "2",
+      "quantity": 3,
+      "id": 2
+    }
+  ]
+}

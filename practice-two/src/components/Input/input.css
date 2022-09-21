@@ -1,0 +1,30 @@
+.input {
+  outline: none;
+  border: none;
+}
+
+.input--basic {
+  padding-right: 30px;
+  background-color: var(--antique-while-color);
+}
+
+.input--primary {
+  padding-right: 30px;
+}
+
+.input--sm {
+  padding-right: 30px;
+}
+
+.input--medium {
+  width: 261px;
+}
+
+.input-outline {
+  border: 2px solid var(--light-color);
+}
+
+.input-border--bottom {
+  border-bottom: 1px solid var(--gray-color);
+}
+  

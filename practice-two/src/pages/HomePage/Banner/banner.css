@@ -1,0 +1,11 @@
+.banner {
+  background: url("../../../assets/images/banner/banner.svg") center / cover no-repeat;
+  height: 646px;
+  width: 1200px;
+  border-radius: 16px;
+  margin-top: 16px;
+}
+  
+.banner__button {
+  margin: 48px 39px;
+}

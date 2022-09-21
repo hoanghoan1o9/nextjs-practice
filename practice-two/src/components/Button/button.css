@@ -1,0 +1,67 @@
+.btn {
+  font-family: DM Sans;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-small);
+  background-color: var(--transparent-color);
+  color: var(--while-color);
+}
+
+.btn--basic {
+  font-weight: var(--font-weight-normal);
+  color: var(--while-color);
+  background-color: var(--light-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  line-height: var(--line-hight-normal);
+}
+  
+.btn--primary {
+  font-weight: var(--font-weight-normal);
+  color: var(--dark-color);
+  background-color: var(--gray-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  line-height: var(--line-hight-normal);
+}
+
+.btn--primary--outline {
+  border: 2px solid var(--while-color);
+  border-radius: 6px;
+  line-height: var(--line-hight-lower-small);
+}
+
+.btn--secondary {
+  background-color: var(--dark-color);
+  border-radius: 4px;
+}
+
+.btn--secondary--outline {
+  color: var(--dark-color);
+  border: 2px solid var(--dark-color);
+  border-radius: 4px;
+}
+
+.btn--small {
+  padding: 5px 5px;
+}
+
+.btn--medium {
+  padding: 14px 32px;
+}
+
+.btn--large {
+  padding: 8px ;
+  width: 300px;
+}
+
+.btn--close {
+  outline: none;
+  color: var(--dark-color);
+  border: none;
+  padding: none;
+  margin: none;
+  margin-left: 10px;
+  height:20px;
+}

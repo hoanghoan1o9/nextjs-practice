@@ -1,0 +1,16 @@
+.counter {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: var(--light-color);
+  background-color: var(--gray-color);
+  border-radius: 4px;
+  width: 55px;
+  height: 50px;
+}
+
+.counter-result {
+  text-align: center;
+  width: 30px;
+}
+  
