@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXTJS PRACTICE 
 
-## Getting Started
+# OVERVIEW 
 
-First, run the development server:
+This document contains the estimation for the practicing with NextJS.
+
+# TIMELINE
+
+* Estimate time: 7 days (12/10/22 - 19/10/22)
+* Actual days: updating
+
+# TECHNICAL STACK
+
+* [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+* [NextJS](https://nextjs.org/): Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route prefetching, and more. No config needed.
+* [TypeScript](https://www.typescriptlang.org/): is a programming language, an enhanced version of Javascript.
+* [charka UI](https://chakra-ui.com/): Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+* [mockAPI](https://mockapi.io/): Json server is a server that returns data in the form of json with full CRUD basic tasks.MockAPI is a simple tool that lets you easily mock up. APIs, generate custom data, and perform operations on it using RESTful interface. MockAPI is meant to be used as a prototyping/testing/learning tool.org/docs/react/get-started/introduction): Storybook is a tool for UI development. It makes development faster and easier by isolating components.
+* [storybook](https://storybook.js.org/docs/react/get-started/introduction): Storybook is a tool for UI development. It makes development faster and easier by isolating components.
+* [Jest](https://jestjs.io/): Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+* [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils.
+
+# EDITOR
+
+[Visual studio code](https://code.visualstudio.com/)
+
+# TARGET
+
+* Apply core knowledges of NextJs:
+    - Pre-rendering Strategies: SSR, SSG, ISR
+    - next/image, next/link, next/script, next/head...
+* Storybook
+* Unit test
+
+
+# FEATURES
+
+Phase 1: (5 days)
+
+* User can login by username/ pwd
+* User can view home page with product list
+
+Phase 2: (2 days)
+
+* User can CUD product (Show confirm modal when deleting product)
+* Hit API from APIs with Next.js (updating)
+
+
+# GETTING STARTED
+
+* Clone repository
 
 ```bash
-npm run dev
-# or
-yarn dev
+    git clone git@gitlab.asoft-python.com:hoan.hoang/react-training.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Cd to the root folder
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+    cd react-training
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+* Checkout to the branch 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+    git checkout nextjs-practice
+```
 
-## Learn More
+* Cd to the folder
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+    cd nextjs-practice/shady-rhymes
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Install the packages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+    pnpm install
+```
 
-## Deploy on Vercel
+* Run the practice
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+    pnpm dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Run the storybook
+
+```bash
+    pnpm storybook
+```
+
+* Run the test
+
+```bash
+    pnpm jest
+```
