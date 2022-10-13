@@ -1,7 +1,8 @@
+import  Header  from '@components/common/Header';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <div>hello</div>;
+  return <Header />;
 };
 
 export default Home;
