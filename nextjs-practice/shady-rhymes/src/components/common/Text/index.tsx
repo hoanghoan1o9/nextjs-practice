@@ -40,7 +40,13 @@ export const TextBase = ({
   variant = 'default',
   ...props
 }: TextProps) => (
-  <TextChakra value={value} size={size} variant={variant} {...props}>
+  <TextChakra
+    value={value}
+    size={size}
+    variant={variant}
+    data-testid="testText"
+    {...props}
+  >
     {value}
   </TextChakra>
 );
