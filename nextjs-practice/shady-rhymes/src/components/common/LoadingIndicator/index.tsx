@@ -1,12 +1,11 @@
 // Libraries
-import React, { memo } from 'react';
 import { Flex, Spinner, SpinnerProps } from '@chakra-ui/react';
 
 interface LoadingIndicatorProps extends SpinnerProps {
   className?: string;
 }
 
-const LoadingIndicatorBase = ({
+export const LoadingIndicator = ({
   size = 'xl',
   ...props
 }: LoadingIndicatorProps) => {
@@ -22,5 +21,3 @@ const LoadingIndicatorBase = ({
     </Flex>
   );
 };
-
-export const LoadingIndicator = memo(LoadingIndicatorBase);
