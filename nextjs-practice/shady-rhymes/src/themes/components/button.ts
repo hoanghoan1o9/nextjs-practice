@@ -3,75 +3,73 @@ export const Button = {
     default: {
       px: '20px',
       py: '10px',
-      borderRadius: '30px'
+      borderRadius: '10px',
     },
 
-    rightAddon: {
+    primary: {
       px: '25px',
       py: '16px',
       fontSize: 'small',
-      borderRadius: '0 30px 30px 0'
+      borderRadius: '0 30px 30px 0',
     },
 
-    tagButton: {
+    secondary: {
       px: '20px',
       py: '15px',
       fontSize: 'tiny',
       borderRadius: '30px',
-      lineHeight: 0
+      lineHeight: 0,
     },
-
-    rounded: {
-      w: '24px',
-      h: '24px',
-      fontSize: '11px',
-      borderRadius: '30px'
-    }
   },
 
   baseStyle: {
     fontSize: 'default',
     bg: '',
-    
+
     _hover: {
       _disabled: {
-        bg: ''
-      }
+        bg: '',
+      },
     },
     _focus: {
-      boxShadow: ''
-    }
+      boxShadow: '',
+    },
   },
 
   variants: {
     default: {
-      bg: 'primary',
-      color: 'light',
+      bg: '',
+      color: '#564E4E',
+      border: '1px solid #F79489',
 
       _hover: {
-        bg: 'danger',
-      }
+        bg: '#f1d0cc',
+      },
     },
 
-    tagButton: {
-      bg: 'grey.100',
-      color: 'grey.600',
+    primary: {
+      bg: '',
+      color: '#564E4E',
+      border: '1px solid #F79489',
 
       _hover: {
-        color: 'primary',
-      }
+        bg: '#f1d0cc',
+      },
     },
 
-    rounded: {
+    secondary: {
+      bg: '',
+      color: '#564E4E',
+      border: '1px solid #F79489',
+
       _hover: {
-        bg: '',
-      }
-    }
+        bg: '#f1d0cc',
+      },
+    },
   },
 
   defaultProps: {
     size: 'default',
-    variant: 'default'
-  }
-  
+    variant: 'default',
+  },
 };
