@@ -22,11 +22,7 @@ const ButtonBase = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonChakra
-      isDisabled={isDisabled}
-      data-testid="testButton"
-      {...props}
-    >
+    <ButtonChakra isDisabled={isDisabled} data-testid="testButton" {...props}>
       {label}
       {children}
     </ButtonChakra>

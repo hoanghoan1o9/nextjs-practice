@@ -43,3 +43,23 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Default',
 };
+
+export const Sizes = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+  >
+    <div style={{ marginRight: '20px' }}>
+      <Button label="default" size="default" type="button" />
+    </div>
+    <div style={{ marginRight: '20px' }}>
+      <Button label="primary" size="primary" type="button" />
+    </div>
+    <div style={{ marginRight: '20px' }}>
+      <Button label="secondary" size="secondary" type="button" />
+    </div>
+  </div>
+);
