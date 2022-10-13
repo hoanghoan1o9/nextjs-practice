@@ -1,4 +1,5 @@
 // Libraries
+import { theme as chakraTheme } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 
 // Component themes
@@ -10,16 +11,23 @@ import { Breadcrumb } from './components/breadcrumb';
 import { colors } from './colors';
 import { fontSizes } from './fontSizes';
 
+const fonts = {
+  ...chakraTheme.fonts,
+  body: `font-family: 'Poppins', sans-serif`,
+  heading: `font-family: 'Poppins', sans-serif`,
+};
+
 const overrides = {
   components: {
     Button,
     Input,
     Text,
     Link,
-    Breadcrumb
+    Breadcrumb,
   },
   colors,
-  fontSizes
+  fontSizes,
+  fonts,
 };
 
 export const CHAKRA_THEME = extendTheme(overrides);
