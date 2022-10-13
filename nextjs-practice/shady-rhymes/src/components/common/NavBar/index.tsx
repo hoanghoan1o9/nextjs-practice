@@ -1,5 +1,6 @@
 // Libraries
 import { Stack, Popover, PopoverTrigger, Link, Flex } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 // Constants
 import { APP_IMAGE_URLS } from '@constants/images';
@@ -29,9 +30,11 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
           <Flex key={navItem.label}>
             <Popover trigger={'hover'}>
               <PopoverTrigger>
-                <Link href={navItem.href ?? '/'} size="navBar" variant="navBar">
-                  {navItem.label}
-                </Link>
+                <NextLink href={navItem.href ?? '/'}>
+                  <Link size="navBar" variant="navBar" ml="10">
+                    {navItem.label}
+                  </Link>
+                </NextLink>
               </PopoverTrigger>
             </Popover>
           </Flex>
