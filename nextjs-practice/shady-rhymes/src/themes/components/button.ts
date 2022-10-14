@@ -39,8 +39,8 @@ export const Button = {
   variants: {
     default: {
       bg: '',
-      color: '#564E4E',
-      border: '1px solid #F79489',
+      color: '#564e4e',
+      border: '1px solid #f79489',
 
       _hover: {
         bg: '#f1d0cc',
@@ -49,8 +49,8 @@ export const Button = {
 
     primary: {
       bg: '',
-      color: '#564E4E',
-      border: '1px solid #F79489',
+      color: '#564e4e',
+      border: '1px solid #f79489',
 
       _hover: {
         bg: '#f1d0cc',
@@ -59,8 +59,8 @@ export const Button = {
 
     secondary: {
       bg: '',
-      color: '#564E4E',
-      border: '1px solid #F79489',
+      color: '#564e4e',
+      border: '1px solid #f79489',
 
       _hover: {
         bg: '#f1d0cc',

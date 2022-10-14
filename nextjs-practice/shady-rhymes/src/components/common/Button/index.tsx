@@ -1,5 +1,4 @@
 // Libraries
-import React, { memo } from 'react';
 import {
   Button as ButtonChakra,
   ButtonProps as ButtonPropsChakra,
@@ -15,7 +14,7 @@ interface ButtonProps extends ButtonPropsChakra {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ButtonBase = ({
+export const Button = ({
   isDisabled = false,
   children,
   label,
@@ -28,5 +27,3 @@ const ButtonBase = ({
     </ButtonChakra>
   );
 };
-
-export const Button = memo(ButtonBase);

@@ -8,13 +8,13 @@ import { APP_IMAGE_URLS } from '@constants/images';
 // Component
 import Logo from '../Logo';
 
-export interface NavItem {
+export interface NavItemProps {
   label: string;
   href?: string;
 }
 
 interface NavBarProps {
-  navItems: NavItem[];
+  navItems: NavItemProps[];
 }
 
 const NavBarBase = ({ navItems = [] }: NavBarProps) => {

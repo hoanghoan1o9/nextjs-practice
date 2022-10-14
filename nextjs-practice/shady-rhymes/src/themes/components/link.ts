@@ -8,7 +8,7 @@ export const Link = {
 
   variants: {
     navBar: {
-      color: '#FFFFFF',
+      color: '#ffffff',
       fontWeight: '400',
 
       _hover: {
