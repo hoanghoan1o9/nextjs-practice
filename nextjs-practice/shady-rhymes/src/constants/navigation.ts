@@ -1,10 +1,10 @@
 // Types
-export interface NavItem {
+export interface NavItemProps {
   label: string;
   href?: string;
 }
 
-export const NAV_ITEMS: NavItem[] = [
+export const NAV_ITEMS: NavItemProps[] = [
   {
     label: 'Furniture  ',
     href: '#',
