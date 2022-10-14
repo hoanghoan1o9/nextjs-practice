@@ -1,5 +1,4 @@
 // Libraries
-import React, { memo } from 'react';
 import {
   Text as TextChakra,
   TextProps as TextPropsChakra,
@@ -50,6 +49,3 @@ export const TextBase = ({
     {value}
   </TextChakra>
 );
-
-const Text = memo(TextBase);
-export default Text;
