@@ -24,7 +24,7 @@ export const Text = {
   },
   variants: {
     default: {
-      color: 'grey.800',
+      color: '#564e4e',
     },
     primary: {
       color: 'grey.800',
