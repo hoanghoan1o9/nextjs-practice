@@ -11,7 +11,7 @@ import { FaSearch } from 'react-icons/fa';
 
 interface FormInputProps extends InputProps {
   className?: string;
-  placeholder?: string;
+  placeholder: string;
   defaultValue?: string;
   rightContent?: string;
   variant?: 'withAddon';
@@ -23,6 +23,7 @@ export const Input = ({
   isRequired = true,
   className = '',
   isReadOnly = false,
+  placeholder,
   autoFocus = true,
 }: FormInputProps) => {
   return (
@@ -35,7 +36,7 @@ export const Input = ({
           isReadOnly={isReadOnly}
           autoFocus={autoFocus}
           variant="withAddon"
-          placeholder="Search furniture"
+          placeholder={placeholder}
         />
         <InputRightElement
           pos="absolute"
