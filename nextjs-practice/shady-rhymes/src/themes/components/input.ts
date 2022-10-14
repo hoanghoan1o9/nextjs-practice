@@ -3,28 +3,37 @@ export const Input = {
     withAddon: {
       field: {
         fontSize: 'small',
-        lineHeight: '24px',
+        lineHeight: '60px',
         px: '25px',
-        borderRadius: '30px 0 0 30px'
-      }
-    }
+        borderRadius: '30px',
+      },
+    },
   },
   variants: {
     withAddon: {
       field: {
-        color: 'grey.700',
-        borderColor: 'grey.400',
+        color: '#2D3748',
+        border: '1px solid #ffffff',
+        // borderColor: 'grey.400',
         borderWidth: '1px',
         borderStyle: 'solid',
 
         _focusVisible: {
-          borderColor: 'grey.400',
-        }
-      }
-    }
+          borderColor: '#ffffff',
+        },
+      },
+      element: {
+        backgroundColor: '#faf5f2',
+        color: '#a09386',
+        width: '10px',
+        height: '10px',
+        borderRadius: '30px',
+      },
+    },
+    withElement: {},
   },
   defaultProps: {
     size: 'withAddon',
-    variant: 'withAddon'
-  }
+    variant: 'withAddon',
+  },
 };
