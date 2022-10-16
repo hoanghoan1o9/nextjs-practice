@@ -24,7 +24,11 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Logo url={APP_IMAGE_URLS.LOGO} alt="main-logo" />
+      <Logo
+        url={APP_IMAGE_URLS.LOGO}
+        alt="main-logo"
+        blurDataURL={APP_IMAGE_URLS.LOGO}
+      />
       <Stack direction={'row'} spacing={4}>
         {navItems.map((navItem) => (
           <Flex key={navItem.label}>
@@ -45,6 +49,7 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
         height={24}
         width={24}
         alt="bag-icon"
+        blurDataURL={APP_IMAGE_URLS.BAG_ICON}
       />
     </Flex>
   );
