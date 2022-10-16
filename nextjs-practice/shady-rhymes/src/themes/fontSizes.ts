@@ -4,6 +4,6 @@ export const fontSizes = {
   small: '14px',
   default: '18px',
   medium: '24px',
-  large: '42px',
+  large: '36px',
   xLarge: '50px'
 };
