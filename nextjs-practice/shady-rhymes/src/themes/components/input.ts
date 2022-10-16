@@ -14,9 +14,9 @@ export const Input = {
       field: {
         color: '#2D3748',
         border: '1px solid #ffffff',
-        // borderColor: 'grey.400',
         borderWidth: '1px',
         borderStyle: 'solid',
+        backgroundColor: '#ffffff80',
 
         _focusVisible: {
           borderColor: '#ffffff',
@@ -30,7 +30,6 @@ export const Input = {
         borderRadius: '30px',
       },
     },
-    withElement: {},
   },
   defaultProps: {
     size: 'withAddon',
