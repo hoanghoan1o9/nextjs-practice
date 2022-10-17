@@ -9,7 +9,7 @@ interface MainLayoutProps {
   children?: React.ReactNode;
 }
 
-export const MainLayoutB = ({ children }: MainLayoutProps) => {
+export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Head>
