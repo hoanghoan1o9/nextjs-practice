@@ -1,5 +1,4 @@
 // Libraries
-import React, { memo } from 'react';
 import Head from 'next/head';
 
 // Layouts
@@ -10,7 +9,7 @@ interface MainLayoutProps {
   children?: React.ReactNode;
 }
 
-const MainLayoutBase = ({ children }: MainLayoutProps) => {
+export const MainLayoutB = ({ children }: MainLayoutProps) => {
   return (
     <>
       <Head>
@@ -24,5 +23,3 @@ const MainLayoutBase = ({ children }: MainLayoutProps) => {
     </>
   );
 };
-
-export const MainLayout = memo(MainLayoutBase);

@@ -1,4 +1,5 @@
 import { ProductItem } from '@components/featured/ProductItem';
+import { Layout } from '@components/featured/ProductItem';
 import { APP_IMAGE_URLS } from '@constants/images';
 import type { NextPage } from 'next';
 
