@@ -1,0 +1,3 @@
+export enum PRODUCT_ACTIONS {
+  SET_PRODUCT_LIST = 'SET_PRODUCT_LIST',
+}
