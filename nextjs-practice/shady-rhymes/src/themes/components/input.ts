@@ -12,19 +12,17 @@ export const Input = {
   variants: {
     withAddon: {
       field: {
-        color: '#2D3748',
-        border: '1px solid #ffffff',
-        borderWidth: '1px',
-        borderStyle: 'solid',
+        color: 'grey.300',
+        border: '1px solid light',
         backgroundColor: '#ffffff80',
 
         _focusVisible: {
-          borderColor: '#ffffff',
+          borderColor: 'light',
         },
       },
       element: {
-        backgroundColor: '#faf5f2',
-        color: '#a09386',
+        backgroundColor: 'lightWhile',
+        color: 'lightGold',
         width: '10px',
         height: '10px',
         borderRadius: '30px',

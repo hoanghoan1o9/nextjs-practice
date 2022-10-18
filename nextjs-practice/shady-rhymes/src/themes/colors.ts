@@ -1,7 +1,10 @@
 export const colors = {
   light: '#fff',
-  primary: '#5869da',
+  dark: '#000',
+  primary: '#f9bab3',
   danger: '#e3363e',
+  lightWhile: '#faf5f2',
+  lightGold: '#a09386',
   grey: {
     100: '#f2f3f5',
     200: '#f0f8ff',
@@ -15,9 +18,9 @@ export const colors = {
   blue: {
     100: '#55acee',
     200: '#3b5999',
-    300: '#5869da'
+    300: '#5869da',
   },
   red: {
-    100: '#bd081c'
-  }
+    100: '#bd081c',
+  },
 };
