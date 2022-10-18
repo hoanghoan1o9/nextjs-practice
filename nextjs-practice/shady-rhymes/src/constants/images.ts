@@ -1,5 +1,6 @@
 export enum APP_IMAGE_URLS {
   LOGO = '/images/main-logo.png',
+  FOOTER_LOGO = '/images/footer-logo.png',
   BAG_ICON = '/images/bag-icon.png',
   CHECK_ICON = '/images/icon-check.png',
   ICON_STAR = '/images/icon-star.png',
