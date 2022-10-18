@@ -30,6 +30,10 @@ export const Text = {
       color: 'grey.800',
       fontWeight: 900,
     },
+    danger: {
+      color: 'danger',
+      fontWeight: 500,
+    },
     secondary: {
       color: 'grey.800',
       fontWeight: 900,
