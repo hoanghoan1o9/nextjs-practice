@@ -16,5 +16,8 @@ export const Link = {
         color: '#f1d0cc',
       },
     },
+    normalLink: {
+      color: '#f79489',
+    },
   },
 };

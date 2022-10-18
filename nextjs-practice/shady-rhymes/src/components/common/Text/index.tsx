@@ -33,7 +33,7 @@ interface TextProps extends TextPropsChakra {
     | 'widgetLink';
 }
 
-export const TextBase = ({
+export const Text = ({
   value = '',
   size = 'default',
   variant = 'default',
