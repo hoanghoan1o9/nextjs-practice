@@ -1,9 +1,9 @@
-import { AboutSection } from '@components/sections/aboutSection';
+import { ProductListSection } from '@components/sections/productListSection';
 import type { NextPage } from 'next';
 
 // FIXME: this field use for testing UI
 const Home: NextPage = () => {
-  return <AboutSection />;
+  return <ProductListSection />;
 };
 
 export default Home;
