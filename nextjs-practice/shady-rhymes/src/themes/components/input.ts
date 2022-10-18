@@ -3,28 +3,36 @@ export const Input = {
     withAddon: {
       field: {
         fontSize: 'small',
-        lineHeight: '24px',
+        lineHeight: '60px',
         px: '25px',
-        borderRadius: '30px 0 0 30px'
-      }
-    }
+        borderRadius: '30px',
+      },
+    },
   },
   variants: {
     withAddon: {
       field: {
-        color: 'grey.700',
-        borderColor: 'grey.400',
+        color: 'grey.300',
+        border: '1px solid light',
         borderWidth: '1px',
         borderStyle: 'solid',
 
         _focusVisible: {
-          borderColor: 'grey.400',
-        }
-      }
-    }
+          borderColor: 'light',
+        },
+      },
+      element: {
+        backgroundColor: 'lightWhile',
+        color: 'lightGold',
+        width: '10px',
+        height: '10px',
+        borderRadius: '30px',
+      },
+    },
+    withElement: {},
   },
   defaultProps: {
     size: 'withAddon',
-    variant: 'withAddon'
-  }
+    variant: 'withAddon',
+  },
 };
