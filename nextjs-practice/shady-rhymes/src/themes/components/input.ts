@@ -16,6 +16,7 @@ export const Input = {
         border: '1px solid light',
         borderWidth: '1px',
         borderStyle: 'solid',
+        backgroundColor: '#ffffff80',
 
         _focusVisible: {
           borderColor: 'light',
@@ -29,7 +30,6 @@ export const Input = {
         borderRadius: '30px',
       },
     },
-    withElement: {},
   },
   defaultProps: {
     size: 'withAddon',

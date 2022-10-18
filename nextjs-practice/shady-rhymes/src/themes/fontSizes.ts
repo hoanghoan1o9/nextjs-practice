@@ -5,5 +5,5 @@ export const fontSizes = {
   default: '18px',
   medium: '24px',
   large: '36px',
-  xLarge: '50px'
+  xLarge: '48px'
 };
