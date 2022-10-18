@@ -1,7 +1,9 @@
 // Libs
+import React, { KeyboardEvent, ChangeEvent } from 'react';
 import {
   Box,
   Icon,
+  Text,
   InputGroup,
   InputProps,
   InputRightElement,
@@ -14,8 +16,11 @@ interface FormInputProps extends InputProps {
   placeholder: string;
   defaultValue?: string;
   rightContent?: string;
+  message?: string;
   variant?: 'withAddon';
   size?: 'withAddon';
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const Input = ({
@@ -25,9 +30,12 @@ export const Input = ({
   isReadOnly = false,
   placeholder,
   autoFocus = true,
+  message,
+  ...props
 }: FormInputProps) => {
   return (
     <Box pos="relative" h="100vh">
+      <Text variant={'danger'} ml={"20px"}>{message}</Text>
       <InputGroup>
         <InputChakra
           isDisabled={isDisabled}
@@ -37,6 +45,7 @@ export const Input = ({
           autoFocus={autoFocus}
           variant="withAddon"
           placeholder={placeholder}
+          {...props}
         />
         <InputRightElement
           pos="absolute"
