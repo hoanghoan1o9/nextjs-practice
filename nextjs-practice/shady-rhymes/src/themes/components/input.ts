@@ -14,8 +14,6 @@ export const Input = {
       field: {
         color: 'grey.300',
         border: '1px solid light',
-        borderWidth: '1px',
-        borderStyle: 'solid',
         backgroundColor: '#ffffff80',
 
         _focusVisible: {
