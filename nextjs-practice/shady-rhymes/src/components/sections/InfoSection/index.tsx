@@ -52,7 +52,7 @@ const Feature = ({
 
 export const InforSection = () => {
   return (
-    <Container maxW={'5xl'} py={12}>
+    <Container maxW={'1700px'} py={12} mt="62px">
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Heading
@@ -63,11 +63,7 @@ export const InforSection = () => {
           >
             Visualize your ideas with us
           </Heading>
-          <Text
-            color={'#564e4Ee'}
-            lineHeight={'36px'}
-            fontSize={'default'}
-          >
+          <Text color={'#564e4Ee'} lineHeight={'36px'} fontSize={'default'}>
             We are ready to help you build and also realize the room design that
             you dream of, with our experts and also the best category
             recommendations from us
