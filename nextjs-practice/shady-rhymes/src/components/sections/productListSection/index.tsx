@@ -5,10 +5,13 @@ import { Box, Flex, Heading } from '@chakra-ui/react';
 // Components
 import { ProductItem } from '@components/featured/ProductItem';
 
-// Constants
-import { Products } from '@constants/productsMockData';
+// Context
+import { useProduct } from '@contexts/ProductContext';
+
 
 export const ProductListSection = () => {
+  const { productList } = useProduct();
+  
   return (
     <Box my={'200px'}>
       <Heading
@@ -21,7 +24,7 @@ export const ProductListSection = () => {
         Featured Product
       </Heading>
       <Flex flexWrap={'wrap'} justifyContent={'space-between'} m={'0 80px'}>
-        {Products.map(({ id, title, category, price, image }) => (
+        {productList.map(({ id, title, category, price, image }) => (
           <ProductItem
             key={id}
             title={title}
