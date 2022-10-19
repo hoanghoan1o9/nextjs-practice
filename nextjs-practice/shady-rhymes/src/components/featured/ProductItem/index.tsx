@@ -2,19 +2,16 @@
 import { Box, Heading, Text, Stack } from '@chakra-ui/react';
 import Logo from '@components/common/Logo';
 
-// Constants
-import { APP_IMAGE_URLS } from '@constants/images';
-
 interface ProductItemProps {
   title: string;
-  url: APP_IMAGE_URLS;
+  url: string;
   category: string;
   price: number;
 }
 
 export const ProductItem = ({
   title,
-  url = APP_IMAGE_URLS.BROWN_CHAIR,
+  url,
   category = 'Category',
   price,
 }: ProductItemProps) => {
@@ -25,7 +22,6 @@ export const ProductItem = ({
       w={'full'}
       height={'full'}
       boxShadow={'2xl'}
-      // rounded={'md'}
       overflow={'hidden'}
     >
       <Box h={'425px'} pos={'relative'}>
