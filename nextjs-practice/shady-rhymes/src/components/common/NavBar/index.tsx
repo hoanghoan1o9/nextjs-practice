@@ -29,7 +29,11 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
         alt="main-logo"
         blurDataURL={APP_IMAGE_URLS.LOGO}
       />
-      <Stack direction={'row'} spacing={4}>
+      <Stack
+        direction={'row'}
+        spacing={4}
+        display={{ base: 'none', lg: 'flex' }}
+      >
         {navItems.map((navItem) => (
           <Flex key={navItem.label}>
             <Popover trigger={'hover'}>
