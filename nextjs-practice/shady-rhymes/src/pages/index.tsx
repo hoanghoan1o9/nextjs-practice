@@ -9,6 +9,7 @@ import { Banner } from '@components/featured/Banner';
 import { AboutSection } from '@components/sections/aboutSection';
 import { InforSection } from '@components/sections/InfoSection';
 import { Seo } from '@components/common/Seo';
+
 // Services
 import { ProductServices } from '@services/productService';
 
@@ -30,13 +31,10 @@ export const getStaticProps: GetStaticProps = async () => {
     if (!responseProducts) {
       throw new Error(APP_ERRORS.DEFAULT_ERROR_APIS);
     }
-
     return {
       props: {
         products: responseProducts,
       },
-      // 10 seconds is for quickly testing.
-      revalidate: 10,
     };
   } catch (error) {
     if (error instanceof Error) {
@@ -44,7 +42,6 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
           error: error.message,
         },
-        // 10 seconds is for quickly testing.
         revalidate: 10,
       };
     }

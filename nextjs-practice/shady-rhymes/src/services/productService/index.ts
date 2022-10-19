@@ -21,6 +21,13 @@ export class ProductClient {
 
     return response.json();
   };
+
+  getProduct = async (url: string, id: string): Promise<Product[]> => {
+    const urlProduct = `${this.baseApi}${url}/${id}`;
+    const response = await fetch(urlProduct);
+
+    return response.json();
+  };
 }
 
-export const ProductServices = new ProductClient(BASE_URL_API);
+export const ProductServices = new ProductClient(BASE_URL_API as string);

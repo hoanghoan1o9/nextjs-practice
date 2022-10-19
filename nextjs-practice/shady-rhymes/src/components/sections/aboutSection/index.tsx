@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Heading, List } from '@chakra-ui/react';
 
 // Components
 import { CardItem } from '@components/Card';
@@ -19,7 +19,12 @@ export const AboutSection = () => {
       >
         Why Choosing Us
       </Heading>
-      <Flex flexWrap={'wrap'} justifyContent={'space-between'} m={'0 80px'}>
+      <List
+        display="flex"
+        flexWrap={'wrap'}
+        justifyContent={'space-between'}
+        m={'0 80px'}
+      >
         {ABOUT_ITEM.map((item) => (
           <CardItem
             key={item.title}
@@ -28,7 +33,7 @@ export const AboutSection = () => {
             description={item.description}
           />
         ))}
-      </Flex>
+      </List>
     </Box>
   );
 };

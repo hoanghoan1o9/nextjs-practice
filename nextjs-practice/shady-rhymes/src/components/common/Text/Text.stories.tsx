@@ -3,7 +3,7 @@ import React from 'react';
 import Storybook from '@storybook/react';
 
 // Components
-import Text from './index';
+import { Text } from './index';
 
 export default {
   title: 'Components/Text',

@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Heading, List } from '@chakra-ui/react';
 
 // Components
 import { ProductItem } from '@components/featured/ProductItem';
@@ -8,10 +8,10 @@ import { ProductItem } from '@components/featured/ProductItem';
 // Context
 import { useProduct } from '@contexts/ProductContext';
 
-
 export const ProductListSection = () => {
   const { productList } = useProduct();
-  
+  console.log('productList', productList);
+
   return (
     <Box my={'200px'}>
       <Heading
@@ -23,9 +23,15 @@ export const ProductListSection = () => {
       >
         Featured Product
       </Heading>
-      <Flex flexWrap={'wrap'} justifyContent={'space-between'} m={'0 80px'}>
+      <List
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        m="0 80px"
+      >
         {productList.map(({ id, title, category, price, image }) => (
           <ProductItem
+            id={id}
             key={id}
             title={title}
             category={category}
@@ -33,7 +39,7 @@ export const ProductListSection = () => {
             url={image.url}
           />
         ))}
-      </Flex>
+      </List>
     </Box>
   );
 };
