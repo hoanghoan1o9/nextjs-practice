@@ -3,18 +3,12 @@ import { ReactNode } from 'react';
 
 // Components
 import Logo from '@components/common/Logo';
+import { ChakraNextLink } from '@components/common/ChakraNextLink';
 
 // Constants
 import { APP_IMAGE_URLS } from '@constants/images';
 
-import {
-  Box,
-  Container,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Container, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -42,28 +36,28 @@ export const Footer = () => (
         </Stack>
         <Stack align={'flex-start'} color="#ffffff">
           <ListHeader>Features</ListHeader>
-          <Link href={'#'}>Our Features</Link>
-          <Link href={'#'}>Pricing</Link>
-          <Link href={'#'}>Affiliate Program</Link>
-          <Link href={'#'}>Press Kit</Link>
+          <ChakraNextLink href={'#'}>Our Features</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Pricing</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Affiliate Program</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Press Kit</ChakraNextLink>
         </Stack>
         <Stack align={'flex-start'} color="#ffffff">
           <ListHeader>Support</ListHeader>
-          <Link href={'#'}>Account</Link>
-          <Link href={'#'}>Help</Link>
-          <Link href={'#'}>Contact Us</Link>
+          <ChakraNextLink href={'#'}>Account</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Help</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Contact Us</ChakraNextLink>
         </Stack>
         <Stack align={'flex-start'} color="#ffffff">
           <ListHeader>Legal</ListHeader>
-          <Link href={'#'}>Privacy Policy</Link>
-          <Link href={'#'}>Terms of Use</Link>
+          <ChakraNextLink href={'#'}>Privacy Policy</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Terms of Use</ChakraNextLink>
         </Stack>
         <Stack align={'flex-start'} color="#ffffff">
           <ListHeader>Social Media</ListHeader>
-          <Link href={'#'}>Twitter</Link>
-          <Link href={'#'}>Product Hunt</Link>
-          <Link href={'#'}>Instagram</Link>
-          <Link href={'#'}>Github</Link>
+          <ChakraNextLink href={'#'}>Twitter</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Product Hunt</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Instagram</ChakraNextLink>
+          <ChakraNextLink href={'#'}>Github</ChakraNextLink>
         </Stack>
       </SimpleGrid>
     </Container>

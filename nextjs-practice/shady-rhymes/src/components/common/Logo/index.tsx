@@ -1,7 +1,9 @@
 // Libs
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+
+// Component
+import { ChakraNextLink } from '@components/common/ChakraNextLink';
 
 interface LogoProps {
   alt: string;
@@ -22,7 +24,7 @@ const Logo = ({
   width = 120,
   height = 35,
 }: LogoProps) => (
-  <Link href="/" passHref>
+  <ChakraNextLink href="/">
     <Image
       src={url}
       alt={alt}
@@ -31,9 +33,8 @@ const Logo = ({
       height={height}
       placeholder={placeholder}
       blurDataURL={blurDataURL}
-      priority
     />
-  </Link>
+  </ChakraNextLink>
 );
 
 export default Logo;

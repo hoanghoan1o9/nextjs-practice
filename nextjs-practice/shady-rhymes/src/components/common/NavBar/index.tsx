@@ -1,12 +1,13 @@
 // Libraries
-import { Stack, Popover, PopoverTrigger, Link, Flex } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import React from 'react';
+import { Stack, Popover, PopoverTrigger, Flex } from '@chakra-ui/react';
 
 // Constants
 import { APP_IMAGE_URLS } from '@constants/images';
 
 // Component
 import Logo from '../Logo';
+import { ChakraNextLink } from '@components/common/ChakraNextLink';
 
 export interface NavItemProps {
   label: string;
@@ -38,11 +39,14 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
           <Flex key={navItem.label}>
             <Popover trigger={'hover'}>
               <PopoverTrigger>
-                <NextLink href={navItem.href ?? '/'}>
-                  <Link size="navBar" variant="navBar" ml="10">
-                    {navItem.label}
-                  </Link>
-                </NextLink>
+                <ChakraNextLink
+                  href={navItem.href ?? '/'}
+                  size="navBar"
+                  variant="navBar"
+                  ml="10"
+                >
+                  {navItem.label}
+                </ChakraNextLink>
               </PopoverTrigger>
             </Popover>
           </Flex>

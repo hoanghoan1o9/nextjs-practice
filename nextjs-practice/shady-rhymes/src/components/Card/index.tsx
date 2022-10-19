@@ -1,10 +1,10 @@
 // Libraries
-import { Box, Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Components
 import { Text } from '@components/common/Text';
+import { ChakraNextLink } from '@components/common/ChakraNextLink';
 
 // Constants
 import { APP_IMAGE_URLS } from '@constants/images';
@@ -29,11 +29,9 @@ const CardItem = ({ href, title, description }: CardProps) => {
       </Box>
       <Text value={title} pl="20px" my="10px" />
       <Text value={description} w="385px" px="20px" mt="10px" mb="20px" />
-      <Link href="/">
-        <ChakraLink pl="20px" variant="normalLink">
-          more info
-        </ChakraLink>
-      </Link>
+      <ChakraNextLink pl="20px" variant="normalLink" href="/">
+        more info
+      </ChakraNextLink>
     </Box>
   );
 };

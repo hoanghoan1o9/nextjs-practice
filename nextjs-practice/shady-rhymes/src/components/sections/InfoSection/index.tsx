@@ -52,7 +52,7 @@ const Feature = ({
 
 export const InforSection = () => {
   return (
-    <Container maxW={'1700px'} py={12} mt="62px">
+    <Container maxW={'9xl'} py={12} mt="62px">
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Heading
