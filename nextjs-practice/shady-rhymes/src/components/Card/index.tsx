@@ -1,5 +1,5 @@
 // Libraries
-import { Box } from '@chakra-ui/react';
+import { Box, ListItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Components
@@ -17,7 +17,7 @@ interface CardProps {
 
 const CardItem = ({ href, title, description }: CardProps) => {
   return (
-    <Box
+    <ListItem
       w="425px"
       h="280px"
       border="1px solid var(--chakra-borders-mainBorder)"
@@ -32,7 +32,7 @@ const CardItem = ({ href, title, description }: CardProps) => {
       <ChakraNextLink pl="20px" variant="normalLink" href="/">
         more info
       </ChakraNextLink>
-    </Box>
+    </ListItem>
   );
 };
 
