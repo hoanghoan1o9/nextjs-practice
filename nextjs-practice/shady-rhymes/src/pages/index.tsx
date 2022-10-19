@@ -8,7 +8,7 @@ import { MainLayout } from '@components/layouts/mainLayout';
 import { Banner } from '@components/featured/Banner';
 import { AboutSection } from '@components/sections/aboutSection';
 import { InforSection } from '@components/sections/InfoSection';
-
+import { Seo } from '@components/common/Seo';
 // Services
 import { ProductServices } from '@services/productService';
 
@@ -64,12 +64,23 @@ export function Home({
   }, []);
 
   return (
-    <MainLayout>
-      <Banner />
-      <AboutSection />
-      <InforSection />
-      <ProductListSection />
-    </MainLayout>
+    <>
+      <Seo
+        props={{
+          title: 'NextJS | Shady Rhymes',
+          description: 'Shady Rhymes interiors design landing page',
+          url: 'https://metatags.io/',
+          thumbnailUrl:
+            'https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png',
+        }}
+      />
+      <MainLayout>
+        <Banner />
+        <AboutSection />
+        <InforSection />
+        <ProductListSection />
+      </MainLayout>
+    </>
   );
 }
 
