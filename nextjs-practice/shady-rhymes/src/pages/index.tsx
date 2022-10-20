@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
           error: error.message,
         },
-        revalidate: 10,
+        revalidate: 5,
       };
     }
 
@@ -50,7 +50,6 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 };
 
-// FIXME: this field use for testing UI
 export function Home({
   products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {

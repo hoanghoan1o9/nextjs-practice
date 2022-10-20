@@ -7,6 +7,7 @@ import Script from 'next/script';
 // Components
 import { LoadingIndicator } from '@components/common/LoadingIndicator';
 import { ErrorBoundary } from '@components/common/ErrorBoundary';
+
 // Themes
 import { CHAKRA_THEME } from '@themes/chakra';
 
@@ -30,15 +31,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
          gtag('config', ${process.env.GOOGLE_ANALYTICS});
         `}
     </Script>
-    <ChakraProvider theme={CHAKRA_THEME}>
-      <Suspense fallback={<LoadingIndicator />}>
-        <AppProvider>
-          <ErrorBoundary>
-            <Component {...pageProps} />
-          </ErrorBoundary>
-        </AppProvider>
-      </Suspense>
-    </ChakraProvider>
+      <ChakraProvider theme={CHAKRA_THEME}>
+        <Suspense fallback={<LoadingIndicator />}>
+          <AppProvider>
+            <ErrorBoundary>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          </AppProvider>
+        </Suspense>
+      </ChakraProvider>
   </>
 );
 

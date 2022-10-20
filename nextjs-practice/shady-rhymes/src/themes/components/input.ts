@@ -6,18 +6,19 @@ export const Input = {
         lineHeight: '60px',
         px: '25px',
         borderRadius: '30px',
+        border: '1px solid black',
       },
     },
   },
   variants: {
     withAddon: {
       field: {
-        color: 'grey.300',
-        border: '1px solid light',
+        color: 'black',
+        border: '1px solid black',
         backgroundColor: '#ffffff80',
 
         _focusVisible: {
-          borderColor: 'light',
+          borderColor: 'black',
         },
       },
       element: {
