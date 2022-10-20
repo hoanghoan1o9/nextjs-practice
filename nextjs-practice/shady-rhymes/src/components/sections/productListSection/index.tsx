@@ -10,7 +10,6 @@ import { useProduct } from '@contexts/ProductContext';
 
 export const ProductListSection = () => {
   const { productList } = useProduct();
-  console.log('productList', productList);
 
   return (
     <Box my={'200px'}>
@@ -29,16 +28,17 @@ export const ProductListSection = () => {
         justifyContent="space-between"
         m="0 80px"
       >
-        {productList.map(({ id, title, category, price, image }) => (
-          <ProductItem
-            id={id}
-            key={id}
-            title={title}
-            category={category}
-            price={price}
-            url={image.url}
-          />
-        ))}
+        {productList?.length &&
+          productList?.map(({ id, title, category, price, image }) => (
+            <ProductItem
+              id={id}
+              key={id}
+              title={title}
+              category={category}
+              price={price}
+              url={image.url}
+            />
+          ))}
       </List>
     </Box>
   );
