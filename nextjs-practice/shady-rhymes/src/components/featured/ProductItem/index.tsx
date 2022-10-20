@@ -34,6 +34,7 @@ export const ProductItem = ({
       boxShadow={'2xl'}
       overflow={'hidden'}
       onClick={handleClick}
+      cursor="poiter"
     >
       <Box>
         <Box h={'425px'} pos={'relative'}>
