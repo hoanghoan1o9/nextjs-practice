@@ -23,7 +23,12 @@ interface Props {
 }
 
 export const DetailProduct = ({ product }: Props) => {
-  const { title, price, category, image } = product;
+  const {
+    title,
+    price,
+    category,
+    image = { alt: '', url: '' },
+  } = product || {};
   return (
     <Container maxW={'7xl'} backgroundColor="#FAF5F2">
       <SimpleGrid
