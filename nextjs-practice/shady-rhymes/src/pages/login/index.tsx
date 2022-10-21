@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { ROUTES } from '@constants/router';
 import { USERS } from '@constants/users';
 
-import { Input } from '@components/common/Input';
+// import { Input } from '@components/common/Input';
 
 import {
   Flex,
@@ -16,6 +16,7 @@ import {
   Button,
   Heading,
   Text,
+  Input,
 } from '@chakra-ui/react';
 
 import { IS_LOGIN, setItem } from '@helpers/localStorage';
