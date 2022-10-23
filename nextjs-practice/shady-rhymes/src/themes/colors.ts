@@ -1,10 +1,21 @@
 export const colors = {
-  light: '#fff',
-  dark: '#000',
-  primary: '#f9bab3',
-  danger: '#e3363e',
-  lightWhile: '#faf5f2',
-  lightGold: '#a09386',
+  light: {
+    100: '#fff',
+  },
+  dark: {
+    100: '#000',
+  },
+
+  primary: {
+    100: '#f9bab3',
+  },
+
+  white: {
+    100: '#faf5f2',
+  },
+  gold: {
+    100: '#a09386',
+  },
   grey: {
     100: '#f2f3f5',
     200: '#f0f8ff',
@@ -23,4 +34,6 @@ export const colors = {
   red: {
     100: '#bd081c',
   },
+  mainShadow: 'rgba(247, 148, 137, 0.2)',
+  mainBorder: '#fadcd9',
 };
