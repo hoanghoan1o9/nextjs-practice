@@ -1,5 +1,5 @@
 // Libraries
-import { Box, ListItem } from '@chakra-ui/react';
+import { Box, ListItem, useStyleConfig } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Components
@@ -15,15 +15,18 @@ interface CardProps {
   description: string;
 }
 
+function Wrapper(props: any) {
+  const { variant, ...rest } = props;
+
+  const styles = useStyleConfig('Card', { variant });
+
+  // Pass the computed styles into the `__css` prop
+  return <ListItem __css={styles} {...rest} />;
+}
+
 const CardItem = ({ href, title, description }: CardProps) => {
   return (
-    <ListItem
-      w="425px"
-      h="280px"
-      border="1px solid var(--chakra-borders-mainBorder)"
-      borderRadius="10px"
-      shadow="4px 2px 10px 2px var(--chakra-shadows-mainShadow)"
-    >
+    <Wrapper variant="solid" size="lg">
       <Box mt="20px" ml="20px">
         <Image src={href} alt={title} width={60} height={60} />
       </Box>
@@ -32,7 +35,7 @@ const CardItem = ({ href, title, description }: CardProps) => {
       <ChakraNextLink pl="20px" variant="normalLink" href="/">
         more info
       </ChakraNextLink>
-    </ListItem>
+    </Wrapper>
   );
 };
 
