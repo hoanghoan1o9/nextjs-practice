@@ -10,7 +10,7 @@ import { NAV_ITEMS } from '@constants/navigation';
 export const Header = () => {
   return (
     <Heading
-      className="container"
+      as="h1"
       pos="absolute"
       left="0"
       right="0"
