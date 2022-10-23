@@ -7,10 +7,9 @@ import { Button } from './components/button';
 import { Input } from './components/input';
 import { Text } from './components/text';
 import { Link } from './components/link';
+import { Card } from './components/card';
 import { colors } from './colors';
 import { fontSizes } from './fontSizes';
-import { borders } from './borders';
-import { shadows } from './shadows';
 
 const fonts = {
   ...chakraTheme.fonts,
@@ -24,12 +23,11 @@ const overrides = {
     Input,
     Text,
     Link,
+    Card,
   },
   colors,
   fontSizes,
   fonts,
-  borders,
-  shadows,
 };
 
 export const CHAKRA_THEME = extendTheme(overrides);

@@ -8,7 +8,6 @@ import { DetailProduct } from '@components/sections/detailProduct';
 import { MainLayout } from '@components/layouts/mainLayout';
 
 // Constants
-import { APP_ERRORS } from '@constants/errors';
 import { API_ENDPOINTS } from '@constants/clientApis';
 import { ProductPathParams } from '@constants/pathParams';
 
@@ -17,6 +16,7 @@ import { ProductServices } from '@services/productService';
 
 // Types
 import { Product } from '@models/Product';
+import axios from 'axios';
 
 interface ProductProps {
   product: Product;
@@ -24,13 +24,9 @@ interface ProductProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const responseProducts = await ProductServices.getProductList(
-      API_ENDPOINTS.PRODUCTS,
-    );
-
-    if (!responseProducts) {
-      throw new Error(APP_ERRORS.DEFAULT_ERROR_APIS);
-    }
+    const responseProducts = await axios
+      .get(API_ENDPOINTS.PRODUCTS)
+      .then(({ data }) => data.data);
 
     const paths = responseProducts.map((product: Product) => {
       return {
@@ -51,14 +47,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as ProductPathParams;
 
-  const singleProduct = await ProductServices.getProduct(
+  const product = await ProductServices.getProduct(
     API_ENDPOINTS.PRODUCTS,
     slug,
   );
 
   return {
     props: {
-      product: singleProduct,
+      product: product,
     },
   };
 };
