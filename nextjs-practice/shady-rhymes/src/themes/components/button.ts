@@ -1,8 +1,9 @@
 export const Button = {
   sizes: {
     default: {
-      px: '20px',
-      py: '10px',
+      px: '25px',
+      py: '16px',
+      height: '20px',
       borderRadius: '10px',
     },
 
@@ -38,9 +39,9 @@ export const Button = {
 
   variants: {
     default: {
-      bg: '',
       color: '#564e4e',
       border: '1px solid #f79489',
+      fontSizes: 'small',
 
       _hover: {
         bg: '#f1d0cc',
