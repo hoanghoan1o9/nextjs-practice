@@ -8,10 +8,7 @@ import { MainLayout } from '@components/layouts/mainLayout';
 import { Banner } from '@components/featured/Banner';
 import { AboutSection } from '@components/sections/aboutSection';
 import { InforSection } from '@components/sections/InfoSection';
-import { Seo } from '@components/common/Seo';
-
-// Services
-import { ProductServices } from '@services/productService';
+import { SEO } from '@components/common/SEO';
 
 // Context
 import { useProduct } from '@contexts/ProductContext';
@@ -20,13 +17,15 @@ import { useProduct } from '@contexts/ProductContext';
 import { API_ENDPOINTS } from '@constants/clientApis';
 import { APP_ERRORS } from '@constants/errors';
 
+import api from '../services/api';
+
 export const getStaticProps: GetStaticProps = async () => {
   // For testing ISR flow
   console.log('====Generate/ Re-generate Product List====');
   try {
-    const responseProducts = await ProductServices.getProductList(
-      API_ENDPOINTS.PRODUCTS,
-    );
+    const responseProducts = await api
+      .get(API_ENDPOINTS.PRODUCTS)
+      .then(({ data }) => data);
 
     if (!responseProducts) {
       throw new Error(APP_ERRORS.DEFAULT_ERROR_APIS);
@@ -56,12 +55,12 @@ export function Home({
   const { setProductList } = useProduct();
 
   useEffect(() => {
-    setProductList(products);
+    setProductList(products.data);
   }, []);
 
   return (
     <>
-      <Seo
+      <SEO
         props={{
           title: 'NextJS | Shady Rhymes',
           description: 'Shady Rhymes interiors design landing page',
