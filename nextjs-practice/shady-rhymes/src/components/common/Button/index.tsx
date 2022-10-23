@@ -16,12 +16,20 @@ interface ButtonProps extends ButtonPropsChakra {
 
 export const Button = ({
   isDisabled = false,
+  size = 'default',
+  variant = 'default',
   children,
   label,
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonChakra isDisabled={isDisabled} data-testid="testButton" {...props}>
+    <ButtonChakra
+      size={size}
+      variant={variant}
+      isDisabled={isDisabled}
+      data-testid="testButton"
+      {...props}
+    >
       {label}
       {children}
     </ButtonChakra>
