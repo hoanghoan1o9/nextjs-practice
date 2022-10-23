@@ -4,7 +4,7 @@ import { Stack, Popover, PopoverTrigger, Flex } from '@chakra-ui/react';
 
 // Constants
 import { APP_IMAGE_URLS } from '@constants/images';
-
+import { ROUTES } from '@constants/router';
 // Component
 import Logo from '../Logo';
 import { ChakraNextLink } from '@components/common/ChakraNextLink';
@@ -21,6 +21,7 @@ interface NavBarProps {
 const NavBarBase = ({ navItems = [] }: NavBarProps) => {
   return (
     <Flex
+      as="nav"
       data-testid="testNavbar"
       justifyContent="space-between"
       alignItems="center"
@@ -40,7 +41,7 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
             <Popover trigger={'hover'}>
               <PopoverTrigger>
                 <ChakraNextLink
-                  href={navItem.href ?? '/'}
+                  href={navItem.href ?? ROUTES.HOME_PAGE}
                   size="navBar"
                   variant="navBar"
                   ml="10"
