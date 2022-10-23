@@ -12,7 +12,7 @@ export interface SeoProps {
   props: SeoInfo;
 }
 
-export const Seo = ({ props }: SeoProps) => {
+export const SEO = ({ props }: SeoProps) => {
   const { title, description, url, thumbnailUrl } = props;
 
   return (
