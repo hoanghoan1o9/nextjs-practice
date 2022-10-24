@@ -10,7 +10,7 @@
     "prepare": "cd ../../ && husky install nextjs-practice/shady-rhymes/.husky",
     "test": "jest",
     "test-coverage": "jest --coverage",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
