@@ -26,7 +26,7 @@ function Wrapper(props: any) {
 
 const CardItem = ({ href, title, description }: CardProps) => {
   return (
-    <Wrapper>
+    <Wrapper variant="solid" size="lg">
       <Box mt="20px" ml="20px">
         <Image src={href} alt={title} width={60} height={60} />
       </Box>
