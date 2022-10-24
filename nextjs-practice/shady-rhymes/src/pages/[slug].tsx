@@ -16,7 +16,7 @@ import { ProductServices } from '@services/productService';
 
 // Types
 import { Product } from '@models/Product';
-import axios from 'axios';
+// import axios from 'axios';
 
 interface ProductProps {
   product: Product;
@@ -24,8 +24,9 @@ interface ProductProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const responseProducts =
-      (await axios.get(API_ENDPOINTS.PRODUCTS).then(({ data }) => data)) || [];
+    const responseProducts = await ProductServices.getProductList(
+      API_ENDPOINTS.PRODUCTS,
+    );
 
     const paths = responseProducts.map((product: Product) => {
       return {
