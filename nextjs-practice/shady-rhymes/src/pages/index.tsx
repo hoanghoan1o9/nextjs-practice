@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const responseProducts = await api
       .get(API_ENDPOINTS.PRODUCTS)
       .then(({ data }) => data);
+    console.log(responseProducts);
 
     if (!responseProducts) {
       throw new Error(APP_ERRORS.DEFAULT_ERROR_APIS);
@@ -55,7 +56,7 @@ export function Home({
   const { setProductList } = useProduct();
 
   useEffect(() => {
-    setProductList(products?.data || []);
+    setProductList(products || []);
   }, []);
 
   return (
