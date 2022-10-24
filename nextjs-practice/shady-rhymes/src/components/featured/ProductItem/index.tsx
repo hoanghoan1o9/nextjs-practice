@@ -1,10 +1,9 @@
 // Libs
-import { useState } from 'react';
 import { Box, Heading, Text, Stack, ListItem, Flex } from '@chakra-ui/react';
 import { Button } from '@components/common/Button';
 import Logo from '@components/common/Logo';
-import { Modal } from '@components/common/Modal';
 
+// Components
 import { useRouter } from 'next/router';
 
 interface ProductItemProps {
@@ -13,6 +12,7 @@ interface ProductItemProps {
   url: string;
   category: string;
   price: number;
+  onOpen: () => void;
 }
 
 export const ProductItem = ({
@@ -21,24 +21,13 @@ export const ProductItem = ({
   url,
   category = 'Category',
   price,
+  onOpen,
 }: ProductItemProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [titleModal, setTitleModal] = useState<string>('');
   const router = useRouter();
 
   const handleClick = (e: any) => {
     e.preventDefault();
     router.push(`/${id}`);
-  };
-
-  const handleOpenDeleteModal = () => {
-    setIsOpen(!isOpen);
-    setTitleModal('Delete Product');
-  };
-
-  const handleOpenEditodal = () => {
-    setIsOpen(!isOpen);
-    setTitleModal('Update product');
   };
 
   return (
@@ -95,13 +84,12 @@ export const ProductItem = ({
               </Text>
             </Stack>
             <Flex mr="10px" direction="column">
-              <Button label="Update" mb="10px" onClick={handleOpenEditodal} />
-              <Button label="Delete" onClick={handleOpenDeleteModal} />
+              <Button label="Update" mb="10px" onClick={onOpen} />
+              <Button label="Delete" onClick={onOpen} />
             </Flex>
           </Flex>
         </Box>
       </ListItem>
-      <Modal title={titleModal} isOpen={isOpen} />
     </>
   );
 };

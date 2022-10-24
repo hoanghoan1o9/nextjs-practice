@@ -21,21 +21,28 @@ export class ProductClient {
    * @returns {Product[]} Product[]
    */
   getProductList = async (url: string): Promise<Product[]> => {
-    const urlProducts = `${this.baseApi}${url}`;
+    // FIXME: Testing api
+    const urlProducts = `${'https://63453164dcae733e8febb806.mockapi.io'}${url}`;
     const response = await fetch(urlProducts);
 
     return response.json();
   };
 
   getProduct = async (url: string, id: string): Promise<Product[]> => {
-    const urlProduct = `${this.baseApi}${url}/${id}`;
+    // FIXME: Testing api
+    const urlProduct = `${'https://63453164dcae733e8febb806.mockapi.io'}${url}/${id}`;
     const response = await fetch(urlProduct);
 
     return response.json();
   };
 
   addProduct = async (product: Product): Promise<Product> => {
-    const response = await fetch(this.baseApi, {
+    // FIXME: Testing api
+    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}${
+      API_ENDPOINTS.PRODUCTS
+    }`;
+    console.log(url);
+    const response = await fetch(url, {
       method: METHODS.POST,
       headers: HEADERS,
       body: JSON.stringify(product),
