@@ -16,9 +16,9 @@ interface CardProps {
 }
 
 function Wrapper(props: any) {
-  const { variant, ...rest } = props;
+  const { variant, size, baseStyle, ...rest } = props;
 
-  const styles = useStyleConfig('Card', { variant });
+  const styles = useStyleConfig('Card', { variant, size, baseStyle });
 
   // Pass the computed styles into the `__css` prop
   return <ListItem __css={styles} {...rest} />;
@@ -26,7 +26,7 @@ function Wrapper(props: any) {
 
 const CardItem = ({ href, title, description }: CardProps) => {
   return (
-    <Wrapper variant="solid" size="lg">
+    <Wrapper>
       <Box mt="20px" ml="20px">
         <Image src={href} alt={title} width={60} height={60} />
       </Box>

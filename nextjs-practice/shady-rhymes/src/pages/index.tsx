@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }
     return {
       props: {
-        products: responseProducts,
+        products: responseProducts?.data || [],
       },
     };
   } catch (error) {
@@ -55,7 +55,7 @@ export function Home({
   const { setProductList } = useProduct();
 
   useEffect(() => {
-    setProductList(products.data);
+    setProductList(products?.data || []);
   }, []);
 
   return (

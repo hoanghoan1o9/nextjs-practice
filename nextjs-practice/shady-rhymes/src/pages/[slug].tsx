@@ -24,9 +24,8 @@ interface ProductProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const responseProducts = await axios
-      .get(API_ENDPOINTS.PRODUCTS)
-      .then(({ data }) => data.data);
+    const responseProducts =
+      (await axios.get(API_ENDPOINTS.PRODUCTS).then(({ data }) => data)) || [];
 
     const paths = responseProducts.map((product: Product) => {
       return {

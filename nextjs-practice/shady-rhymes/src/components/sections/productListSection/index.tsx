@@ -10,7 +10,7 @@ import { useProduct } from '@contexts/ProductContext';
 
 export const ProductListSection = () => {
   const { productList } = useProduct();
-
+  
   return (
     <Box my={'200px'}>
       <Heading
