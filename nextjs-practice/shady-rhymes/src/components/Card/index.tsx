@@ -1,5 +1,5 @@
 // Libraries
-import { Box, ListItem, useStyleConfig } from '@chakra-ui/react';
+import { Box, useStyleConfig } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Components
@@ -21,7 +21,7 @@ function Wrapper(props: any) {
   const styles = useStyleConfig('Card', { variant, size, baseStyle });
 
   // Pass the computed styles into the `__css` prop
-  return <ListItem __css={styles} {...rest} />;
+  return <Box __css={styles} {...rest} />;
 }
 
 const CardItem = ({ href, title, description }: CardProps) => {
