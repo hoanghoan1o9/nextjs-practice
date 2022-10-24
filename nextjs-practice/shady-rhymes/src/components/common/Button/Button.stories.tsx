@@ -42,6 +42,8 @@ const Template: Storybook.ComponentStory<typeof Button> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   label: 'Default',
+  type: 'button',
+  size: 'default',
 };
 
 export const Sizes = () => (
