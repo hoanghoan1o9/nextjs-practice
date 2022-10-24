@@ -3,12 +3,13 @@ import { defineStyleConfig } from '@chakra-ui/react';
 export const Card = defineStyleConfig({
   // style object for base or default style
   baseStyle: {
-    border: '1px solid mainBorder',
-    boxShadow: '4px 2px 10px 2px mainShadow',
+    borderWidth: '1px ',
+    borderStyle: 'solid',
+    borderColor: 'primary.100',
+    shadow: '4px 2px 10px 2px #000',
     borderRadius: '10px',
     width: '425px',
     height: '280px',
-    backgroundColor: 'red',
   },
   // styles for different sizes ("sm", "md", "lg")
   sizes: {
