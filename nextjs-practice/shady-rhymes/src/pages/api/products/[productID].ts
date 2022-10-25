@@ -25,10 +25,9 @@ export default async function handler(
     case METHODS.DELETE:
       try {
         const { id } = req.body;
-        await ProductServices.deleteProduct(id);
-        
-        res.status(200).json({ success: true });
+        await ProductServices.deleteProductServer(id);
 
+        res.status(200).json({ success: true });
       } catch (error) {
         res
           .status(500)

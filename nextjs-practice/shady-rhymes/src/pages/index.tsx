@@ -19,6 +19,8 @@ import { ProductServices } from '@services/productService';
 // Constants
 import { API_ENDPOINTS } from '@constants/clientApis';
 import { APP_ERRORS } from '@constants/errors';
+import { DeleteProductForm } from '@components/featured/DeleteProductForm';
+import { AddProductForm } from '@components/featured/AddProductForm';
 
 // import api from '../services/api';
 
@@ -77,6 +79,8 @@ export function Home({
         <AboutSection />
         <InforSection />
         <ProductListSection />
+        <AddProductForm isOpen={true} />
+        <DeleteProductForm isOpen={true} id={5} />
       </MainLayout>
     </>
   );

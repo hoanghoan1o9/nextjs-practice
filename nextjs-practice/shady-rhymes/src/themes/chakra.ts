@@ -7,7 +7,7 @@ import { Button } from './components/button';
 import { Input } from './components/input';
 import { Text } from './components/text';
 import { Link } from './components/link';
-import { Card } from './components/card';
+import { ListStyle } from './components/list';
 import { colors } from './colors';
 import { fontSizes } from './fontSizes';
 
@@ -23,7 +23,7 @@ const overrides = {
     Input,
     Text,
     Link,
-    Card,
+    List: ListStyle,
   },
   colors,
   fontSizes,

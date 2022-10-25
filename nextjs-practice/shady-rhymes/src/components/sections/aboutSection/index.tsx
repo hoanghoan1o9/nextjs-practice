@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { Box, Heading, List, ListItem } from '@chakra-ui/react';
+import { Box, Heading, List } from '@chakra-ui/react';
 
 // Components
 import { CardItem } from '@components/Card';
@@ -26,13 +26,12 @@ export const AboutSection = () => {
         m={'0 80px'}
       >
         {ABOUT_ITEM.map((item) => (
-          <ListItem key={item.title}>
-            <CardItem
-              title={item.title}
-              href={item.href}
-              description={item.description}
-            />
-          </ListItem>
+          <CardItem
+            key={item.title}
+            title={item.title}
+            href={item.href}
+            description={item.description}
+          />
         ))}
       </List>
     </Box>
