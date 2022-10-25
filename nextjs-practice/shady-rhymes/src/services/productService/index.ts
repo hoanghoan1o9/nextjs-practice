@@ -38,10 +38,23 @@ export class ProductClient {
 
   addProduct = async (product: Product): Promise<Product> => {
     // FIXME: Testing api
+    const url = `${'http://localhost:3000/api'}${API_ENDPOINTS.PRODUCTS}`;
+
+    const response = await fetch(url, {
+      method: METHODS.POST,
+      headers: HEADERS,
+      body: JSON.stringify(product),
+    });
+
+    return response.json();
+  };
+
+  addProductServer = async (product: Product): Promise<Product> => {
+    // FIXME: Testing api
     const url = `${'https://63453164dcae733e8febb806.mockapi.io'}${
       API_ENDPOINTS.PRODUCTS
     }`;
-    console.log(url);
+
     const response = await fetch(url, {
       method: METHODS.POST,
       headers: HEADERS,
@@ -52,7 +65,21 @@ export class ProductClient {
   };
 
   deleteProduct = async (id: number): Promise<boolean> => {
-    const url = `${this.baseApi}/${API_ENDPOINTS.PRODUCTS}/${id}`;
+    const url = `${'http://localhost:3000/api'}/${
+      API_ENDPOINTS.PRODUCTS
+    }/${id}`;
+    const response = await fetch(url, {
+      method: METHODS.DELETE,
+      headers: HEADERS,
+    });
+
+    return !!response.ok;
+  };
+
+  deleteProductServer = async (id: number): Promise<boolean> => {
+    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
+      API_ENDPOINTS.PRODUCTS
+    }/${id}`;
     const response = await fetch(url, {
       method: METHODS.DELETE,
       headers: HEADERS,
