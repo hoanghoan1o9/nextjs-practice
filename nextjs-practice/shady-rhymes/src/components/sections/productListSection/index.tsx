@@ -5,6 +5,7 @@ import { Box, Heading, List } from '@chakra-ui/react';
 // Components
 import { ProductItem } from '@components/featured/ProductItem';
 import { AddProductForm } from '@components/featured/AddProductForm';
+// import { DeleteProductForm } from '@components/featured/DeleteProductForm';
 
 // Context
 import { useProduct } from '@contexts/ProductContext';
