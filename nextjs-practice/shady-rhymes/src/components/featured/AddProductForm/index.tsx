@@ -15,22 +15,26 @@ export const AddProductForm = ({ isOpen }: Props) => {
     title: '',
     category: '',
     price: 0,
-    image: { url: '', atl: '' },
   });
 
   const handleAddProduct = async () => {
-    const newproduct = {
-      ...input,
-      image: { url: '/images/brown-chair.png', alt: 'Chair' },
-    };
-    await ProductServices.addProduct(newproduct as unknown as Product);
+    try {
+      const newproduct = {
+        ...input,
+        image: { url: '/images/brown-chair.png', alt: 'Chair' },
+      };
+      await ProductServices.addProduct(newproduct as unknown as Product);
+      setInput({ title: '', category: '', price: 0 });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValues = e.target.value;
     setInput({
       ...input,
-      [e.target.name]: inputValues.trim(),
+      [e.target.name]: inputValues,
     });
   };
 
