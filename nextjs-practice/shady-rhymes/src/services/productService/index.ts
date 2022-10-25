@@ -65,6 +65,7 @@ export class ProductClient {
   };
 
   deleteProduct = async (id: number): Promise<boolean> => {
+    // FIXME: Testing api
     const url = `${'http://localhost:3000/api'}/${
       API_ENDPOINTS.PRODUCTS
     }/${id}`;
@@ -77,6 +78,7 @@ export class ProductClient {
   };
 
   deleteProductServer = async (id: number): Promise<boolean> => {
+    // FIXME: Testing api
     const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
       API_ENDPOINTS.PRODUCTS
     }/${id}`;
@@ -89,7 +91,24 @@ export class ProductClient {
   };
 
   patchProduct = async (product: Product): Promise<Product> => {
-    const url = `${this.baseApi}/${API_ENDPOINTS.PRODUCTS}/${product.id}`;
+    // FIXME: Testing api
+    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
+      API_ENDPOINTS.PRODUCTS
+    }/${product.id}`;
+    const response = await fetch(url, {
+      method: METHODS.PATCH,
+      headers: HEADERS,
+      body: JSON.stringify(product),
+    });
+
+    return response.json();
+  };
+
+  patchProductServer = async (product: Product): Promise<Product> => {
+    // FIXME: Testing api
+    const url = `${'http://localhost:3000/api'}/${API_ENDPOINTS.PRODUCTS}/${
+      product.id
+    }`;
     const response = await fetch(url, {
       method: METHODS.PATCH,
       headers: HEADERS,
