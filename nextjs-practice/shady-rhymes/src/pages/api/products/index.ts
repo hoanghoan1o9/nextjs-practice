@@ -34,13 +34,16 @@ export default async function handler(
       break;
     case METHODS.POST:
       try {
-        const { title, category, price } = req.body;
-        if (!title || !category || !price) throw 'Invalid data';
-        const newProduct = await ProductServices.addProduct({
+        const { title, category, price, image } = req.body;
+        if (!title || !category || !price || !image.url) throw 'Invalid data';
+
+        const newProduct = await ProductServices.addProductServer({
           title,
           category,
           price,
+          image,
         } as Product);
+        console.log('newProduct', newProduct);
         res.status(200).json({ success: true, data: newProduct });
       } catch (error) {
         res
