@@ -16,6 +16,7 @@ import { ProductServices } from '@services/productService';
 
 // Types
 import { Product } from '@models/Product';
+import { UpdateProductForm } from '@components/feature/UpdateProductForm';
 // import axios from 'axios';
 
 interface ProductProps {
@@ -63,6 +64,7 @@ export const ProducDetail: NextPage<ProductProps> = ({ product }) => {
   return (
     <MainLayout>
       <DetailProduct product={product} />
+      <UpdateProductForm id={product.id} isOpen={true} />
     </MainLayout>
   );
 };

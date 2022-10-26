@@ -77,7 +77,7 @@ export class ProductClient {
     return !!response.ok;
   };
 
-  deleteProductServer = async (id: number): Promise<boolean> => {
+  deleteProductServer = async (id: string): Promise<boolean> => {
     // FIXME: Testing api
     const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
       API_ENDPOINTS.PRODUCTS
@@ -92,9 +92,9 @@ export class ProductClient {
 
   patchProduct = async (product: Product): Promise<Product> => {
     // FIXME: Testing api
-    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
-      API_ENDPOINTS.PRODUCTS
-    }/${product.id}`;
+    const url = `${'http://localhost:3000/api'}/${API_ENDPOINTS.PRODUCTS}/${
+      product.id
+    }`;
     const response = await fetch(url, {
       method: METHODS.PATCH,
       headers: HEADERS,
@@ -106,9 +106,9 @@ export class ProductClient {
 
   patchProductServer = async (product: Product): Promise<Product> => {
     // FIXME: Testing api
-    const url = `${'http://localhost:3000/api'}/${API_ENDPOINTS.PRODUCTS}/${
-      product.id
-    }`;
+    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}${
+      API_ENDPOINTS.PRODUCTS
+    }/${product.id}`;
     const response = await fetch(url, {
       method: METHODS.PATCH,
       headers: HEADERS,

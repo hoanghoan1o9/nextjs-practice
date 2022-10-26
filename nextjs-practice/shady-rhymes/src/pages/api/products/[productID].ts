@@ -21,10 +21,12 @@ export default async function handler(
   res: NextApiResponse<Props>,
 ) {
   const { method } = req;
+
   switch (method) {
     case METHODS.DELETE:
       try {
-        const { id } = req.body;
+        const id = req.query.productID as string;
+
         await ProductServices.deleteProductServer(id);
 
         res.status(200).json({ success: true });
@@ -36,10 +38,13 @@ export default async function handler(
       break;
     case METHODS.PATCH:
       try {
+        const id = req.query.productID as string;
+        console.log(id);
         const { title, category, price } = req.body;
 
         if (!title || !category || !price) throw 'Invalid data';
-        await ProductServices.patchProduct({
+        await ProductServices.patchProductServer({
+          id,
           title,
           category,
           price,

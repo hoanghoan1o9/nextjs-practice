@@ -1,4 +1,4 @@
-// Libs
+ // Libs
 import { useEffect } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
@@ -80,7 +80,7 @@ export function Home({
         <InforSection />
         <ProductListSection />
         <AddProductForm isOpen={true} />
-        <DeleteProductForm isOpen={true} id={5} />
+        <DeleteProductForm isOpen={true} id={6} />
       </MainLayout>
     </>
   );
