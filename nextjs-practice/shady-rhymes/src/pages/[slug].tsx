@@ -3,9 +3,9 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 // Components
-import { DetailProduct } from '@components/sections/detailProduct';
+import { DetailProduct } from '@components/sections/ProductDetail';
 // Layouts
-import { MainLayout } from '@components/layouts/mainLayout';
+import { MainLayout } from '@components/layouts/MainLayout';
 
 // Constants
 import { API_ENDPOINTS } from '@constants/clientApis';

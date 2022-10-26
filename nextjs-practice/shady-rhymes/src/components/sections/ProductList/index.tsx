@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Box, Heading, List } from '@chakra-ui/react';
 
 // Components
-import { ProductItem } from '@components/featured/ProductItem';
-import { AddProductForm } from '@components/featured/AddProductForm';
+import { ProductItem } from '@components/feature/ProductItem';
+import { AddProductForm } from '@components/feature/AddProductForm';
 // import { DeleteProductForm } from '@components/featured/DeleteProductForm';
 
 // Context

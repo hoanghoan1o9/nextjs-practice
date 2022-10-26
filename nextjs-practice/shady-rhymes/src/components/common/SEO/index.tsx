@@ -17,22 +17,24 @@ export const SEO = ({ props }: SeoProps) => {
   const { title, description, url, thumbnailUrl } = props;
 
   return (
-    <Head>
-      <title>NextJS | Shady Rhymes</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
+    <>
+      <Head>
+        <title>NextJS | Shady Rhymes</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={thumbnailUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={thumbnailUrl} />
 
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={thumbnailUrl} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={thumbnailUrl} />
+      </Head>
 
       <Script
         strategy="afterInteractive"
@@ -40,12 +42,12 @@ export const SEO = ({ props }: SeoProps) => {
       />
       <Script strategy="afterInteractive">
         {` 
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         gtag('config', ${process.env.GOOGLE_ANALYTICS});
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+           gtag('config', ${process.env.GOOGLE_ANALYTICS});
         `}
       </Script>
-    </Head>
+    </>
   );
 };

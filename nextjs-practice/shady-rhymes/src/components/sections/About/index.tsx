@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Heading, List } from '@chakra-ui/react';
 
 // Components
-import { CardItem } from '@components/Card';
+import { CardItem } from '@components/feature/Card';
 
 // Constants
 import { ABOUT_ITEM } from '@constants/about';
