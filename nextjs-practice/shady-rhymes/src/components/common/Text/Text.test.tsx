@@ -3,7 +3,7 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 
 // Components
-import Text from './index';
+import { Text } from './index';
 
 const mockProps = {
   value: 'Text',
