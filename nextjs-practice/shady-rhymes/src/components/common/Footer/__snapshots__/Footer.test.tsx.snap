@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer render Should render Footer component 1`] = `
+<div
+  class="css-1luty40"
+  data-testid="TestFooter"
+>
+  <div
+    class="chakra-stack chakra-container css-165xph2"
+  >
+    <div
+      class="css-f7a9bo"
+    >
+      <div
+        class="chakra-stack css-16voevi"
+      >
+        <div
+          class="css-0"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 120px; height: 35px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <img
+              alt="Footer logo"
+              data-nimg="fixed"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="chakra-stack css-15s87bl"
+      >
+        <p
+          class="chakra-text css-4vhhf7"
+        >
+          Features
+        </p>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Our Features
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Pricing
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Affiliate Program
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Press Kit
+        </a>
+      </div>
+      <div
+        class="chakra-stack css-15s87bl"
+      >
+        <p
+          class="chakra-text css-4vhhf7"
+        >
+          Support
+        </p>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Account
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Help
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Contact Us
+        </a>
+      </div>
+      <div
+        class="chakra-stack css-15s87bl"
+      >
+        <p
+          class="chakra-text css-4vhhf7"
+        >
+          Legal
+        </p>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Privacy Policy
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Terms of Use
+        </a>
+      </div>
+      <div
+        class="chakra-stack css-15s87bl"
+      >
+        <p
+          class="chakra-text css-4vhhf7"
+        >
+          Social Media
+        </p>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Twitter
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Product Hunt
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Instagram
+        </a>
+        <a
+          class="chakra-link css-0"
+          href="/#"
+        >
+          Github
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="css-9452eu"
+  >
+    <p
+      class="chakra-text css-1qh67hf"
+    >
+      Copyright 2021 ©shady rhymes
+    </p>
+  </div>
+</div>
+`;
