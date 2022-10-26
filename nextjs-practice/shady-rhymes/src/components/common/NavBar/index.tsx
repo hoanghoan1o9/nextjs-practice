@@ -23,7 +23,7 @@ const NavBarBase = ({ navItems = [] }: NavBarProps) => {
   return (
     <Flex
       as="nav"
-      data-testid="testNavbar"
+      data-testid="TestNavbar"
       justifyContent="space-between"
       alignItems="center"
     >

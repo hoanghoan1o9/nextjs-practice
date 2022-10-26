@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar render should render NavBar component 1`] = `
+<nav
+  class="css-1lekzkb"
+  data-testid="TestNavbar"
+>
+  <span
+    style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 120px; height: 35px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+  >
+    <img
+      alt="main-logo"
+      data-nimg="fixed"
+      decoding="async"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+    />
+    <noscript />
+  </span>
+  <div
+    class="chakra-stack css-4jkpek"
+  >
+    <div
+      class="css-k008qs"
+    >
+      <a
+        aria-controls="popover-content-:r1:"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="chakra-link css-1y6ic72"
+        href="/#"
+        id="popover-trigger-:r1:"
+      >
+        Furniture  
+      </a>
+    </div>
+    <div
+      class="css-k008qs"
+    >
+      <a
+        aria-controls="popover-content-:r3:"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="chakra-link css-1y6ic72"
+        href="/#"
+        id="popover-trigger-:r3:"
+      >
+        Shop
+      </a>
+    </div>
+    <div
+      class="css-k008qs"
+    >
+      <a
+        aria-controls="popover-content-:r5:"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="chakra-link css-1y6ic72"
+        href="/#"
+        id="popover-trigger-:r5:"
+      >
+        About Us
+      </a>
+    </div>
+    <div
+      class="css-k008qs"
+    >
+      <a
+        aria-controls="popover-content-:r7:"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="chakra-link css-1y6ic72"
+        href="/#"
+        id="popover-trigger-:r7:"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+  <span
+    style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 24px; height: 24px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+  >
+    <img
+      alt="bag-icon"
+      data-nimg="fixed"
+      decoding="async"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+    />
+    <noscript />
+  </span>
+</nav>
+`;
