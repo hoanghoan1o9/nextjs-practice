@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Script from 'next/script';
 
 export interface SeoInfo {
   title: string;
@@ -32,6 +33,19 @@ export const SEO = ({ props }: SeoProps) => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={thumbnailUrl} />
+
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="afterInteractive">
+        {` 
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', ${process.env.GOOGLE_ANALYTICS});
+        `}
+      </Script>
     </Head>
   );
 };

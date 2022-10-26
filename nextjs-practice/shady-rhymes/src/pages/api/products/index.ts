@@ -43,7 +43,7 @@ export default async function handler(
           price,
           image,
         } as Product);
-        console.log('newProduct', newProduct);
+
         res.status(200).json({ success: true, data: newProduct });
       } catch (error) {
         res

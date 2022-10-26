@@ -2,7 +2,6 @@
 import { Suspense } from 'react';
 import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import Script from 'next/script';
 
 import { useRouter } from 'next/router';
 import { ROUTES } from '@constants/router';
@@ -12,6 +11,7 @@ import { useEffect } from 'react';
 // Components
 import { LoadingIndicator } from '@components/common/LoadingIndicator';
 import { ErrorBoundary } from '@components/common/ErrorBoundary';
+import { SEO } from '@components/common/SEO';
 
 // Themes
 import { CHAKRA_THEME } from '@themes/chakra';
@@ -37,22 +37,19 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-      />
-      <Script strategy="lazyOnload">
-        {` 
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         gtag('config', ${process.env.GOOGLE_ANALYTICS});
-        `}
-      </Script>
       <ChakraProvider theme={CHAKRA_THEME}>
         <Suspense fallback={<LoadingIndicator />}>
           <AppProvider>
             <ErrorBoundary>
+              <SEO
+                props={{
+                  title: 'NextJS | Shady Rhymes',
+                  description: 'Shady Rhymes interiors design landing page',
+                  url: 'https://shady-rhymes.vercel.app',
+                  thumbnailUrl:
+                    'https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png',
+                }}
+              />
               <Component {...pageProps} />
             </ErrorBoundary>
           </AppProvider>
