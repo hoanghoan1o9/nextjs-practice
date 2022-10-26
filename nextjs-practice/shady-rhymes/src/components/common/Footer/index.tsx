@@ -19,7 +19,10 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export const Footer = () => (
-  <Box bg="linear-gradient(275.58deg, #000000 0%, #4B4B4B 100%)">
+  <Box
+    bg="linear-gradient(275.58deg, #000000 0%, #4B4B4B 100%)"
+    data-testid="TestFooter"
+  >
     <Container as={Stack} maxW="6xl" py={10}>
       <SimpleGrid
         templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
