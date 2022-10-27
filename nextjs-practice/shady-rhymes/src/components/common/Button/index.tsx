@@ -6,8 +6,8 @@ import {
 
 interface ButtonProps extends ButtonPropsChakra {
   disabled?: boolean;
-  size?: 'default' | 'primary' | 'secondary';
-  variant?: 'default' | 'primary' | 'secondary';
+  size?: 'default' | 'primary' | 'secondary' | 'close';
+  variant?: 'default' | 'primary' | 'secondary' | 'close';
   label: string;
   className?: string;
   children?: React.ReactNode;
