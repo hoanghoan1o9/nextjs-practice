@@ -1,11 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
 import { ROUTES } from '@constants/router';
 import { USERS } from '@constants/users';
-
-// import { Input } from '@components/common/Input';
 
 import {
   Flex,
@@ -22,19 +20,23 @@ import {
 import { IS_LOGIN, setItem } from '@helpers/localStorage';
 
 const Login: NextPage = () => {
-  const [userNameInput, setUsernameInput] = useState('');
-  const [passwordInput, setpasswordInput] = useState('');
-  const [message, setmessage] = useState('');
+  const [message, setMessage] = useState('');
+
+  const userNameRef = useRef<HTMLInputElement | null>(null);
+  const passwordRef = useRef<HTMLInputElement | null>(null);
 
   const router = useRouter();
   const isLogin = false;
 
   const handleLogin = () => {
+    const userNameInput = userNameRef?.current?.value.trim().toLowerCase();
+    const passwordInput = passwordRef?.current?.value.trim().toLowerCase();
+
     if (userNameInput === USERS.NAME && passwordInput === USERS.PASSWORD) {
       setItem(IS_LOGIN, true);
       router.push(ROUTES.HOME_PAGE);
     } else {
-      setmessage('Wrong password or user name');
+      setMessage('Wrong password or user name');
     }
   };
 
@@ -52,17 +54,19 @@ const Login: NextPage = () => {
             <FormControl id="email">
               <FormLabel>User name</FormLabel>
               <Input
+                variant="outline"
+                ref={userNameRef}
                 type="email"
                 placeholder="User name"
-                onChange={(e) => setUsernameInput(e.target.value)}
               />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
               <Input
+                variant="outline"
+                ref={passwordRef}
                 type="password"
-                placeholder="Passeword"
-                onChange={(e) => setpasswordInput(e.target.value)}
+                placeholder="Password"
               />
             </FormControl>
             <FormLabel display={isLogin ? 'nome' : 'block'} color="red">
