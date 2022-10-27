@@ -1,6 +1,6 @@
 // Libs
 import React from 'react';
-import { Box, Heading, List } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
 
 // Components
 import { CardItem } from '@components/feature/Card';
@@ -12,14 +12,18 @@ export const AboutSection = () => {
   return (
     <Box mt={'80px'}>
       <Heading
-        fontSize={'36px'}
-        lineHeight={'72px'}
-        fontWeight={'500'}
-        m={'0 0 16px 80px'}
+        display={{ base: 'none', md: 'block' }}
+        fontSize="36px"
+        lineHeight="72px"
+        fontWeight="500"
+        m="0 0 16px 80px"
       >
         Why Choosing Us
       </Heading>
-      <List
+      <SimpleGrid
+        as="ul"
+        columns={[2, 4]}
+        gap={6}
         display="flex"
         flexWrap={'wrap'}
         justifyContent={'space-between'}
@@ -33,7 +37,7 @@ export const AboutSection = () => {
             description={item.description}
           />
         ))}
-      </List>
+      </SimpleGrid>
     </Box>
   );
 };

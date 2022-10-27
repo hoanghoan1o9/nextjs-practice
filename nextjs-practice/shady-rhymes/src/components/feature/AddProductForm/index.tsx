@@ -19,11 +19,11 @@ export const AddProductForm = ({ isOpen }: Props) => {
 
   const handleAddProduct = async () => {
     try {
-      const newproduct = {
+      const newProduct = {
         ...input,
         image: { url: '/images/brown-chair.png', alt: 'Chair' },
       };
-      await ProductServices.addProduct(newproduct as unknown as Product);
+      await ProductServices.addProduct(newProduct as unknown as Product);
       setInput({ title: '', category: '', price: 0 });
     } catch (error) {
       console.log(error);
@@ -50,7 +50,11 @@ export const AddProductForm = ({ isOpen }: Props) => {
       p="10px"
       borderRadius="10px"
       mb="100px"
-      // pos="absolute"
+      pos="fixed"
+      top="100px"
+      left="0"
+      right="0"
+      backgroundColor="whiteText.100"
     >
       <FormControl isRequired>
         <FormLabel>Title</FormLabel>

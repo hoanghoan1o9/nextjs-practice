@@ -1,5 +1,5 @@
 // Libs
-import { Box, Heading, Text, Stack, ListItem, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Stack, Flex, GridItem } from '@chakra-ui/react';
 import { Button } from '@components/common/Button';
 import Logo from '@components/common/Logo';
 
@@ -32,17 +32,16 @@ export const ProductItem = ({
 
   return (
     <>
-      <ListItem
-        maxW={'425px'}
-        maxH={'600px'}
+      <GridItem
+        as="li"
         w={'full'}
-        height={'full'}
         boxShadow={'2xl'}
         overflow={'hidden'}
-        cursor="poiter"
+        cursor="pointer"
+        mt="30px"
       >
-        <Box>
-          <Box h={'425px'} pos={'relative'} onClick={handleClick}>
+        <Box pos="relative">
+          <Box pos={'relative'} onClick={handleClick}>
             <Logo
               layout={'responsive'}
               width={425}
@@ -83,13 +82,18 @@ export const ProductItem = ({
                 IDR {price}.000
               </Text>
             </Stack>
-            <Flex mr="10px" direction="column">
-              <Button label="Update" mb="10px" onClick={onOpen} />
-              <Button label="Delete" onClick={onOpen} />
-            </Flex>
+            <Button
+              pos="absolute"
+              top="0"
+              right="0"
+              variant="close"
+              size="close"
+              label="X"
+              onClick={onOpen}
+            />
           </Flex>
         </Box>
-      </ListItem>
+      </GridItem>
     </>
   );
 };

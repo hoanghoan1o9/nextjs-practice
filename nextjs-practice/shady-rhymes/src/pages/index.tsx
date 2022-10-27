@@ -1,4 +1,4 @@
- // Libs
+// Libs
 import { useEffect } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
@@ -7,7 +7,7 @@ import { ProductListSection } from '@components/sections/ProductList';
 import { MainLayout } from '@components/layouts/MainLayout';
 import { Banner } from '@components/feature/Banner';
 import { AboutSection } from '@components/sections/About';
-import { InforSection } from '@components/sections/Info';
+import { InfoSection } from '@components/sections/Info';
 import { SEO } from '@components/common/SEO';
 
 // Context
@@ -19,8 +19,6 @@ import { ProductServices } from '@services/productService';
 // Constants
 import { API_ENDPOINTS } from '@constants/clientApis';
 import { APP_ERRORS } from '@constants/errors';
-import { DeleteProductForm } from '@components/feature/DeleteProductForm';
-import { AddProductForm } from '@components/feature/AddProductForm';
 
 // import api from '../services/api';
 
@@ -77,10 +75,8 @@ export function Home({
       <MainLayout>
         <Banner />
         <AboutSection />
-        <InforSection />
+        <InfoSection />
         <ProductListSection />
-        <AddProductForm isOpen={true} />
-        <DeleteProductForm isOpen={true} id={6} />
       </MainLayout>
     </>
   );

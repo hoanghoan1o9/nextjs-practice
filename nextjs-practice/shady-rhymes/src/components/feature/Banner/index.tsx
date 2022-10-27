@@ -32,7 +32,7 @@ export const Banner = () => {
             textAlign={'center'}
             fontSize={useBreakpointValue({ base: '3xl', md: '5xl' })}
           >
-            {'Make Your Interior More Minimaistic & Modern'}
+            Make Your Interior More Minimaistic & Modern
           </Text>
           <Text
             color={'#ffffff'}

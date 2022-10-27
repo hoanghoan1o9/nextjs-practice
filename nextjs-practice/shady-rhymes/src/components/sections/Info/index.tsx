@@ -1,6 +1,5 @@
 // Libs
 import {
-  Container,
   SimpleGrid,
   Flex,
   Heading,
@@ -9,6 +8,7 @@ import {
   Stack,
   StackDivider,
   useColorModeValue,
+  Container,
 } from '@chakra-ui/react';
 
 // Components
@@ -50,10 +50,10 @@ const Feature = ({
   );
 };
 
-export const InforSection = () => {
+export const InfoSection = () => {
   return (
-    <Container maxW={'9xl'} py={12} mt="62px">
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+    <Container maxW="8xl">
+      <SimpleGrid columns={{ sm: 1, md: 2 }} gap={6} py={12} mt="62px">
         <Stack spacing={4}>
           <Heading
             color={'#564e4e'}

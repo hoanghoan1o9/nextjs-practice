@@ -1,5 +1,5 @@
 // Libs
-import { FormControl, FormLabel, Container } from '@chakra-ui/react';
+import { FormControl, FormLabel, Container, Flex } from '@chakra-ui/react';
 import { Button } from '../../common/Button';
 
 import { ProductServices } from '@services/productService';
@@ -24,16 +24,23 @@ export const DeleteProductForm = ({ isOpen, id }: Props) => {
       p="10px"
       borderRadius="10px"
       mb="100px"
-      // pos="absolute"
+      pos="fixed"
+      top="100px"
+      left="0"
+      right="0"
+      backgroundColor="whiteText.100"
     >
       <FormControl>
-        <FormLabel>Delete Product</FormLabel>
+        <FormLabel fontSize="default">Delete Product</FormLabel>
       </FormControl>
       <FormControl>
-        <FormLabel>Do you want to delete this product</FormLabel>
+        <FormLabel fontSize="small">
+          Do you want to delete this product
+        </FormLabel>
       </FormControl>
-
-      <Button label={'Delete'} mt="20px" onClick={handleDeleteProduct} />
+      <Flex justifyContent="space-between">
+        <Button label={'Delete'} onClick={handleDeleteProduct} />
+      </Flex>
     </Container>
   );
 };

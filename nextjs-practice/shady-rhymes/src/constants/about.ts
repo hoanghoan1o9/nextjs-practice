@@ -15,8 +15,7 @@ export const ABOUT_ITEM: AboutItemProps[] = [
   },
   {
     title: 'Smooth workflow',
-    description:
-      'We provide the most easy smoth workflow of interior design.y.',
+    description: 'We provide the most easy smoth workflow of interior design.',
     href: APP_IMAGE_URLS.ICON_DOUBLE,
   },
   {

@@ -1,5 +1,5 @@
 // Libraries
-import { Box, ListItem, useMultiStyleConfig } from '@chakra-ui/react';
+import { Box, useMultiStyleConfig, GridItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 // Components
@@ -19,16 +19,16 @@ const CardItem = ({ href, title, description }: CardProps) => {
   const styles = useMultiStyleConfig('List');
 
   return (
-    <ListItem __css={styles.item}>
+    <GridItem as="li" __css={styles.item} w={{ sm: 'full', md: '300px' }}>
       <Box mt="20px" ml="20px">
         <Image src={href} alt={title} width={60} height={60} />
       </Box>
       <Text value={title} pl="20px" my="10px" />
-      <Text value={description} w="385px" px="20px" mt="10px" mb="20px" />
-      <ChakraNextLink pl="20px" variant="normalLink" href="/">
+      <Text value={description} px="20px" mt="10px" mb="20px" />
+      <ChakraNextLink pl="20px" mb="20px" variant="normalLink" href="/">
         more info
       </ChakraNextLink>
-    </ListItem>
+    </GridItem>
   );
 };
 

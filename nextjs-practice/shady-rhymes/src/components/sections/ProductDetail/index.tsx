@@ -28,7 +28,7 @@ export const DetailProduct = ({ product }: Props) => {
     image = { alt: '', url: '' },
   } = product || {};
   return (
-    <Container maxW={'7xl'} backgroundColor="#FAF5F2">
+    <Container maxW="100%" backgroundColor="#93928f">
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -41,8 +41,8 @@ export const DetailProduct = ({ product }: Props) => {
             src={image.url}
             fit={'cover'}
             align={'center'}
-            w={'100%'}
-            h={{ base: '100%', sm: '400px', lg: '500px' }}
+            w={{ base: '100%' }}
+            h={{ base: '100%' }}
           />
         </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
@@ -72,7 +72,7 @@ export const DetailProduct = ({ product }: Props) => {
               />
             }
           >
-            <VStack spacing={{ base: 4, sm: 6 }}>
+            <VStack spacing={{ base: 4 }}>
               <Text
                 color={useColorModeValue('gray.500', 'gray.400')}
                 fontSize={'2xl'}
