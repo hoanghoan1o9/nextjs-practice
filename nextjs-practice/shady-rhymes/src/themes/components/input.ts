@@ -1,5 +1,6 @@
 export const Input = {
   sizes: {
+    default: {},
     withAddon: {
       field: {
         fontSize: 'small',
@@ -11,6 +12,16 @@ export const Input = {
     },
   },
   variants: {
+    outline: {
+      field: {
+        border: '1px solid',
+        _focus: {
+          borderColor: 'purple.400',
+          boxShadow: 'none',
+        },
+      },
+    },
+
     withAddon: {
       field: {
         color: 'black',
@@ -21,6 +32,7 @@ export const Input = {
           borderColor: 'black',
         },
       },
+
       element: {
         backgroundColor: 'lightWhile',
         color: 'lightGold',

@@ -2,7 +2,8 @@ export const colors = {
   light: {
     100: '#fff',
   },
-  dark: {
+
+  darkText: {
     100: '#000',
   },
 
@@ -10,12 +11,14 @@ export const colors = {
     100: '#f9bab3',
   },
 
-  white: {
+  whiteText: {
     100: '#faf5f2',
   },
+
   gold: {
     100: '#a09386',
   },
+
   grey: {
     100: '#f2f3f5',
     200: '#f0f8ff',
@@ -26,14 +29,18 @@ export const colors = {
     700: '#495057',
     800: '#212529',
   },
+
   blue: {
     100: '#55acee',
     200: '#3b5999',
     300: '#5869da',
   },
+
   red: {
-    100: '#bd081c',
+    100: '#e53e3e',
+    200: '#f70000',
   },
+
   mainShadow: 'rgba(247, 148, 137, 0.2)',
   mainBorder: '#fadcd9',
 };
