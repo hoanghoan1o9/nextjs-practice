@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonPropsChakra {
   disabled?: boolean;
   size?: 'default' | 'primary' | 'secondary' | 'close';
   variant?: 'default' | 'primary' | 'secondary' | 'close';
-  label: string;
+  label?: string;
   className?: string;
   children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
