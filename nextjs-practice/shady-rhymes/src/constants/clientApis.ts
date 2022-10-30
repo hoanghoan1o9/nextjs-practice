@@ -1,17 +1,22 @@
-export namespace API {}
-export const BASE_URL_API = process.env.BASE_API_URL;
+export namespace API {
+  export const URL = {
+    BASE: process.env.NEXT_PUBLIC_URL,
+    LOCAL: process.env.NEXT_PUBLIC_URL_LOCAL,
+    PRODUCTION: process.env.NEXT_PUBLIC_URL_PRODUCTION,
+  };
 
-export const API_ENDPOINTS = {
-  PRODUCTS: '/products',
-};
+  export const ENDPOINTS = {
+    PRODUCTS: '/products',
+  };
 
-export const METHODS = {
-  GET: 'GET',
-  POST: 'POST',
-  PATCH: 'PATCH',
-  DELETE: 'DELETE',
-};
+  export const METHODS = {
+    GET: 'GET',
+    POST: 'POST',
+    PATCH: 'PATCH',
+    DELETE: 'DELETE',
+  };
 
-export enum HEADERS {
-  'Content-Type' = 'application/json',
+  export enum HEADERS {
+    'Content-Type' = 'application/json',
+  }
 }
