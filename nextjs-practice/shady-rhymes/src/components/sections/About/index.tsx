@@ -10,13 +10,13 @@ import { ABOUT_ITEM } from '@constants/about';
 
 export const AboutSection = () => {
   return (
-    <Box mt={'80px'}>
+    <Box mt={{ base: '40px', md: '80px' }} mx={{ base: '0', md: '80px' }}>
       <Heading
         display={{ base: 'none', md: 'block' }}
         fontSize="36px"
         lineHeight="72px"
         fontWeight="500"
-        m="0 0 16px 80px"
+        mb=" 16px"
       >
         Why Choosing Us
       </Heading>
@@ -27,7 +27,6 @@ export const AboutSection = () => {
         display="flex"
         flexWrap={'wrap'}
         justifyContent={'space-between'}
-        m={'0 80px'}
       >
         {ABOUT_ITEM.map((item) => (
           <CardItem
