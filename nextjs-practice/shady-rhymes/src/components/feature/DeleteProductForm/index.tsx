@@ -3,7 +3,7 @@ import { FormControl, FormLabel, Container, Flex } from '@chakra-ui/react';
 import { Button } from '../../common/Button';
 
 // Services
-import { deleteProduct } from '@services/productService';
+import { deleteProduct } from '@services/productService'
 
 interface Props {
   isOpen: boolean;
