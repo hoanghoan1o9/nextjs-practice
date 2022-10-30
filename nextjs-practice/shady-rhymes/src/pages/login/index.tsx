@@ -1,10 +1,5 @@
 import { useState, useRef } from 'react';
-import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-
-import { ROUTES } from '@constants/router';
-import { USERS } from '@constants/users';
-
 import {
   Flex,
   Box,
@@ -17,9 +12,19 @@ import {
   Input,
 } from '@chakra-ui/react';
 
+// Models
+import { NextPageWithLayout } from '@models/common';
+
+// layouts
+import LoginLayout from '@components/layouts/Login';
+
+// Constants
+import { ROUTES } from '@constants/router';
+import { USERS } from '@constants/users';
+
 import { IS_LOGIN, setItem } from '@helpers/localStorage';
 
-const Login: NextPage = () => {
+const Login: NextPageWithLayout = () => {
   const [message, setMessage] = useState('');
 
   const userNameRef = useRef<HTMLInputElement | null>(null);
@@ -91,5 +96,7 @@ const Login: NextPage = () => {
     </Flex>
   );
 };
+
+Login.Layout = LoginLayout;
 
 export default Login;
