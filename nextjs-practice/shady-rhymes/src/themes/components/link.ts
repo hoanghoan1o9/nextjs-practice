@@ -16,8 +16,25 @@ export const Link = {
         color: '#f1d0cc',
       },
     },
+
     normalLink: {
       color: '#f79489',
+    },
+
+    notFoundLink: {
+      color: '#000',
+      mt: '20px',
+      padding: '20px',
+      cursor: 'pointer',
+      borderWidth: '1px',
+      borderColor: '#000',
+      borderStyle: 'solid',
+      borderRadius: '30px',
+
+      _hover: {
+        bg: '#f79489',
+        textDecoration: 'none',
+      },
     },
   },
 };
