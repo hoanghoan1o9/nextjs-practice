@@ -2,7 +2,7 @@
 import { FormControl, FormLabel, Container, Flex } from '@chakra-ui/react';
 import { Button } from '../../common/Button';
 
-import { ProductServices } from '@services/productService';
+import { deleteProduct } from '@services/productService';
 
 interface Props {
   isOpen: boolean;
@@ -11,7 +11,7 @@ interface Props {
 
 export const DeleteProductForm = ({ isOpen, id }: Props) => {
   const handleDeleteProduct = async () => {
-    await ProductServices.deleteProduct(id);
+    await deleteProduct(id);
   };
 
   return (
