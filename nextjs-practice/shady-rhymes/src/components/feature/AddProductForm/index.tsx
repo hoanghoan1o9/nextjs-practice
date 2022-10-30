@@ -1,16 +1,30 @@
 // Libs
 import React, { useState } from 'react';
-import { FormControl, FormLabel, Input, Container } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Container,
+  Box,
+} from '@chakra-ui/react';
 import { Button } from '../../common/Button';
 
-import { ProductServices } from '@services/productService';
+// Models
 import { Product } from '@models/Product';
+
+// Components
+// import { LoadingIndicator } from '@components/common/LoadingIndicator';
+
+// Services
+import { addProduct } from '@services/productService';
 
 interface Props {
   isOpen: boolean;
 }
 
 export const AddProductForm = ({ isOpen }: Props) => {
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
   const [input, setInput] = useState({
     title: '',
     category: '',
@@ -23,12 +37,15 @@ export const AddProductForm = ({ isOpen }: Props) => {
         ...input,
         image: { url: '/images/brown-chair.png', alt: 'Chair' },
       };
-      await ProductServices.addProduct(newProduct as unknown as Product);
+      await addProduct(newProduct as unknown as Product);
       setInput({ title: '', category: '', price: 0 });
+      // setIsOpen(!isOpen);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleCloseAddForm = async () => {};
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValues = e.target.value;
@@ -43,13 +60,13 @@ export const AddProductForm = ({ isOpen }: Props) => {
   return (
     <Container
       maxW={'20em'}
+      maxH={'358px'}
       display={isOpen ? 'flex' : 'none'}
       flexDirection="column"
       alignItems="center"
       border="1px solid #000"
       p="10px"
       borderRadius="10px"
-      mb="100px"
       pos="fixed"
       top="100px"
       left="0"
@@ -85,7 +102,13 @@ export const AddProductForm = ({ isOpen }: Props) => {
           onChange={handleInputChange}
         />
       </FormControl>
-      <Button label={'Submit'} mt="20px" onClick={handleAddProduct} />
+      <Box w="100%" display="flex" justifyContent="space-between">
+        <Button mt="20px" onClick={handleAddProduct}>
+          {/* {isLoading ? <LoadingIndicator /> : 'Submit'} */}
+          Submit
+        </Button>
+        <Button label={'Cancel'} mt="20px" onClick={handleCloseAddForm} />
+      </Box>
     </Container>
   );
 };

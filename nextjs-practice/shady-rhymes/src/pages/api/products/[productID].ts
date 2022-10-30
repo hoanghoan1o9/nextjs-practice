@@ -5,10 +5,13 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '@models/Product';
 
 // Services
-import { ProductServices } from '@services/productService';
+import {
+  deleteProductServer,
+  patchProductServer,
+} from '@services/productService';
 
 // Constants
-import { METHODS } from '@constants/clientApis';
+import { API } from '@constants/clientApis';
 
 interface Props {
   data?: Product[] | Product;
@@ -23,11 +26,11 @@ export default async function handler(
   const { method } = req;
 
   switch (method) {
-    case METHODS.DELETE:
+    case API.METHODS.DELETE:
       try {
         const id = req.query.productID as string;
 
-        await ProductServices.deleteProductServer(id);
+        await deleteProductServer(id);
 
         res.status(200).json({ success: true });
       } catch (error) {
@@ -36,14 +39,14 @@ export default async function handler(
           .json({ success: false, error: 'fail to delete products' });
       }
       break;
-    case METHODS.PATCH:
+    case API.METHODS.PATCH:
       try {
         const id = req.query.productID as string;
         console.log(id);
         const { title, category, price } = req.body;
 
         if (!title || !category || !price) throw 'Invalid data';
-        await ProductServices.patchProductServer({
+        await patchProductServer({
           id,
           title,
           category,

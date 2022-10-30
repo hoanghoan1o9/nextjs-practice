@@ -5,10 +5,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '@models/Product';
 
 // Services
-import { ProductServices } from '@services/productService';
+import { addProductServer } from '@services/productService';
 
 // Constants
-import { METHODS, API_ENDPOINTS } from '@constants/clientApis';
+import { API } from '@constants/clientApis';
 
 interface Props {
   data?: Product[] | Product;
@@ -22,22 +22,12 @@ export default async function handler(
 ) {
   const { method } = req;
   switch (method) {
-    case METHODS.GET:
-      try {
-        const products = await ProductServices.getProductList(
-          API_ENDPOINTS.PRODUCTS,
-        );
-        res.status(200).json({ success: true, data: products });
-      } catch (error) {
-        res.status(500).json({ success: false, error: 'fail to get products' });
-      }
-      break;
-    case METHODS.POST:
+    case API.METHODS.POST:
       try {
         const { title, category, price, image } = req.body;
         if (!title || !category || !price || !image.url) throw 'Invalid data';
 
-        const newProduct = await ProductServices.addProductServer({
+        const newProduct = await addProductServer({
           title,
           category,
           price,

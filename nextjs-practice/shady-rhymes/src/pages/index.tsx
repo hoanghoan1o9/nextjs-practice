@@ -14,10 +14,10 @@ import { SEO } from '@components/common/SEO';
 import { useProduct } from '@contexts/ProductContext';
 
 // Services
-import { ProductServices } from '@services/productService';
+import { getProductList } from '@services/productService';
 
 // Constants
-import { API_ENDPOINTS } from '@constants/clientApis';
+import { API } from '@constants/clientApis';
 import { APP_ERRORS } from '@constants/errors';
 import { NextPageWithLayout } from '@models/common';
 
@@ -27,9 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // For testing ISR flow
   console.log('====Generate/ Re-generate Product List====');
   try {
-    const responseProducts = await ProductServices.getProductList(
-      API_ENDPOINTS.PRODUCTS,
-    );
+    const responseProducts = await getProductList(API.ENDPOINTS.PRODUCTS);
 
     if (!responseProducts) {
       throw new Error(APP_ERRORS.DEFAULT_ERROR_APIS);

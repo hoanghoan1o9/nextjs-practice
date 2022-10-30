@@ -14,25 +14,22 @@ import { NextPageWithLayout } from '@models/common';
 import { MainLayout } from '@components/layouts/Main';
 
 // Constants
-import { API_ENDPOINTS } from '@constants/clientApis';
+import { API } from '@constants/clientApis';
 import { ProductPathParams } from '@constants/pathParams';
 
 // Services
-import { ProductServices } from '@services/productService';
+import { getProduct, getProductList } from '@services/productService';
 
 // Types
 import { Product } from '@models/Product';
 // import { UpdateProductForm } from '@components/feature/UpdateProductForm';
-// import axios from 'axios';
 
 interface ProductProps {
   product: Product;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const responseProducts = await ProductServices.getProductList(
-    API_ENDPOINTS.PRODUCTS,
-  );
+  const responseProducts = await getProductList(API.ENDPOINTS.PRODUCTS);
 
   const paths = responseProducts.map((product: Product) => {
     return {
@@ -46,10 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as ProductPathParams;
 
-  const product = await ProductServices.getProduct(
-    API_ENDPOINTS.PRODUCTS,
-    slug,
-  );
+  const product = await getProduct(API.ENDPOINTS.PRODUCTS, slug);
 
   if (!product) return { notFound: true };
 

@@ -2,121 +2,97 @@
 import { Product } from '@models/Product';
 
 // Constants
-import {
-  BASE_URL_API,
-  METHODS,
-  HEADERS,
-  API_ENDPOINTS,
-} from '@constants/clientApis';
+import { API } from '@constants/clientApis';
 
-export class ProductClient {
-  private readonly baseApi: string;
+/**
+ * Get products from server
+ * @returns {Product[]} Product[]
+ */
+export const getProductList = async (url: string): Promise<Product[]> => {
+  const urlProducts = `${API.URL.BASE}${url}`;
+  const response = await fetch(urlProducts);
 
-  constructor(baseApi: string) {
-    this.baseApi = baseApi;
+  return response.json();
+};
+
+export const getProduct = async (
+  url: string,
+  id: string,
+): Promise<Product[] | boolean> => {
+  const urlProduct = `${API.URL.BASE}${url}/${id}`;
+  const response = await fetch(urlProduct);
+  if (response.status === 200) {
+    return response.json();
+  } else {
+    return response.ok;
   }
+};
 
-  /**
-   * Get products from server
-   * @returns {Product[]} Product[]
-   */
-  getProductList = async (url: string): Promise<Product[]> => {
-    // FIXME: Testing api
-    const urlProducts = `${'https://63453164dcae733e8febb806.mockapi.io'}${url}`;
-    const response = await fetch(urlProducts);
+export const addProduct = async (product: Product): Promise<Product> => {
+  const url = `${API.URL.LOCAL}${API.ENDPOINTS.PRODUCTS}`;
 
-    return response.json();
-  };
+  const response = await fetch(url, {
+    method: API.METHODS.POST,
+    headers: API.HEADERS,
+    body: JSON.stringify(product),
+  });
 
-  getProduct = async (url: string, id: string): Promise<Product[]> => {
-    // FIXME: Testing api
-    const urlProduct = `${'https://63453164dcae733e8febb806.mockapi.io'}${url}/${id}`;
-    const response = await fetch(urlProduct);
+  return response.json();
+};
 
-    return response.json();
-  };
+export const addProductServer = async (product: Product): Promise<Product> => {
+  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}`;
 
-  addProduct = async (product: Product): Promise<Product> => {
-    // FIXME: Testing api
-    const url = `${'http://localhost:3000/api'}${API_ENDPOINTS.PRODUCTS}`;
+  const response = await fetch(url, {
+    method: API.METHODS.POST,
+    headers: API.HEADERS,
+    body: JSON.stringify(product),
+  });
 
-    const response = await fetch(url, {
-      method: METHODS.POST,
-      headers: HEADERS,
-      body: JSON.stringify(product),
-    });
+  return response.json();
+};
 
-    return response.json();
-  };
+export const deleteProduct = async (id: number): Promise<boolean> => {
+  const url = `${API.URL.LOCAL}/${API.ENDPOINTS.PRODUCTS}/${id}`;
+  const response = await fetch(url, {
+    method: API.METHODS.DELETE,
+    headers: API.HEADERS,
+  });
 
-  addProductServer = async (product: Product): Promise<Product> => {
-    // FIXME: Testing api
-    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}${
-      API_ENDPOINTS.PRODUCTS
-    }`;
+  return !!response.ok;
+};
 
-    const response = await fetch(url, {
-      method: METHODS.POST,
-      headers: HEADERS,
-      body: JSON.stringify(product),
-    });
+export const deleteProductServer = async (id: string): Promise<boolean> => {
+  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}/${id}`;
 
-    return response.json();
-  };
+  const response = await fetch(url, {
+    method: API.METHODS.DELETE,
+    headers: API.HEADERS,
+  });
 
-  deleteProduct = async (id: number): Promise<boolean> => {
-    // FIXME: Testing api
-    const url = `${'http://localhost:3000/api'}/${
-      API_ENDPOINTS.PRODUCTS
-    }/${id}`;
-    const response = await fetch(url, {
-      method: METHODS.DELETE,
-      headers: HEADERS,
-    });
+  return !!response.ok;
+};
 
-    return !!response.ok;
-  };
+export const patchProduct = async (product: Product): Promise<Product> => {
+  const url = `${API.URL.BASE}/${API.ENDPOINTS.PRODUCTS}/${product.id}`;
+  const response = await fetch(url, {
+    method: API.METHODS.PATCH,
+    headers: API.HEADERS,
+    body: JSON.stringify(product),
+  });
 
-  deleteProductServer = async (id: string): Promise<boolean> => {
-    // FIXME: Testing api
-    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}/${
-      API_ENDPOINTS.PRODUCTS
-    }/${id}`;
-    const response = await fetch(url, {
-      method: METHODS.DELETE,
-      headers: HEADERS,
-    });
+  return response.json();
+};
 
-    return !!response.ok;
-  };
+export const patchProductServer = async (
+  product: Product,
+): Promise<Product> => {
+  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}/${product.id}`;
+  const response = await fetch(url, {
+    method: API.METHODS.PATCH,
+    headers: API.HEADERS,
+    body: JSON.stringify(product),
+  });
 
-  patchProduct = async (product: Product): Promise<Product> => {
-    // FIXME: Testing api
-    const url = `${'http://localhost:3000/api'}/${API_ENDPOINTS.PRODUCTS}/${
-      product.id
-    }`;
-    const response = await fetch(url, {
-      method: METHODS.PATCH,
-      headers: HEADERS,
-      body: JSON.stringify(product),
-    });
-
-    return response.json();
-  };
-
-  patchProductServer = async (product: Product): Promise<Product> => {
-    // FIXME: Testing api
-    const url = `${'https://63453164dcae733e8febb806.mockapi.io'}${
-      API_ENDPOINTS.PRODUCTS
-    }/${product.id}`;
-    const response = await fetch(url, {
-      method: METHODS.PATCH,
-      headers: HEADERS,
-      body: JSON.stringify(product),
-    });
-
-    return response.json();
-  };
-}
-
-export const ProductServices = new ProductClient(BASE_URL_API as string);
+  return response.json();
+};
