@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import Script from 'next/script';
 
+import { Partytown } from '@builder.io/partytown/react';
 export interface SeoInfo {
   title: string;
   description: string;
@@ -36,18 +37,22 @@ export const SEO = ({ props }: SeoProps) => {
         <meta property="twitter:image" content={thumbnailUrl} />
       </Head>
 
+      <Partytown debug={true} forward={['dataLayer.push']} />
       <Script
-        strategy="afterInteractive"
+        strategy="worker"
+        type="text/partytown"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
       />
-      <Script strategy="afterInteractive">
-        {` 
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', ${process.env.GOOGLE_ANALYTICS});
-        `}
-      </Script>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: ` 
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ${process.env.GOOGLE_ANALYTICS});
+       `,
+        }}
+      />
     </>
   );
 };
