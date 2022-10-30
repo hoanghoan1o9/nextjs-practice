@@ -1,11 +1,17 @@
 // Libraries
 import React from 'react';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 
 // Components
 import { DetailProduct } from '@components/sections/ProductDetail';
+import { LoadingIndicator } from '@components/common/LoadingIndicator';
+
+// Models
+import { NextPageWithLayout } from '@models/common';
+
 // Layouts
-import { MainLayout } from '@components/layouts/MainLayout';
+import { MainLayout } from '@components/layouts/Main';
 
 // Constants
 import { API_ENDPOINTS } from '@constants/clientApis';
@@ -24,25 +30,17 @@ interface ProductProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  try {
-    const responseProducts = await ProductServices.getProductList(
-      API_ENDPOINTS.PRODUCTS,
-    );
+  const responseProducts = await ProductServices.getProductList(
+    API_ENDPOINTS.PRODUCTS,
+  );
 
-    const paths = responseProducts.map((product: Product) => {
-      return {
-        params: { slug: product.id },
-      };
-    });
+  const paths = responseProducts.map((product: Product) => {
+    return {
+      params: { slug: product.id },
+    };
+  });
 
-    return { paths, fallback: false };
-  } catch (error) {
-    if (error instanceof Error) {
-      return { paths: [], fallback: true };
-    }
-
-    return { paths: [], fallback: true };
-  }
+  return { paths, fallback: true };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -53,20 +51,33 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     slug,
   );
 
+  if (!product) return { notFound: true };
+
   return {
     props: {
       product: product,
     },
+    revalidate: 5,
   };
 };
 
-export const ProductDetail: NextPage<ProductProps> = ({ product }) => {
+export const ProductDetail: NextPageWithLayout<ProductProps> = ({
+  product,
+}) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <LoadingIndicator />;
+  }
+
   return (
-    <MainLayout>
+    <>
       <DetailProduct product={product} />
       {/* <UpdateProductForm id={product.id} isOpen={true} /> */}
-    </MainLayout>
+    </>
   );
 };
+
+ProductDetail.Layout = MainLayout;
 
 export default ProductDetail;
