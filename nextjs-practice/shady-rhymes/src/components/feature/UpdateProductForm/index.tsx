@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { Product } from '@models/Product';
 
 // Services
-import { ProductServices } from '@services/productService';
+import { patchProduct } from '@services/productService';
 
 // Constants
 import { ROUTES } from '@constants/router';
@@ -40,7 +40,7 @@ export const UpdateProductForm = ({ isOpen, id }: Props) => {
         id,
         image: { url: '/images/brown-chair.png', alt: 'Chair' },
       };
-      await ProductServices.patchProduct(newproduct as unknown as Product);
+      await patchProduct(newproduct as unknown as Product);
       setInput({ title: '', category: '', price: '' });
       router.push(ROUTES.HOME_PAGE);
     } catch (error) {
