@@ -25,7 +25,7 @@ export const ProductItem = ({
 }: ProductItemProps) => {
   const router = useRouter();
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     router.push(`/${id}`);
   };
