@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start --port 3001",
+		"build": "npm run partytown && next build",
+		"partytown": "partytown copylib public/~partytown",
+    "start": "next start",
     "lint": "next lint",
     "prepare": "cd ../../ && husky install nextjs-practice/shady-rhymes/.husky",
     "test": "jest",
