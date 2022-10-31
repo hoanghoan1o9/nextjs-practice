@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '@models/Product';
 
 // Services
-import { addProduct } from '@services/productService';
+import { addProduct, getProductList } from '@services/productService';
 
 // Constants
 import { API } from '@constants/clientApis';
@@ -22,6 +22,15 @@ export default async function handler(
 ) {
   const { method } = req;
   switch (method) {
+    case API.METHODS.GET:
+      try {
+        const products = await getProductList(API.ENDPOINTS.PRODUCTS);
+        res.status(200).json({ success: true, data: products });
+      } catch (error) {
+        res.status(500).json({ success: false, error: 'fail to get products' });
+      }
+      break;
+
     case API.METHODS.POST:
       try {
         const { title, category, price, image } = req.body;
