@@ -29,7 +29,7 @@ export const getProduct = async (
 };
 
 export const addProduct = async (product: Product): Promise<Product> => {
-  const url = `${API.URL.LOCAL}${API.ENDPOINTS.PRODUCTS}`;
+  const url = `${API.URL.PRODUCTION}${API.ENDPOINTS.PRODUCTS}`;
 
   const response = await fetch(url, {
     method: API.METHODS.POST,
@@ -53,7 +53,7 @@ export const addProductServer = async (product: Product): Promise<Product> => {
 };
 
 export const deleteProduct = async (id: number): Promise<boolean> => {
-  const url = `${API.URL.LOCAL}/${API.ENDPOINTS.PRODUCTS}/${id}`;
+  const url = `${API.URL.PRODUCTION}/${API.ENDPOINTS.PRODUCTS}/${id}`;
   const response = await fetch(url, {
     method: API.METHODS.DELETE,
     headers: API.HEADERS,
@@ -74,7 +74,7 @@ export const deleteProductServer = async (id: string): Promise<boolean> => {
 };
 
 export const patchProduct = async (product: Product): Promise<Product> => {
-  const url = `${API.URL.BASE}/${API.ENDPOINTS.PRODUCTS}/${product.id}`;
+  const url = `${API.URL.PRODUCTION}/${API.ENDPOINTS.PRODUCTS}/${product.id}`;
   const response = await fetch(url, {
     method: API.METHODS.PATCH,
     headers: API.HEADERS,
