@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '@models/Product';
 
 // Services
-import { addProductServer } from '@services/productService';
+import { addProduct } from '@services/productService';
 
 // Constants
 import { API } from '@constants/clientApis';
@@ -27,12 +27,15 @@ export default async function handler(
         const { title, category, price, image } = req.body;
         if (!title || !category || !price || !image.url) throw 'Invalid data';
 
-        const newProduct = await addProductServer({
-          title,
-          category,
-          price,
-          image,
-        } as Product);
+        const newProduct = await addProduct(
+          API.URL.BASE as string,
+          {
+            title,
+            category,
+            price,
+            image,
+          } as Product,
+        );
 
         res.status(200).json({ success: true, data: newProduct });
       } catch (error) {

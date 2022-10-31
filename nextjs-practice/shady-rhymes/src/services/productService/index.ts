@@ -28,67 +28,40 @@ export const getProduct = async (
   }
 };
 
-export const addProduct = async (product: Product): Promise<Product> => {
-  const url = `${API.URL.PRODUCTION}${API.ENDPOINTS.PRODUCTS}`;
-
-  const response = await fetch(url, {
-    method: API.METHODS.POST,
-    headers: API.HEADERS,
-    body: JSON.stringify(product),
-  });
-
-  return response.json();
-};
-
-export const addProductServer = async (product: Product): Promise<Product> => {
-  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}`;
-
-  const response = await fetch(url, {
-    method: API.METHODS.POST,
-    headers: API.HEADERS,
-    body: JSON.stringify(product),
-  });
-
-  return response.json();
-};
-
-export const deleteProduct = async (id: number): Promise<boolean> => {
-  const url = `${API.URL.PRODUCTION}/${API.ENDPOINTS.PRODUCTS}/${id}`;
-  const response = await fetch(url, {
-    method: API.METHODS.DELETE,
-    headers: API.HEADERS,
-  });
-
-  return !!response.ok;
-};
-
-export const deleteProductServer = async (id: string): Promise<boolean> => {
-  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}/${id}`;
-
-  const response = await fetch(url, {
-    method: API.METHODS.DELETE,
-    headers: API.HEADERS,
-  });
-
-  return !!response.ok;
-};
-
-export const patchProduct = async (product: Product): Promise<Product> => {
-  const url = `${API.URL.PRODUCTION}/${API.ENDPOINTS.PRODUCTS}/${product.id}`;
-  const response = await fetch(url, {
-    method: API.METHODS.PATCH,
-    headers: API.HEADERS,
-    body: JSON.stringify(product),
-  });
-
-  return response.json();
-};
-
-export const patchProductServer = async (
+export const addProduct = async (
+  url: string,
   product: Product,
 ): Promise<Product> => {
-  const url = `${API.URL.BASE}${API.ENDPOINTS.PRODUCTS}/${product.id}`;
-  const response = await fetch(url, {
+  const urlProduct = `${url}${API.ENDPOINTS.PRODUCTS}`;
+
+  const response = await fetch(urlProduct, {
+    method: API.METHODS.POST,
+    headers: API.HEADERS,
+    body: JSON.stringify(product),
+  });
+
+  return response.json();
+};
+
+export const deleteProduct = async (
+  url: string,
+  id: string,
+): Promise<boolean> => {
+  const urlProduct = `${url}/${API.ENDPOINTS.PRODUCTS}/${id}`;
+  const response = await fetch(urlProduct, {
+    method: API.METHODS.DELETE,
+    headers: API.HEADERS,
+  });
+
+  return !!response.ok;
+};
+
+export const patchProduct = async (
+  url: string,
+  product: Product,
+): Promise<Product> => {
+  const urlProduct = `${url}/${API.ENDPOINTS.PRODUCTS}/${product.id}`;
+  const response = await fetch(urlProduct, {
     method: API.METHODS.PATCH,
     headers: API.HEADERS,
     body: JSON.stringify(product),

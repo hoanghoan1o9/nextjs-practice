@@ -5,10 +5,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Product } from '@models/Product';
 
 // Services
-import {
-  deleteProductServer,
-  patchProductServer,
-} from '@services/productService';
+import { deleteProduct, patchProduct } from '@services/productService';
 
 // Constants
 import { API } from '@constants/clientApis';
@@ -30,7 +27,7 @@ export default async function handler(
       try {
         const id = req.query.productID as string;
 
-        await deleteProductServer(id);
+        await deleteProduct(API.URL.BASE as string, id);
 
         res.status(200).json({ success: true });
       } catch (error) {
@@ -42,16 +39,19 @@ export default async function handler(
     case API.METHODS.PATCH:
       try {
         const id = req.query.productID as string;
-        console.log(id);
+
         const { title, category, price } = req.body;
 
         if (!title || !category || !price) throw 'Invalid data';
-        await patchProductServer({
-          id,
-          title,
-          category,
-          price,
-        } as Product);
+        await patchProduct(
+          API.URL.BASE as string,
+          {
+            id,
+            title,
+            category,
+            price,
+          } as Product,
+        );
         res.status(200).json({ success: true });
       } catch (error) {
         res

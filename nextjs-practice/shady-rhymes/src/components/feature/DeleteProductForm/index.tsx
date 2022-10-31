@@ -1,47 +1,46 @@
 // Libs
-import { FormControl, FormLabel, Container, Flex } from '@chakra-ui/react';
+import { FormControl, FormLabel } from '@chakra-ui/react';
+
+// Components
 import { Button } from '../../common/Button';
+import Modal from '@components/common/Modal';
 
 // Services
-import { deleteProduct } from '@services/productService'
+import { deleteProduct } from '@services/productService';
+
+// Constants
+import { API } from '@constants/clientApis';
 
 interface Props {
   isOpen: boolean;
-  id: number;
+  id: string;
+  onClose: () => void;
 }
 
-export const DeleteProductForm = ({ isOpen, id }: Props) => {
+export const DeleteProductForm = ({ isOpen, id, onClose }: Props) => {
   const handleDeleteProduct = async () => {
-    await deleteProduct(id);
+    await deleteProduct(API.URL.LOCAL as string, id);
   };
 
   return (
-    <Container
-      maxW={'20em'}
-      display={isOpen ? 'flex' : 'none'}
-      flexDirection="column"
-      alignItems="center"
-      border="1px solid #000"
-      p="10px"
-      borderRadius="10px"
-      mb="100px"
-      pos="fixed"
-      top="100px"
-      left="0"
-      right="0"
-      backgroundColor="whiteText.100"
-    >
-      <FormControl>
-        <FormLabel fontSize="default">Delete Product</FormLabel>
-      </FormControl>
-      <FormControl>
-        <FormLabel fontSize="small">
-          Do you want to delete this product
-        </FormLabel>
-      </FormControl>
-      <Flex justifyContent="space-between">
-        <Button label={'Delete'} onClick={handleDeleteProduct} />
-      </Flex>
-    </Container>
+    <Modal
+      title="Delete product"
+      body={
+        <>
+          <FormControl>
+            <FormLabel fontSize="small">
+              Do you want to delete this product
+            </FormLabel>
+          </FormControl>
+        </>
+      }
+      footer={
+        <Button onClick={handleDeleteProduct} isDisabled={false}>
+          Delete
+        </Button>
+      }
+      isOpen={isOpen}
+      onClose={onClose}
+    />
   );
 };

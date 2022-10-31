@@ -1,35 +1,29 @@
 // Libs
 import React, { useState } from 'react';
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Container,
-  Box,
-} from '@chakra-ui/react';
-import { Button } from '../../common/Button';
+import { FormControl, FormLabel, Input } from '@chakra-ui/react';
 
 // Models
 import { Product } from '@models/Product';
 
 // Components
+import { Button } from '../../common/Button';
+import Modal from '@components/common/Modal';
 // import { LoadingIndicator } from '@components/common/LoadingIndicator';
 
 // Services
 import { addProduct } from '@services/productService';
 
+// Constants
+import { API } from '@constants/clientApis';
+
 interface Props {
   isOpen: boolean;
+  onClose: () => void;
 }
 
-export const AddProductForm = ({ isOpen }: Props) => {
+export const AddProductForm = ({ isOpen, onClose }: Props) => {
   // const [isLoading, setIsLoading] = useState<boolean>(false);
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [input, setInput] = useState({
-    title: '',
-    category: '',
-    price: 0,
-  });
+  const [input, setInput] = useState({});
 
   const handleAddProduct = async () => {
     try {
@@ -37,15 +31,16 @@ export const AddProductForm = ({ isOpen }: Props) => {
         ...input,
         image: { url: '/images/brown-chair.png', alt: 'Chair' },
       };
-      await addProduct(newProduct as unknown as Product);
+
+      await addProduct(
+        API.URL.LOCAL as string,
+        newProduct as unknown as Product,
+      );
       setInput({ title: '', category: '', price: 0 });
-      // setIsOpen(!isOpen);
     } catch (error) {
       console.log(error);
     }
   };
-
-  const handleCloseAddForm = async () => {};
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValues = e.target.value;
@@ -55,60 +50,50 @@ export const AddProductForm = ({ isOpen }: Props) => {
     });
   };
 
-  const { title, category, price } = input;
-
   return (
-    <Container
-      maxW={'20em'}
-      maxH={'358px'}
-      display={isOpen ? 'flex' : 'none'}
-      flexDirection="column"
-      alignItems="center"
-      border="1px solid #000"
-      p="10px"
-      borderRadius="10px"
-      pos="fixed"
-      top="100px"
-      left="0"
-      right="0"
-      backgroundColor="whiteText.100"
-    >
-      <FormControl isRequired>
-        <FormLabel>Title</FormLabel>
-        <Input
-          placeholder="Enter Title"
-          type="text"
-          name="title"
-          value={title}
-          onChange={handleInputChange}
-        />
-      </FormControl>
-      <FormControl isRequired>
-        <FormLabel>Category</FormLabel>
-        <Input
-          placeholder="Enter Category"
-          type="text"
-          name="category"
-          value={category}
-          onChange={handleInputChange}
-        />
-      </FormControl>
-      <FormControl isRequired>
-        <FormLabel>Price</FormLabel>
-        <Input
-          type="number"
-          name="price"
-          value={price}
-          onChange={handleInputChange}
-        />
-      </FormControl>
-      <Box w="100%" display="flex" justifyContent="space-between">
-        <Button mt="20px" onClick={handleAddProduct}>
-          {/* {isLoading ? <LoadingIndicator /> : 'Submit'} */}
+    <Modal
+      title="Add new product"
+      body={
+        <>
+          <FormControl isRequired>
+            <FormLabel>Title</FormLabel>
+            <Input
+              name="title"
+              type="text"
+              data-id="Title"
+              placeholder="Chair"
+              onChange={handleInputChange}
+            />
+          </FormControl>
+          <FormControl isRequired mt={2}>
+            <FormLabel>Category</FormLabel>
+            <Input
+              name="category"
+              type="text"
+              data-id="Category"
+              placeholder="Furniture"
+              onChange={handleInputChange}
+            />
+          </FormControl>
+          <FormControl isRequired mt={2}>
+            <FormLabel>Price</FormLabel>
+            <Input
+              name="price"
+              type="number"
+              data-id="Price"
+              placeholder="1000"
+              onChange={handleInputChange}
+            />
+          </FormControl>
+        </>
+      }
+      footer={
+        <Button onClick={handleAddProduct} isDisabled={false}>
           Submit
         </Button>
-        <Button label={'Cancel'} mt="20px" onClick={handleCloseAddForm} />
-      </Box>
-    </Container>
+      }
+      isOpen={isOpen}
+      onClose={onClose}
+    />
   );
 };

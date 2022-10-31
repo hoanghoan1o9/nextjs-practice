@@ -63,8 +63,15 @@ export const ProductListSection = () => {
               />
             ))}
         </SimpleGrid>
-        <AddProductForm isOpen={isOpenAddForm} />
-        <DeleteProductForm isOpen={isOpenDeleteForm} id={5} />
+        <AddProductForm
+          isOpen={isOpenAddForm}
+          onClose={handleOpenAddFormModal}
+        />
+        <DeleteProductForm
+          isOpen={isOpenDeleteForm}
+          id={'5'}
+          onClose={handleOpenDeleteFormModal}
+        />
       </Box>
     </>
   );
