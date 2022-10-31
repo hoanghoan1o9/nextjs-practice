@@ -18,6 +18,5 @@ export namespace API {
 
   export enum HEADERS {
     'Content-Type' = 'application/x-www-form-urlencoded; charset=UTF-8',
-    "Access-Control-Allow-Methods" = "GET,POST,PUT,DELETE,OPTIONS",
   }
 }

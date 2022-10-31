@@ -32,6 +32,7 @@ export const addProduct = async (product: Product): Promise<Product> => {
   const url = `${API.URL.PRODUCTION}${API.ENDPOINTS.PRODUCTS}`;
 
   const response = await fetch(url, {
+    method: API.METHODS.POST,
     headers: API.HEADERS,
     body: JSON.stringify(product),
   });
