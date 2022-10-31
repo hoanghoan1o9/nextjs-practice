@@ -17,6 +17,6 @@ export namespace API {
   };
 
   export enum HEADERS {
-    'Content-Type' = 'application/json',
+    'Content-Type' = 'application/x-www-form-urlencoded; charset=UTF-8',
   }
 }
