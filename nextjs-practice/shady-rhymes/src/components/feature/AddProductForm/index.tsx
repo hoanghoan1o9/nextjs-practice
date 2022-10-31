@@ -33,7 +33,7 @@ export const AddProductForm = ({ isOpen, onClose }: Props) => {
       };
 
       await addProduct(
-        API.URL.LOCAL as string,
+        API.URL.PRODUCTION as string,
         newProduct as unknown as Product,
       );
       setInput({ title: '', category: '', price: 0 });
