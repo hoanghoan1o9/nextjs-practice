@@ -12,7 +12,7 @@ export const getProductList = async (url: string): Promise<Product[]> => {
   const urlProducts = `${API.URL.BASE}${url}`;
   const response = await fetch(urlProducts);
 
-  return response.json();
+  return !!response && response.json();
 };
 
 export const getProduct = async (
